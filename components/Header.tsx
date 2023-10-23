@@ -1,0 +1,43 @@
+"use client"
+import { useState } from 'react'
+
+export default function Header(){
+
+    const [state, setState] = useState(false)
+
+    return (
+    <nav className="bg-white border-gray-200 dark:bg-gray-900">
+        <div className="flex flex-wrap justify-between mx-auto">
+            <a href="/" className="flex flex-none items-center">
+                <img src="images/logo_vertical_black.png" className="h-14 mr-5 hidden md:inline-block" alt="" />
+                <img src="images/logo-only-text.png" className="h-10 mr-3 inline-block md:hidden" alt="" />
+            </a>
+            <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+                <span className="sr-only">Open main menu</span>
+                <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                </svg>
+            </button>
+            <div className="hidden md:block  flex-auto" id="navbar-default">
+                <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 bg-gray-50 md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li className="flex-1">
+                        <a href="#" className="text-center block py-2 px-8 border-r-0 font-gilmedium uppercase text-black hover:text-white hover:bg-blue-900 border border-black dark:text-white md:dark:text-blue-500" aria-current="page">События</a>
+                    </li>
+                    <li className="flex-1">
+                        <a href="#" className="text-center block py-2 px-8 border-r-0 font-gilmedium uppercase text-black hover:text-white hover:bg-blue-900 border border-black dark:text-white md:dark:text-blue-500" aria-current="page">Образовательный центр</a>
+                    </li>
+                    <li className="flex-1">
+                        <a href="#" className="text-center block py-2 px-8 border-r-0 font-gilmedium uppercase text-black hover:text-white hover:bg-blue-900 border border-black dark:text-white md:dark:text-blue-500" aria-current="page">Студии и Клубы</a>
+                    </li>
+                    <li className="flex-1">
+                        <a href="#" className="text-center block py-2 px-8 border-r-0 font-gilmedium uppercase text-black hover:text-white hover:bg-blue-900 border border-black dark:text-white md:dark:text-blue-500" aria-current="page">О нас</a>
+                    </li>
+                    <li className="flex-1">
+                        <a href="#" className="text-center block py-2 px-8 font-gilmedium uppercase text-black hover:text-white hover:bg-blue-900 border border-black dark:text-white md:dark:text-blue-500" aria-current="page">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+)
+}
