@@ -10,15 +10,16 @@
   },
   "dependencies": {
     "@apollo/client": "^3.5.10",
+    "@react-buddy/ide-toolbox-next": "^2.4.1",
     "flowbite": "^1.8.1",
     "flowbite-react": "^0.6.4",
     "graphql": "^16.3.0",
     "next": "13.5.4",
     "react": "^18",
-    "react-dom": "^18",
-    "@react-buddy/ide-toolbox-next": "^2.4.1"
+    "react-dom": "^18"
   },
   "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
