@@ -67,7 +67,7 @@ export default function Events() {
                                     <h4 className="font-gilbold uppercase lg:text-2xl xl:text-3xl mb-2">07.11.2023</h4>
                                 </div>
                                 <div className="link lg:text-lg xl:text-xl font-gilbold uppercase">
-                                    <a href="" title="" className="flex flex-row items-end justify-between w-full"><span>Большое путешествие специальная доставка</span><span className="ml-4 text-4xl align-baseline">»</span> </a>
+                                    <a href="" title="" className="flex flex-row items-end justify-between w-full"><span>Старик Хоттабыч</span><span className="ml-4 text-4xl align-baseline">»</span> </a>
                                 </div>
                             </div>
                         </div>
@@ -89,10 +89,10 @@ export default function Events() {
                             />
                             <div className="flex flex-col justify-between content absolute backdrop-blur-md bg-white/20 w-full h-full left-0 top-0 p-8 text-white pb-6">
                                 <div>
-                                    <h4 className="font-gilbold uppercase lg:text-2xl xl:text-3xl mb-2">07.11.2023</h4>
+                                    <h4 className="font-gilbold uppercase lg:text-2xl xl:text-3xl mb-2">10.11.2023</h4>
                                 </div>
                                 <div className="link lg:text-lg xl:text-xl font-gilbold uppercase">
-                                    <a href="" title="" className="flex flex-row items-end justify-between w-full"><span>Большое путешествие специальная доставка</span><span className="ml-4 text-4xl align-baseline">»</span> </a>
+                                    <a href="" title="" className="flex flex-row items-end justify-between w-full"><span>Чебурашка</span><span className="ml-4 text-4xl align-baseline">»</span> </a>
                                 </div>
                             </div>
                         </div>
@@ -114,10 +114,10 @@ export default function Events() {
                             />
                             <div className="flex flex-col justify-between content absolute backdrop-blur-md bg-white/20 w-full h-full left-0 top-0 p-8 text-white pb-6">
                                 <div>
-                                    <h4 className="font-gilbold uppercase lg:text-2xl xl:text-3xl mb-2">07.11.2023</h4>
+                                    <h4 className="font-gilbold uppercase lg:text-2xl xl:text-3xl mb-2">16.11.2023</h4>
                                 </div>
                                 <div className="link lg:text-lg xl:text-xl font-gilbold uppercase">
-                                    <a href="" title="" className="flex flex-row items-end justify-between w-full"><span>Большое путешествие специальная доставка</span><span className="ml-4 text-4xl align-baseline">»</span> </a>
+                                    <a href="" title="" className="flex flex-row items-end justify-between w-full"><span>Женитьба Бальзаминовна</span><span className="ml-4 text-4xl align-baseline">»</span> </a>
                                 </div>
                             </div>
                         </div>
@@ -139,7 +139,7 @@ export default function Events() {
                             />
                             <div className="flex flex-col justify-between content absolute backdrop-blur-md bg-white/20 w-full h-full left-0 top-0 p-8 text-white pb-6">
                                 <div>
-                                    <h4 className="font-gilbold uppercase lg:text-2xl xl:text-3xl mb-2">07.11.2023</h4>
+                                    <h4 className="font-gilbold uppercase lg:text-2xl xl:text-3xl mb-2">22.11.2023</h4>
                                 </div>
                                 <div className="link lg:text-lg xl:text-xl font-gilbold uppercase">
                                     <a href="" title="" className="flex flex-row items-end justify-between w-full"><span>Большое путешествие специальная доставка</span><span className="ml-4 text-4xl align-baseline">»</span> </a>
