@@ -39,6 +39,12 @@ const config: Config = {
         'map-pattern': "url('/images/russia-map-bg.png')",
         'common-pattern': "url('/images/common-background.jpg')",
       },
+      colors: {
+        'theme-red': '#e21d3a',
+        'theme-blue': '#06a2dc',
+        'theme-green': '#6fb450',
+        'theme-yellow': '#fac412',
+      },
       fontFamily: {
         gilbold: ["Gilroy_Bold"],
         gilregular: ["Gilroy_Regular"],

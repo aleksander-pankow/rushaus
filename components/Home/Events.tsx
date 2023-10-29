@@ -1,5 +1,6 @@
 "use client"
 import Image from 'next/image';
+import React from "react";
 
 export default function Events() {
     return (
@@ -23,7 +24,7 @@ export default function Events() {
                                 className="object-none h-full w-full"
                             />
                         </div>
-                        <div className="group/details flex justify-between flex-col invisible hover:bg-red-700 group-hover/item:visible w-full h-full top-0 left-0 absolute p-8 transition ease-in duration-75">
+                        <div className="group/details flex justify-between flex-col invisible hover:bg-theme-red group-hover/item:visible w-full h-full top-0 left-0 absolute p-8 transition ease-in duration-75">
                             <div className="text-white space-y-5">
                             <p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности
                                 представляет собой интересный эксперимент проверки модели развития. Равным образом
@@ -65,7 +66,21 @@ export default function Events() {
                     [&:nth-child(3)]:pt-4
                     [&:nth-child(4)]:pt-4 [&:nth-child(4)]:border-l [&:nth-child(4)]:border-black
                     border-black lg:w-1/2 aspect-square">
-                        <div className="h-full bg-gray-400">1</div>
+                        <div className="relative h-full">
+                            <img
+                                src="/images/test/test-event-picture.png"
+                                alt="My Image"
+                                className="object-none h-full w-full"
+                            />
+                            <div className="flex flex-col justify-between content absolute backdrop-blur-md bg-white/20 w-full h-full left-0 top-0 p-8 text-white pb-6">
+                                <div>
+                                    <h4 className="font-gilbold uppercase text-3xl mb-2">07.11.2023</h4>
+                                </div>
+                                <div className="link text-xl  font-gilbold uppercase">
+                                    <a href="" title="" className="flex flex-row items-end justify-between w-full"><span>Большое путешествие специальная доставка</span><span className="text-4xl align-baseline">»</span> </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div className="w-1/2 sm:w-full md:w-full
                     odd:px-4
@@ -75,7 +90,21 @@ export default function Events() {
                     [&:nth-child(3)]:pt-4
                     [&:nth-child(4)]:pt-4 [&:nth-child(4)]:border-l [&:nth-child(4)]:border-black
                     border-black lg:w-1/2 aspect-square">
-                        <div className="h-full bg-gray-400">1</div>
+                        <div className="relative h-full">
+                            <img
+                                src="/images/test/test-event-picture.png"
+                                alt="My Image"
+                                className="object-none h-full w-full"
+                            />
+                            <div className="flex flex-col justify-between content absolute backdrop-blur-md bg-white/20 w-full h-full left-0 top-0 p-8 text-white pb-6">
+                                <div>
+                                    <h4 className="font-gilbold uppercase text-3xl mb-2">07.11.2023</h4>
+                                </div>
+                                <div className="link text-xl  font-gilbold uppercase">
+                                    <a href="" title="" className="flex flex-row items-end justify-between w-full"><span>Большое путешествие специальная доставка</span><span className="text-4xl align-baseline">»</span> </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div className="w-1/2 sm:w-full md:w-full
                     odd:px-4
@@ -85,7 +114,21 @@ export default function Events() {
                     [&:nth-child(3)]:pt-4
                     [&:nth-child(4)]:pt-4 [&:nth-child(4)]:border-l [&:nth-child(4)]:border-black
                     border-black lg:w-1/2 aspect-square">
-                        <div className="h-full bg-gray-400">1</div>
+                        <div className="relative h-full">
+                            <img
+                                src="/images/test/test-event-picture.png"
+                                alt="My Image"
+                                className="object-none h-full w-full"
+                            />
+                            <div className="flex flex-col justify-between content absolute backdrop-blur-md bg-white/20 w-full h-full left-0 top-0 p-8 text-white pb-6">
+                                <div>
+                                    <h4 className="font-gilbold uppercase text-3xl mb-2">07.11.2023</h4>
+                                </div>
+                                <div className="link text-xl  font-gilbold uppercase">
+                                    <a href="" title="" className="flex flex-row items-end justify-between w-full"><span>Большое путешествие специальная доставка</span><span className="text-4xl align-baseline">»</span> </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div className="w-1/2 sm:w-full md:w-full
                     odd:px-4
@@ -95,13 +138,21 @@ export default function Events() {
                     [&:nth-child(3)]:pt-4
                     [&:nth-child(4)]:pt-4 [&:nth-child(4)]:border-l [&:nth-child(4)]:border-black
                     border-black lg:w-1/2 aspect-square">
-                        <div className="h-full bg-gray-400">1</div>
-                    </div>
-                    <div className="w-1/2 pl-4 pt-4 sm:w-full  md:w-full lg:w-1/2 text-xl text-black font-gilbold uppercase">
-                        <a href="" className="space-x-3" title="">
-                            <span>→</span>
-                            <span>Другие события</span>
-                        </a>
+                        <div className="relative h-full">
+                            <img
+                                src="/images/test/test-event-picture.png"
+                                alt="My Image"
+                                className="object-none h-full w-full"
+                            />
+                            <div className="flex flex-col justify-between content absolute backdrop-blur-md bg-white/20 w-full h-full left-0 top-0 p-8 text-white pb-6">
+                                <div>
+                                    <h4 className="font-gilbold uppercase text-3xl mb-2">07.11.2023</h4>
+                                </div>
+                                <div className="link text-xl  font-gilbold uppercase">
+                                    <a href="" title="" className="flex flex-row items-end justify-between w-full"><span>Большое путешествие специальная доставка</span><span className="text-4xl align-baseline">»</span> </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
