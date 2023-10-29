@@ -4,6 +4,7 @@ import Slider from "@/components/Home/Slider";
 import Ticker from "@/components/Home/Ticker";
 import Events from "@/components/Home/Events";
 import Categories from "@/components/Home/Categories";
+import Social from "@/components/Home/Social";
 
 export default function Home() {
     return (
@@ -12,6 +13,7 @@ export default function Home() {
             <Ticker/>
             <Events/>
             <Categories/>
+            <Social/>
         </section>
     )
 }

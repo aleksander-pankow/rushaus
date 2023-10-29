@@ -44,6 +44,7 @@ const config: Config = {
         'theme-blue': '#06a2dc',
         'theme-green': '#6fb450',
         'theme-yellow': '#fac412',
+        'theme-gray': '#575966',
       },
       fontFamily: {
         gilbold: ["Gilroy_Bold"],

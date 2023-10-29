@@ -4,7 +4,7 @@ function Categories() {
     return (
         <section className="px-8">
             <div className="w-full flex flex-wrap border-black border-t pt-4 pb-4">
-                <div className="w-1/2 sm:w-full md:w-full pr-4 lg:w-1/2 aspect-square">
+                <div className="w-1/2 sm:max-md:w-full pr-4 lg:w-1/2 aspect-square">
                     <div className="relative flex h-full border border-black group/item p-8 group/item items-center justify-center">
                         <h4 className="font-gilbold uppercase text-5xl text-center">Образовательный центр</h4>
                         <div className="group/details flex justify-between flex-col invisible hover:bg-theme-blue group-hover/item:visible w-full h-full top-0 left-0 absolute p-8 transition ease-in duration-75">
@@ -41,7 +41,7 @@ function Categories() {
                         </div>
                     </div>
                 </div>
-                <div className=" w-1/2 sm:w-full md:w-full pl-4 border-l border-black lg:w-1/2 aspect-square">
+                <div className=" w-1/2 sm:max-md:w-full pl-4 border-l border-black lg:w-1/2 aspect-square">
                     <div className="relative h-full border border-black group/item">
                         <div className="flex flex-col justify-between h-[calc((100%/2)-0.8rem)] p-8">
                             <div>
@@ -53,9 +53,9 @@ function Categories() {
                         </div>
                         <div className="h-[calc((100%/2)+0.8rem)] bg-blue-900">
                             <img
-                                src="/images/test/test-event-picture.png"
+                                src="/images/test/urok.png"
                                 alt="My Image"
-                                className="object-none h-full w-full"
+                                className="object-fill h-full w-full"
                             />
                         </div>
                         <div className="group/details flex justify-between flex-col invisible hover:bg-theme-blue group-hover/item:visible w-full h-full top-0 left-0 absolute p-8 transition ease-in duration-75">
@@ -94,7 +94,7 @@ function Categories() {
                 </div>
             </div>
             <div className="w-full flex flex-wrap border-black border-t pt-4 pb-4">
-                <div className="w-1/2 sm:w-full md:w-full pr-4 lg:w-1/2 aspect-square">
+                <div className="w-1/2 sm:max-md:w-full pr-4 lg:w-1/2 aspect-square">
                     <div className="relative flex h-full border border-black group/item p-8 group/item items-center justify-center">
                         <h4 className="font-gilbold uppercase text-5xl text-center">Художественная мастерская</h4>
                         <div className="group/details flex justify-between flex-col invisible hover:bg-theme-yellow group-hover/item:visible w-full h-full top-0 left-0 absolute p-8 transition ease-in duration-75">
