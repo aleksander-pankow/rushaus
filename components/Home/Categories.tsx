@@ -4,12 +4,12 @@ function Categories() {
     return (
         <section className="border border-black border-t-0 p-5">
             <div className="w-full flex flex-wrap pb-5 gap-4 sm:gap-0">
-                <div className="w-full sm:max-md:w-full md:pr-5 md:w-1/2 aspect-square">
+                <div className="w-full sm:max-md:w-full md:pr-5 md:w-1/2 md:aspect-square">
                     <div
                         className="relative flex h-full border border-black group/item p-8 group/item items-center justify-center">
                         <h4 className="font-gilbold uppercase text-2xl sm:text-rhtitle text-center">Образовательный центр</h4>
                         <div
-                            className="group/details flex justify-between flex-col invisible hover:bg-theme-blue group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-75">
+                            className="group/details flex justify-between flex-col invisible hover:bg-theme-blue sm:group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-75">
                             <div className="text-base/[20px] sm:text-rhregular text-white space-y-5">
                                 <p>Русский колледж открыт для детей и подростков, которые хотят научиться чему-то
                                     новому, узнать больше о русской культуре. Все материалы и методики разработаны
@@ -47,7 +47,7 @@ function Categories() {
                             />
                         </div>
                         <div
-                            className="group/details flex justify-between flex-col invisible hover:bg-theme-blue group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-75">
+                            className="group/details flex justify-between flex-col invisible hover:bg-theme-blue sm:group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-75">
                             <div className="text-base sm:text-rhregular text-white space-y-5">
                                 <p>Интенсивные курсы - отличный способ погрузиться в языковую среду. В течение
                                     двухнедельных регулярных занятий с понедельника по пятницу даже начинающие изучают
@@ -66,12 +66,12 @@ function Categories() {
                 </div>
             </div>
             <div className="w-full flex flex-wrap pb-5 gap-4 sm:gap-0">
-                <div className="w-full sm:max-md:w-full md:pr-5 md:w-1/2 aspect-square">
+                <div className="w-full sm:max-md:w-full md:pr-5 md:w-1/2 md:aspect-square">
                     <div
                         className="relative flex h-full border border-black group/item p-8 group/item items-center justify-center">
                         <h4 className="font-gilbold uppercase text-2xl sm:text-rhtitle text-center">Художественная мастерская</h4>
                         <div
-                            className="group/details flex justify-between flex-col invisible hover:bg-theme-yellow group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-75">
+                            className="group/details flex justify-between flex-col invisible hover:bg-theme-yellow sm:group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-75">
                             <div className="text-white text-base/[20px] sm:text-rhregular space-y-5">
                                 <p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности
                                     представляет собой интересный эксперимент проверки модели развития. Равным образом
@@ -113,7 +113,7 @@ function Categories() {
                             />
                         </div>
                         <div
-                            className="group/details flex justify-between flex-col invisible hover:bg-theme-yellow group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-75">
+                            className="group/details flex justify-between flex-col invisible hover:bg-theme-yellow sm:group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-75">
                             <div className="text-white text-base/[20px] sm:text-rhregular space-y-5">
                                 <p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности
                                     представляет собой интересный эксперимент проверки модели развития. Равным образом
@@ -138,12 +138,12 @@ function Categories() {
                 </div>
             </div>
             <div className="w-full flex flex-wrap sm:pb-5 gap-4 sm:gap-0">
-                <div className="w-full sm:max-md:w-full md:pr-5 md:w-1/2 aspect-square">
+                <div className="w-full sm:max-md:w-full md:pr-5 md:w-1/2 md:aspect-square">
                     <div
                         className="relative flex h-full border border-black group/item p-[30px] group/item items-center justify-center ">
                         <h4 className="font-gilbold uppercase text-2xl sm:text-rhtitle text-center">Студии и клубы</h4>
                         <div
-                            className="group/details flex justify-between flex-col invisible hover:bg-theme-green group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-75">
+                            className="group/details flex justify-between flex-col invisible hover:bg-theme-green sm:group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-75">
                             <div className="text-white text-base/[20px] sm:text-rhregular space-y-5">
                                 <p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности
                                     представляет собой интересный эксперимент проверки модели развития. Равным образом
@@ -166,12 +166,12 @@ function Categories() {
                         </div>
                     </div>
                 </div>
-                <div className="w-full sm:max-md:w-full md:pr-5 md:w-1/2 aspect-square">
+                <div className="w-full sm:max-md:w-full md:pr-5 md:w-1/2 md:aspect-square">
                     <div
                         className="relative flex h-full border border-black group/item p-[30px] group/item items-center justify-center ">
                         <h4 className="font-gilbold uppercase text-2xl sm:text-rhtitle text-center">О нас</h4>
                         <div
-                            className="group/details flex justify-between flex-col invisible hover:bg-theme-blue group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-75">
+                            className="group/details flex justify-between flex-col invisible hover:bg-theme-blue sm:group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-75">
                             <div className="text-white text-base/[20px] sm:text-rhregular space-y-5">
                                 <p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности
                                     представляет собой интересный эксперимент проверки модели развития. Равным образом
