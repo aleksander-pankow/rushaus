@@ -31,7 +31,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className="text-sm py-6 bg-theme-gray text-white dark:bg-gray-700 md:flex md:items-center md:justify-between">
-                    <div className="md:flex md:items-center md:justify-between gap-8">
+                    <div className="flex items-center justify-between gap-8">
                         <span className="">© 2023 Русский дом в Берлине</span>
                         <a href="#" className="">Политика приватности</a>
                         <a href="#" className="">Правила и условия</a>

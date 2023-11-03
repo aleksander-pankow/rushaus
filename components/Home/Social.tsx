@@ -4,7 +4,7 @@ function Social() {
     return (
         <section>
             <div className="flex flex-col xl:flex-row border border-black border-t-0 p-5 gap-4">
-                <div className="w-1/2 sm:max-md:w-full">
+                <div className="w-full  sm:w-1/2">
                         <div className="flex items-center justify-center gap-4">
                             <a href=" " className="w-1/3 aspect-square flex items-center justify-center bg-theme-gray/10 hover:bg-transparent hover:border border-black" title="">
                                 <img
@@ -29,7 +29,7 @@ function Social() {
                             </a>
                         </div>
                 </div>
-                <div className="w-1/2 sm:max-md:w-full">
+                <div className="w-full  sm:w-1/2">
                     <div className="flex items-center justify-center gap-4">
                         <a href=" " className="w-1/3 aspect-square flex items-center justify-center bg-theme-gray/10 hover:bg-transparent hover:border border-black" title="">
                             <img
