@@ -6,7 +6,7 @@ export default function Header(){
     const [state, setState] = useState(false)
 
     return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900">
+    <nav className="container mx-auto bg-white border-gray-200 dark:bg-gray-900 pt-5">
         <div className="flex flex-wrap justify-between mx-auto">
             <a href="/" className="flex flex-none items-center">
                 <img src="images/logo_vertical_black.png" className="h-14 mr-5 hidden md:inline-block" alt="" />
@@ -19,21 +19,21 @@ export default function Header(){
                 </svg>
             </button>
             <div className="hidden md:block  flex-auto" id="navbar-default">
-                <ul className="font-medium  flex flex-col p-4 md:p-0 mt-4 bg-gray-50 md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                <ul className="font-gilbold text-rhregular uppercase text-black flex flex-col p-4 md:p-0 mt-4 bg-gray-50 md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                     <li className="flex-1">
-                        <a href="#" className="max-xl:text-sm text-center block py-2 px-8 border-r-0 font-gilmedium uppercase text-black hover:text-white hover:bg-blue-900 border border-black dark:text-white md:dark:text-blue-500" aria-current="page">События</a>
+                        <a href="#" className="text-center block py-2 px-2 border-r-0  hover:text-white hover:bg-theme-blue border border-black dark:text-white md:dark:text-blue-500" aria-current="page">События</a>
                     </li>
                     <li className="flex-1">
-                        <a href="#" className="max-xl:text-sm text-center block py-2 px-8 border-r-0 font-gilmedium uppercase text-black hover:text-white hover:bg-blue-900 border border-black dark:text-white md:dark:text-blue-500" aria-current="page">Образовательный центр</a>
+                        <a href="#" className="text-center block py-2 px-2 border-r-0 hover:text-white hover:bg-theme-blue border border-black dark:text-white md:dark:text-blue-500" aria-current="page">Образовательный центр</a>
                     </li>
                     <li className="flex-1">
-                        <a href="#" className="max-xl:text-sm text-center block py-2 px-8 border-r-0 font-gilmedium uppercase text-black hover:text-white hover:bg-blue-900 border border-black dark:text-white md:dark:text-blue-500" aria-current="page">Студии и Клубы</a>
+                        <a href="#" className="text-center block py-2 px-2 border-r-0  hover:text-white hover:bg-theme-blue border border-black dark:text-white md:dark:text-blue-500" aria-current="page">Студии и Клубы</a>
                     </li>
                     <li className="flex-1">
-                        <a href="#" className="max-xl:text-sm text-center block py-2 px-8 border-r-0 font-gilmedium uppercase text-black hover:text-white hover:bg-blue-900 border border-black dark:text-white md:dark:text-blue-500" aria-current="page">О нас</a>
+                        <a href="#" className="text-center block py-2 px-2 border-r-0  hover:text-white hover:bg-theme-blue border border-black dark:text-white md:dark:text-blue-500" aria-current="page">О нас</a>
                     </li>
                     <li className="flex-1">
-                        <a href="#" className="max-xl:text-sm text-center block py-2 px-8 font-gilmedium uppercase text-black hover:text-white hover:bg-blue-900 border border-black dark:text-white md:dark:text-blue-500" aria-current="page">Контакты</a>
+                        <a href="#" className="text-center block py-2 px-2  hover:text-white hover:bg-theme-blue border border-black dark:text-white md:dark:text-blue-500" aria-current="page">Контакты</a>
                     </li>
                 </ul>
             </div>

@@ -2,15 +2,15 @@ import React from 'react';
 
 function Categories() {
     return (
-        <section className="px-8">
-            <div className="w-full flex flex-wrap border-black border-t pt-4 pb-4">
-                <div className="w-1/2 sm:max-md:w-full pr-4 lg:w-1/2 aspect-square">
+        <section className="border border-black border-t-0 p-5">
+            <div className="w-full flex flex-wrap pb-5">
+                <div className="w-1/2 sm:max-md:w-full pr-5 lg:w-1/2 aspect-square">
                     <div
                         className="relative flex h-full border border-black group/item p-8 group/item items-center justify-center">
-                        <h4 className="font-gilbold uppercase text-5xl text-center">Образовательный центр</h4>
+                        <h4 className="font-gilbold uppercase text-rhtitle text-center">Образовательный центр</h4>
                         <div
-                            className="group/details flex justify-between flex-col invisible hover:bg-theme-blue group-hover/item:visible w-full h-full top-0 left-0 absolute p-8 transition ease-in duration-75">
-                            <div className="text-white space-y-5">
+                            className="group/details flex justify-between flex-col invisible hover:bg-theme-blue group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-75">
+                            <div className="text-rhregular text-white space-y-5">
                                 <p>Русский колледж открыт для детей и подростков, которые хотят научиться чему-то
                                     новому, узнать больше о русской культуре. Все материалы и методики разработаны
                                     педагогами, чтобы обеспечить максимальную эффективность обучения.</p>
@@ -20,22 +20,22 @@ function Categories() {
                                 <p> - Математика</p>
                                 <p> - Подготовка к школе</p>
                             </div>
-                            <div className="link text-xl text-white font-gilbold uppercase">
+                            <div className="link text-rhbuttons text-white font-gilbold uppercase">
                                 <a href="" title="" className="flex flex-row items-center space-x-3"><span>→</span>
                                     <span>Подробная информация</span></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className=" w-1/2 sm:max-md:w-full pl-4 border-l border-black lg:w-1/2 aspect-square">
+                <div className=" w-1/2 sm:max-md:w-full pl-5 border-l border-black lg:w-1/2 aspect-square">
                     <div className="relative h-full border border-black group/item">
-                        <div className="flex flex-col justify-between h-[calc((100%/2)-0.8rem)] p-8">
+                        <div className="flex flex-col justify-between h-[calc((100%/2)-0.8rem)] p-[30px]">
                             <div>
-                                <h4 className="font-gilbold uppercase text-2xl mb-2">Интенсивные курсы русского
+                                <h4 className="font-gilbold uppercase text-rhtitle mb-2">Интенсивные курсы русского
                                     языка</h4>
                             </div>
                             <div>
-                                <p className="font-gilregular">Отличный способ погрузиться в языковую среду в течении
+                                <p className="font-gilregular text-rhregular">Отличный способ погрузиться в языковую среду в течении
                                     регулярных двухнедельных занятий</p>
                             </div>
                         </div>
@@ -47,7 +47,7 @@ function Categories() {
                             />
                         </div>
                         <div
-                            className="group/details flex justify-between flex-col invisible hover:bg-theme-blue group-hover/item:visible w-full h-full top-0 left-0 absolute p-8 transition ease-in duration-75">
+                            className="group/details flex justify-between flex-col invisible hover:bg-theme-blue group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-75">
                             <div className="text-white space-y-5">
                                 <p>Интенсивные курсы - отличный способ погрузиться в языковую среду. В течение
                                     двухнедельных регулярных занятий с понедельника по пятницу даже начинающие изучают
@@ -57,7 +57,7 @@ function Categories() {
                                     русский язык, независимо от того, нужен ли вам русский язык для работы, учебы или в
                                     личных целях.</p>
                             </div>
-                            <div className="link text-xl text-white font-gilbold uppercase">
+                            <div className="link text-rhbuttons text-white font-gilbold uppercase">
                                 <a href="" title="" className="flex flex-row items-center space-x-3"><span>→</span>
                                     <span>Подробная информация</span></a>
                             </div>
@@ -65,14 +65,14 @@ function Categories() {
                     </div>
                 </div>
             </div>
-            <div className="w-full flex flex-wrap border-black border-t pt-4 pb-4">
-                <div className="w-1/2 sm:max-md:w-full pr-4 lg:w-1/2 aspect-square">
+            <div className="w-full flex flex-wrap border-black border-t py-5">
+                <div className="w-1/2 sm:max-md:w-full pr-5 lg:w-1/2 aspect-square">
                     <div
                         className="relative flex h-full border border-black group/item p-8 group/item items-center justify-center">
-                        <h4 className="font-gilbold uppercase text-5xl text-center">Художественная мастерская</h4>
+                        <h4 className="font-gilbold uppercase text-rhtitle text-center">Художественная мастерская</h4>
                         <div
-                            className="group/details flex justify-between flex-col invisible hover:bg-theme-yellow group-hover/item:visible w-full h-full top-0 left-0 absolute p-8 transition ease-in duration-75">
-                            <div className="text-white space-y-5">
+                            className="group/details flex justify-between flex-col invisible hover:bg-theme-yellow group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-75">
+                            <div className="text-white text-rhregular space-y-5">
                                 <p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности
                                     представляет собой интересный эксперимент проверки модели развития. Равным образом
                                     укрепление и развитие структуры представляет собой интересный эксперимент проверки
@@ -87,21 +87,21 @@ function Categories() {
 
 
                             </div>
-                            <div className="link text-xl text-white font-gilbold uppercase">
+                            <div className="link text-rhbuttons text-white font-gilbold uppercase">
                                 <a href="" title="" className="flex flex-row items-center space-x-3"><span>→</span>
                                     <span>Подробная информация</span></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className=" w-1/2 sm:w-full md:w-full pl-4 border-l border-black lg:w-1/2 aspect-square">
+                <div className=" w-1/2 sm:w-full md:w-full pl-5 border-l border-black lg:w-1/2 aspect-square">
                     <div className="relative h-full border border-black group/item">
-                        <div className="flex flex-col justify-between h-[calc((100%/2)-0.8rem)] p-8">
+                        <div className="flex flex-col justify-between h-[calc((100%/2)-0.8rem)] p-[30px]">
                             <div>
-                                <h4 className="font-gilbold uppercase text-2xl mb-2">Класс керамики</h4>
+                                <h4 className="font-gilbold uppercase text-rhtitle mb-2">Класс керамики</h4>
                             </div>
                             <div>
-                                <p className="font-gilregular">Опытные мастера-керамисты научат всех желающих гончарному
+                                <p className="font-gilregular text-rhregular">Опытные мастера-керамисты научат всех желающих гончарному
                                     ремеслу, ручной лепке, техникам росписи керамических изделий.</p>
                             </div>
                         </div>
@@ -113,8 +113,8 @@ function Categories() {
                             />
                         </div>
                         <div
-                            className="group/details flex justify-between flex-col invisible hover:bg-theme-yellow group-hover/item:visible w-full h-full top-0 left-0 absolute p-8 transition ease-in duration-75">
-                            <div className="text-white space-y-5">
+                            className="group/details flex justify-between flex-col invisible hover:bg-theme-yellow group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-75">
+                            <div className="text-white text-rhregular space-y-5">
                                 <p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности
                                     представляет собой интересный эксперимент проверки модели развития. Равным образом
                                     укрепление и развитие структуры представляет собой интересный эксперимент проверки
@@ -137,14 +137,14 @@ function Categories() {
                     </div>
                 </div>
             </div>
-            <div className="w-full flex flex-wrap border-black border-t pt-4">
-                <div className="w-1/2 sm:w-full md:w-full pr-4 lg:w-1/2 aspect-square">
+            <div className="w-full flex flex-wrap border-black border-t pt-5">
+                <div className="w-1/2 sm:w-full md:w-full pr-5 lg:w-1/2 aspect-square">
                     <div
-                        className="relative flex h-full border border-black group/item p-8 group/item items-center justify-center ">
-                        <h4 className="font-gilbold uppercase text-5xl text-center">Студии и клубы</h4>
+                        className="relative flex h-full border border-black group/item p-[30px] group/item items-center justify-center ">
+                        <h4 className="font-gilbold uppercase text-rhtitle text-center">Студии и клубы</h4>
                         <div
-                            className="group/details flex justify-between flex-col invisible hover:bg-theme-green group-hover/item:visible w-full h-full top-0 left-0 absolute p-8 transition ease-in duration-75">
-                            <div className="text-white space-y-5">
+                            className="group/details flex justify-between flex-col invisible hover:bg-theme-green group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-75">
+                            <div className="text-white text-rhregular space-y-5">
                                 <p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности
                                     представляет собой интересный эксперимент проверки модели развития. Равным образом
                                     укрепление и развитие структуры представляет собой интересный эксперимент проверки
@@ -159,20 +159,20 @@ function Categories() {
 
 
                             </div>
-                            <div className="link text-xl text-white font-gilbold uppercase">
+                            <div className="link text-rhbuttons text-white font-gilbold uppercase">
                                 <a href="" title="" className="flex flex-row items-center space-x-3"><span>→</span>
                                     <span>Подробная информация</span></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="w-1/2 sm:w-full md:w-full pl-4 border-l border-black lg:w-1/2 aspect-square">
+                <div className="w-1/2 sm:w-full md:w-full pl-5 border-l border-black lg:w-1/2 aspect-square">
                     <div
-                        className="relative flex h-full border border-black group/item p-8 group/item items-center justify-center">
-                        <h4 className="font-gilbold uppercase text-5xl text-center">О нас</h4>
+                        className="relative flex h-full border border-black group/item p-[30px] group/item items-center justify-center">
+                        <h4 className="font-gilbold uppercase text-rhtitle text-center">О нас</h4>
                         <div
-                            className="group/details flex justify-between flex-col invisible hover:bg-theme-blue group-hover/item:visible w-full h-full top-0 left-0 absolute p-8 transition ease-in duration-75">
-                            <div className="text-white space-y-5">
+                            className="group/details flex justify-between flex-col invisible hover:bg-theme-blue group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-75">
+                            <div className="text-white text-rhregular space-y-5">
                                 <p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности
                                     представляет собой интересный эксперимент проверки модели развития. Равным образом
                                     укрепление и развитие структуры представляет собой интересный эксперимент проверки
@@ -187,7 +187,7 @@ function Categories() {
 
 
                             </div>
-                            <div className="link text-xl text-white font-gilbold uppercase">
+                            <div className="link text-rhbuttons text-white font-gilbold uppercase">
                                 <a href="" title="" className="flex flex-row items-center space-x-3"><span>→</span>
                                     <span>Подробная информация</span></a>
                             </div>

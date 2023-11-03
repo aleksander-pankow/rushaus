@@ -9,6 +9,12 @@ const config: Config = {
   ],
   darkMode: "class",
   theme: {
+    fontSize: {
+      rhtitle: ['40px', '40px'],
+      rhregular: ['20px', '30px'],
+      rhbuttons: ['25x', '30px'],
+      rhfooter: ['17x', '30px'],
+    },
     aspectRatio: {
       auto: 'auto',
       square: '1 / 1',
