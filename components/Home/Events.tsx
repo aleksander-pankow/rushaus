@@ -6,25 +6,25 @@ export default function Events() {
     return (
         <section className="border border-black border-t-0 p-5">
             <div className="flex flex-col xl:flex-row">
-                <div className="relative w-full xl:w-1/2 h-auto group/item pr-5">
-                        <div className="flex flex-col justify-between h-[calc((100%/2)-1.5rem)] p-[30px] border border-black">
+                <div className="relative w-full xl:w-1/2 h-auto group/item lg:pr-5">
+                        <div className="flex flex-col justify-between h-[calc(50%)] lg:h-[calc((100%/2)-1.5rem)] p-[30px] border border-black">
                             <div>
-                                <h4 className="font-gilbold uppercase text-rhtitle mb-2">Городские сны</h4>
+                                <h4 className="font-gilbold uppercase text-2xl md:text-rhtitle mb-2">Городские сны</h4>
                                 <p className="font-gilregular text-rhregular mt-5">Международный арт проект</p>
                                 <p className="font-gilregular text-rhregular">фотография, живопись, графика, скульптура</p>
                             </div>
                             <div>
-                                <h4 className="font-gilbold uppercase text-rhtitle">До 30 апреля 2024</h4>
+                                <h4 className="max-sm:mt-4 font-gilbold uppercase text-2xl md:text-rhtitle">До 30 апреля 2024</h4>
                             </div>
                         </div>
-                        <div className="h-[calc((100%/2)+1.5rem)] bg-blue-900">
+                        <div className="h-[calc(50%)] lg:h-[calc((100%/2)+1.5rem)] bg-blue-900">
                             <img
                                 src="/images/test/test-event-picture.png"
                                 alt="My Image"
                                 className="object-fill h-full w-full"
                             />
                         </div>
-                        <div className="group/details flex justify-between flex-col invisible hover:bg-theme-red group-hover/item:visible w-[calc((100%)-20px)] h-full top-0 left-0 absolute p-[30px] transition ease-in duration-75">
+                        <div className="group/details flex justify-between flex-col invisible hover:bg-theme-red md:group-hover/item:visible md:w-[calc((100%)-20px)] h-full top-0 left-0 absolute p-[30px] transition ease-in duration-75">
 
                                 <div className="text-rhregular text-white space-y-5 max-h-[calc(90%)] ">
                                 <p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности
@@ -46,16 +46,15 @@ export default function Events() {
 
                         </div>
                     </div>
-                <div className="w-full xl:w-1/2 h-auto flex flex-wrap border-black border-l ">
+                <div className="w-full xl:w-1/2 h-auto flex flex-wrap border-black md:border-l ">
                     <div className="w-1/2
-                    max-sm:w-full
-                    odd:px-5
-                    even:pl-5
-                    [&:nth-child(1)]:pb-5 [&:nth-child(1)]:border-b
-                    [&:nth-child(2)]:pb-5 [&:nth-child(2)]:border-b [&:nth-child(2)]:border-l [&:nth-child(2)]:border-black
-                    [&:nth-child(3)]:pt-5
-                    [&:nth-child(4)]:pt-5 [&:nth-child(4)]:border-l [&:nth-child(4)]:border-black
-                    border-black lg:w-1/2 aspect-square">
+                    max-sm:w-full max-sm:first:mt-4 max-sm:my-2
+                    md:odd:px-5 md:even:pl-5
+                    md:[&:nth-child(1)]:pb-5 md:[&:nth-child(1)]:border-b
+                    md:[&:nth-child(2)]:pb-5 md:[&:nth-child(2)]:border-b md:[&:nth-child(2)]:border-l [&:nth-child(2)]:border-black
+                    md:[&:nth-child(3)]:pt-5
+                    md:[&:nth-child(4)]:pt-5 md:[&:nth-child(4)]:border-l [&:nth-child(4)]:border-black
+                    border-black lg:w-1/2 sm:aspect-square">
                         <div className="relative h-full">
                             <img
                                 src="/images/test/test-event-picture.png"
@@ -73,14 +72,13 @@ export default function Events() {
                         </div>
                     </div>
                     <div className="w-1/2
-                    max-sm:w-full
-                    odd:px-5
-                    even:pl-5
-                    [&:nth-child(1)]:pb-5 [&:nth-child(1)]:border-b
-                    [&:nth-child(2)]:pb-5 [&:nth-child(2)]:border-b [&:nth-child(2)]:border-l [&:nth-child(2)]:border-black
-                    [&:nth-child(3)]:pt-5
-                    [&:nth-child(4)]:pt-5 [&:nth-child(4)]:border-l [&:nth-child(4)]:border-black
-                    border-black lg:w-1/2 aspect-square">
+                    max-sm:w-full max-sm:first:mt-4 max-sm:my-2
+                    md:odd:px-5 md:even:pl-5
+                    md:[&:nth-child(1)]:pb-5 md:[&:nth-child(1)]:border-b
+                    md:[&:nth-child(2)]:pb-5 md:[&:nth-child(2)]:border-b md:[&:nth-child(2)]:border-l [&:nth-child(2)]:border-black
+                    md:[&:nth-child(3)]:pt-5
+                    md:[&:nth-child(4)]:pt-5 md:[&:nth-child(4)]:border-l [&:nth-child(4)]:border-black
+                    border-black lg:w-1/2 sm:aspect-square">
                         <div className="relative h-full">
                             <img
                                 src="/images/test/test-event-picture.png"
@@ -98,14 +96,13 @@ export default function Events() {
                         </div>
                     </div>
                     <div className="w-1/2
-                    max-sm:w-full
-                    odd:px-5
-                    even:pl-5
-                    [&:nth-child(1)]:pb-5 [&:nth-child(1)]:border-b
-                    [&:nth-child(2)]:pb-5 [&:nth-child(2)]:border-b [&:nth-child(2)]:border-l [&:nth-child(2)]:border-black
-                    [&:nth-child(3)]:pt-5
-                    [&:nth-child(4)]:pt-5 [&:nth-child(4)]:border-l [&:nth-child(4)]:border-black
-                    border-black lg:w-1/2 aspect-square">
+                    max-sm:w-full max-sm:first:mt-4 max-sm:my-2
+                    md:odd:px-5 md:even:pl-5
+                    md:[&:nth-child(1)]:pb-5 md:[&:nth-child(1)]:border-b
+                    md:[&:nth-child(2)]:pb-5 md:[&:nth-child(2)]:border-b md:[&:nth-child(2)]:border-l [&:nth-child(2)]:border-black
+                    md:[&:nth-child(3)]:pt-5
+                    md:[&:nth-child(4)]:pt-5 md:[&:nth-child(4)]:border-l [&:nth-child(4)]:border-black
+                    border-black lg:w-1/2 sm:aspect-square">
                         <div className="relative h-full">
                             <img
                                 src="/images/test/test-event-picture.png"
@@ -123,14 +120,13 @@ export default function Events() {
                         </div>
                     </div>
                     <div className="w-1/2
-                    max-sm:w-full
-                    odd:px-5
-                    even:pl-5
-                    [&:nth-child(1)]:pb-5 [&:nth-child(1)]:border-b
-                    [&:nth-child(2)]:pb-5 [&:nth-child(2)]:border-b [&:nth-child(2)]:border-l [&:nth-child(2)]:border-black
-                    [&:nth-child(3)]:pt-5
-                    [&:nth-child(4)]:pt-5 [&:nth-child(4)]:border-l [&:nth-child(4)]:border-black
-                    border-black lg:w-1/2 aspect-square">
+                    max-sm:w-full max-sm:first:mt-4 max-sm:my-2
+                    md:odd:px-5 md:even:pl-5
+                    md:[&:nth-child(1)]:pb-5 md:[&:nth-child(1)]:border-b
+                    md:[&:nth-child(2)]:pb-5 md:[&:nth-child(2)]:border-b md:[&:nth-child(2)]:border-l [&:nth-child(2)]:border-black
+                    md:[&:nth-child(3)]:pt-5
+                    md:[&:nth-child(4)]:pt-5 md:[&:nth-child(4)]:border-l [&:nth-child(4)]:border-black
+                    border-black lg:w-1/2 sm:aspect-square">
                         <div className="relative h-full">
                             <img
                                 src="/images/test/test-event-picture.png"
@@ -147,7 +143,7 @@ export default function Events() {
                             </div>
                         </div>
                     </div>
-                    <div className="w-1/2 pl-5 pt-5 sm:w-full  md:w-full lg:w-1/2 text-rhbuttons text-black font-gilbold uppercase">
+                    <div className="w-1/2 pl-5 pt-5 w-full lg:w-1/2 text-2xl md:text-rhbuttons text-black font-gilbold uppercase flex items-center justify-center">
                         <a href="" className="space-x-3" title="">
                             <span>→</span>
                             <span>Другие события</span>

@@ -6,7 +6,7 @@ export default function Header(){
     const [state, setState] = useState(false)
 
     return (
-    <nav className="container mx-auto bg-white border-gray-200 dark:bg-gray-900 pt-5">
+    <nav className="max-sm:px-5 container mx-auto bg-white border-gray-200 dark:bg-gray-900 pt-5">
         <div className="flex flex-wrap justify-between mx-auto">
             <a href="/" className="flex flex-none items-center">
                 <img src="images/logo_vertical_black.png" className="h-14 mr-5 hidden md:inline-block" alt="" />
