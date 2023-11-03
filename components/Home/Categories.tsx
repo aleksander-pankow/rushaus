@@ -7,7 +7,7 @@ function Categories() {
                 <div className="w-full sm:max-md:w-full md:pr-5 md:w-1/2 aspect-square">
                     <div
                         className="relative flex h-full border border-black group/item p-8 group/item items-center justify-center">
-                        <h4 className="font-gilbold uppercase text-rhtitle text-center">Образовательный центр</h4>
+                        <h4 className="font-gilbold uppercase text-2xl sm:text-rhtitle text-center">Образовательный центр</h4>
                         <div
                             className="group/details flex justify-between flex-col invisible hover:bg-theme-blue group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-75">
                             <div className="text-base/[20px] sm:text-rhregular text-white space-y-5">
@@ -69,7 +69,7 @@ function Categories() {
                 <div className="w-full sm:max-md:w-full md:pr-5 md:w-1/2 aspect-square">
                     <div
                         className="relative flex h-full border border-black group/item p-8 group/item items-center justify-center">
-                        <h4 className="font-gilbold uppercase text-rhtitle text-center">Художественная мастерская</h4>
+                        <h4 className="font-gilbold uppercase text-2xl sm:text-rhtitle text-center">Художественная мастерская</h4>
                         <div
                             className="group/details flex justify-between flex-col invisible hover:bg-theme-yellow group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-75">
                             <div className="text-white text-base/[20px] sm:text-rhregular space-y-5">
@@ -141,7 +141,7 @@ function Categories() {
                 <div className="w-full sm:max-md:w-full md:pr-5 md:w-1/2 aspect-square">
                     <div
                         className="relative flex h-full border border-black group/item p-[30px] group/item items-center justify-center ">
-                        <h4 className="font-gilbold uppercase text-rhtitle text-center">Студии и клубы</h4>
+                        <h4 className="font-gilbold uppercase text-2xl sm:text-rhtitle text-center">Студии и клубы</h4>
                         <div
                             className="group/details flex justify-between flex-col invisible hover:bg-theme-green group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-75">
                             <div className="text-white text-base/[20px] sm:text-rhregular space-y-5">
@@ -169,7 +169,7 @@ function Categories() {
                 <div className="w-full sm:max-md:w-full md:pr-5 md:w-1/2 aspect-square">
                     <div
                         className="relative flex h-full border border-black group/item p-[30px] group/item items-center justify-center ">
-                        <h4 className="font-gilbold uppercase text-rhtitle text-center">О нас</h4>
+                        <h4 className="font-gilbold uppercase text-2xl sm:text-rhtitle text-center">О нас</h4>
                         <div
                             className="group/details flex justify-between flex-col invisible hover:bg-theme-blue group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-75">
                             <div className="text-white text-base/[20px] sm:text-rhregular space-y-5">
