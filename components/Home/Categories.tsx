@@ -27,19 +27,19 @@ function Categories() {
                         </div>
                     </div>
                 </div>
-                <div className=" w-full sm:max-md:w-full md:pl-5 md:border-l border-black md:w-1/2 aspect-square">
+                <div className=" w-full sm:max-md:w-full md:pl-5 md:border-l border-black md:w-1/2 md:aspect-square">
                     <div className="relative h-full border border-black group/item">
-                        <div className="flex flex-col justify-between h-[calc(50%)] md:h-[calc((100%/2)-0.8rem)] p-[30px]">
+                        <div className="flex flex-col justify-between h-auto md:h-[calc(50%)] md:h-[calc((100%/2)-0.8rem)] p-[30px]">
                             <div>
                                 <h4 className="font-gilbold uppercase text-2xl sm:text-rhtitle mb-2">Интенсивные курсы русского
                                     языка</h4>
                             </div>
                             <div>
-                                <p className="font-gilregular text-rhregular hidden sm:block">Отличный способ погрузиться в языковую среду в течении
+                                <p className="font-gilregular text-rhregular">Отличный способ погрузиться в языковую среду в течении
                                     регулярных двухнедельных занятий</p>
                             </div>
                         </div>
-                        <div className="h-[calc(50%)] md:h-[calc((100%/2)+0.8rem)] bg-blue-900">
+                        <div className="h-auto md:h-[calc((100%/2)+0.8rem)] bg-blue-900">
                             <img
                                 src="/images/test/urok.png"
                                 alt="My Image"
@@ -48,7 +48,7 @@ function Categories() {
                         </div>
                         <div
                             className="group/details flex justify-between flex-col invisible hover:bg-theme-blue sm:group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-75">
-                            <div className="text-base sm:text-rhregular text-white space-y-5">
+                            <div className="text-rhregular text-white space-y-5">
                                 <p>Интенсивные курсы - отличный способ погрузиться в языковую среду. В течение
                                     двухнедельных регулярных занятий с понедельника по пятницу даже начинающие изучают
                                     основы русской грамматики и могут обсуждать на русском языке самые разные темы.</p>
@@ -94,18 +94,18 @@ function Categories() {
                         </div>
                     </div>
                 </div>
-                <div className=" w-full sm:max-md:w-full md:pl-5 md:border-l border-black md:w-1/2 aspect-square">
+                <div className=" w-full sm:max-md:w-full md:pl-5 md:border-l border-black md:w-1/2 md:aspect-square">
                     <div className="relative h-full border border-black group/item">
-                        <div className="flex flex-col justify-between h-[calc(50%)] md:h-[calc((100%/2)-0.8rem)] p-[30px]">
+                        <div className="flex flex-col justify-between h-auto md:h-[calc((100%/2)-0.8rem)] p-[30px]">
                             <div>
                                 <h4 className="font-gilbold uppercase text-2xl sm:text-rhtitle mb-2">Класс керамики</h4>
                             </div>
                             <div>
-                                <p className="font-gilregular text-rhregular hidden sm:block">Опытные мастера-керамисты научат всех желающих гончарному
+                                <p className="font-gilregular text-rhregular ">Опытные мастера-керамисты научат всех желающих гончарному
                                     ремеслу, ручной лепке, техникам росписи керамических изделий.</p>
                             </div>
                         </div>
-                        <div className="h-[calc(50%)] md:h-[calc((100%/2)-0.8rem)] bg-blue-900">
+                        <div className="h-auto md:h-[calc((100%/2)-0.8rem)] bg-blue-900">
                             <img
                                 src="/images/test/keramika.png"
                                 alt="My Image"
