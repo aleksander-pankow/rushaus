@@ -35,7 +35,7 @@ function Categories() {
                                     языка</h4>
                             </div>
                             <div>
-                                <p className="font-gilregular text-rhregular">Отличный способ погрузиться в языковую среду в течении
+                                <p className="font-gilregular text-base sm:text-rhregular">Отличный способ погрузиться в языковую среду в течении
                                     регулярных двухнедельных занятий</p>
                             </div>
                         </div>
@@ -101,7 +101,7 @@ function Categories() {
                                 <h4 className="font-gilbold uppercase text-2xl sm:text-rhtitle mb-2">Класс керамики</h4>
                             </div>
                             <div>
-                                <p className="font-gilregular text-rhregular">Опытные мастера-керамисты научат всех желающих гончарному
+                                <p className="font-gilregular text-base sm:text-rhregular">Опытные мастера-керамисты научат всех желающих гончарному
                                     ремеслу, ручной лепке, техникам росписи керамических изделий.</p>
                             </div>
                         </div>
