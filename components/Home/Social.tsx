@@ -10,21 +10,21 @@ function Social() {
                                 <img
                                     src="/images/social/Instagram.svg"
                                     alt="My Image"
-                                    className="h-[75px] w-auto"
+                                    className="h-[50px] lg:h-[75px] w-auto"
                                 />
                             </a>
                             <a href=" " className="w-1/3 aspect-square flex items-center justify-center bg-theme-gray/10 hover:bg-transparent hover:border border-black" title="">
                                         <img
                                             src="/images/social/telegram.svg"
                                             alt="My Image"
-                                            className="h-[75px] w-auto"
+                                            className="h-[50px] lg:h-[75px] w-auto"
                                         />
                             </a>
                             <a href=" " className="w-1/3 aspect-square flex items-center justify-center bg-theme-gray/10 hover:bg-transparent hover:border border-black" title="">
                                         <img
                                             src="/images/social/facebook.svg"
                                             alt="My Image"
-                                            className="h-[75px] w-auto"
+                                            className="h-[50px] lg:h-[75px] w-auto"
                                         />
                             </a>
                         </div>
@@ -35,21 +35,21 @@ function Social() {
                             <img
                                 src="/images/social/youtube.svg"
                                 alt="My Image"
-                                className="h-[75px] w-auto"
+                                className="h-[50px] lg:h-[75px] w-auto"
                             />
                         </a>
                         <a href=" " className="w-1/3 aspect-square flex items-center justify-center bg-theme-gray/10 hover:bg-transparent hover:border border-black" title="">
                             <img
                                 src="/images/social/odnoklassniki.svg"
                                 alt="My Image"
-                                className="h-[75px] w-auto"
+                                className="h-[50px] lg:h-[75px] w-auto"
                             />
                         </a>
                         <a href=" " className="w-1/3 aspect-square flex items-center justify-center bg-theme-gray/10 hover:bg-transparent hover:border border-black" title="">
                             <img
                                 src="/images/social/vk.svg"
                                 alt="My Image"
-                                className="h-[75px] w-auto"
+                                className="h-[50px] lg:h-[75px] w-auto"
                             />
                         </a>
                     </div>
