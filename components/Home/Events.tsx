@@ -8,10 +8,10 @@ export default function Events() {
     let itemList=items.map((item,index)=>{
         return (
             <div key={index} className="w-1/2
-                    max-sm:w-full max-sm:first:mt-4 max-sm:my-2 max-sm:h-32
-                    sm:odd:pr-2.5 sm:even:pl-2.5
+                    max-sm:w-full max-sm:first:mt-4 max-sm:my-2 max-sm:h-32 sm:max-md:h-44 md:max-xl:h-52
+                    sm:odd:pr-2.5 sm:even:pl-2.5 md:max-xl:odd:pr-5
                     sm:[&:nth-child(1)]:pb-5 sm:[&:nth-child(2)]:pb-5
-                    md:odd:px-5 md:even:pl-5
+                    xl:odd:px-5 md:even:pl-5
                     md:[&:nth-child(1)]:border-b
                     md:[&:nth-child(2)]:border-b md:[&:nth-child(2)]:border-l [&:nth-child(2)]:border-black
                     md:[&:nth-child(3)]:pt-5
@@ -57,7 +57,7 @@ export default function Events() {
                                 className="object-fill h-full w-full"
                             />
                         </div>
-                        <div className="group/details flex justify-between flex-col invisible hover:bg-theme-red md:group-hover/item:visible md:w-[calc((100%)-20px)] h-full top-0 left-0 absolute p-[30px] transition ease-in duration-75">
+                        <div className="group/details flex justify-between flex-col invisible md:group-hover/item:bg-theme-red md:group-hover/item:visible w-full xl:w-[calc((100%)-20px)] h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
 
                                 <div className="text-rhregular text-white space-y-5 max-h-[calc(90%)] ">
                                 <p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности
@@ -79,9 +79,9 @@ export default function Events() {
 
                         </div>
                     </div>
-                <div className="w-full h-auto flex flex-wrap border-black max-sm:mt-0 max-xl:mt-5 md:border-l xl:w-1/2">
+                <div className="w-full h-auto flex flex-wrap border-black max-sm:mt-0 max-xl:mt-5 xl:border-l xl:w-1/2">
                     {itemList}
-                    <div className="w-1/2 pl-5 pt-5 w-full lg:w-1/2 text-xl md:text-rhbuttons text-black font-gilbold uppercase flex max-xl:items-center max-xl:justify-center">
+                    <div className="pl-5 pt-5 w-full xl:w-1/2 text-xl md:text-rhbuttons text-black font-gilbold uppercase flex max-xl:items-center max-xl:justify-center">
                         <a href="" className="space-x-3" title="">
                             <span>→</span>
                             <span>Другие события</span>
