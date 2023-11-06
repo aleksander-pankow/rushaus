@@ -46,7 +46,7 @@ export default function Events() {
 
                         </div>
                     </div>
-                <div className="w-full h-auto flex flex-wrap border-black sm:mt-5 md:border-l xl:w-1/2">
+                <div className="w-full h-auto flex flex-wrap border-black max-xl:mt-5 md:border-l xl:w-1/2">
                     <div className="w-1/2
                     max-sm:w-full max-sm:first:mt-4 max-sm:my-2
                     sm:odd:pr-2.5 sm:even:pl-2.5
@@ -151,7 +151,7 @@ export default function Events() {
                             </div>
                         </div>
                     </div>
-                    <div className="w-1/2 pl-5 pt-5 w-full lg:w-1/2 text-2xl md:text-rhbuttons text-black font-gilbold uppercase flex items-center justify-center">
+                    <div className="w-1/2 pl-5 pt-5 w-full lg:w-1/2 text-2xl md:text-rhbuttons text-black font-gilbold uppercase flex max-xl:items-center max-xl:justify-center">
                         <a href="" className="space-x-3" title="">
                             <span>→</span>
                             <span>Другие события</span>

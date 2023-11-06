@@ -3,7 +3,7 @@ import React from 'react';
 function Categories() {
     return (
         <section className="border border-black border-t-0 p-5">
-            <div className="w-full flex flex-wrap pb-5 gap-5">
+            <div className="w-full flex flex-wrap pb-5 max-xl:gap-5 xl:border-b border-black">
                 <div className="w-full sm:max-md:w-full md:pr-5 md:w-1/2 md:aspect-square">
                     <div
                         className="relative flex h-full border border-black group/item p-8 group/item items-center justify-center">
@@ -29,7 +29,7 @@ function Categories() {
                 </div>
                 <div className="w-full sm:max-md:w-full md:pl-5 md:border-l border-black md:w-1/2 md:aspect-square">
                     <div className="relative h-full border border-black group/item">
-                        <div className="flex flex-col justify-between h-auto md:h-[calc(50%)] md:h-[calc((100%/2)-0.8rem)] p-[30px]">
+                        <div className="flex flex-col justify-between h-auto md:h-[calc((100%/2)-0.8rem)] p-[30px]">
                             <div>
                                 <h4 className="font-gilbold uppercase text-2xl lg:text-rhtitle mb-2">Интенсивные курсы русского
                                     языка</h4>
@@ -65,7 +65,7 @@ function Categories() {
                     </div>
                 </div>
             </div>
-            <div className="w-full flex flex-wrap pb-5 gap-5">
+            <div className="w-full flex flex-wrap pb-5 max-xl:gap-5 xl:border-b border-black xl:mt-5">
                 <div className="w-full sm:max-md:w-full md:pr-5 md:w-1/2 md:aspect-square">
                     <div
                         className="relative flex h-full border border-black group/item p-8 group/item items-center justify-center">
@@ -105,7 +105,7 @@ function Categories() {
                                     ремеслу, ручной лепке, техникам росписи керамических изделий.</p>
                             </div>
                         </div>
-                        <div className="h-auto md:h-[calc((100%/2)-0.8rem)] bg-blue-900">
+                        <div className="h-auto md:h-[calc((100%/2)+0.8rem)] bg-blue-900">
                             <img
                                 src="/images/test/keramika.png"
                                 alt="My Image"
@@ -137,7 +137,7 @@ function Categories() {
                     </div>
                 </div>
             </div>
-            <div className="w-full flex flex-wrap gap-5">
+            <div className="w-full flex flex-wrap max-xl:gap-5 xl:mt-5">
                 <div className="w-full sm:max-md:w-full md:pr-5 md:w-1/2 md:aspect-square">
                     <div
                         className="relative flex h-full border border-black group/item p-[30px] group/item items-center justify-center ">
@@ -166,7 +166,7 @@ function Categories() {
                         </div>
                     </div>
                 </div>
-                <div className="w-full sm:max-md:w-full md:pr-5 md:w-1/2 md:aspect-square">
+                <div className="w-full sm:max-md:w-full md:pl-5 md:border-l border-black md:w-1/2 md:aspect-square">
                     <div
                         className="relative flex h-full border border-black group/item p-[30px] group/item items-center justify-center ">
                         <h4 className="font-gilbold uppercase text-2xl lg:text-rhtitle text-center">О нас</h4>
