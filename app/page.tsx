@@ -8,7 +8,7 @@ import Social from "@/components/Home/Social";
 
 export default function Home() {
     return (
-        <section className="">
+        <section className="container mx-auto">
             <Slider/>
             <Ticker/>
             <Events/>
