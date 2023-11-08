@@ -24,7 +24,7 @@ export default function Footer() {
                     </div>
                     <div className="flex justify-end">
                         <img
-                            src="/images/logo_vertical_white.png"
+                            src="/images/Logo RH_horizontal_white.png"
                             alt="My Image"
                             className="h-[90px] w-auto"
                         />
