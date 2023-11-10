@@ -5,7 +5,7 @@ export default function Footer() {
 
         <footer className="container mx-auto px-5 pt-8 bg-theme-gray dark:bg-gray-900">
             <div className="w-full">
-                <div className="border-y border-white items-start grid grid-cols-2 gap-8 py-5 md:grid-cols-4 font-gilregular text-white text-rhfooter">
+                <div className="border-y border-white items-start grid md:grid-cols-2 gap-8 py-5 md:grid-cols-4 font-gilregular text-white text-rhfooter">
                     <div>
                         <p>FriedrichstraBe 176-179</p>
                         <p>10117 Berlin</p>
@@ -22,7 +22,7 @@ export default function Footer() {
                         <p>Ежедневно 12:00-14:00, 15:00-19:00</p>
                         <p>Выходной: воскресенье</p>
                     </div>
-                    <div className="flex justify-end">
+                    <div className="flex md:justify-end">
                         <img
                             src="/images/Logo RH_horizontal_white.png"
                             alt="My Image"
