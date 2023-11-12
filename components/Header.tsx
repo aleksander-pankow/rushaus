@@ -19,7 +19,7 @@ export default function Header(){
                 </svg>
             </button>
             <div className="hidden lg:block  flex-auto" id="navbar-default">
-                <ul className="font-gilbold text-sm uppercase text-black flex flex-col p-4 md:p-0 mt-4 bg-gray-50 md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                <ul className="font-gilbold 2xl:text-sm text-xs uppercase text-black flex flex-col p-4 md:p-0 mt-4 bg-gray-50 md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                     <li className="flex-1">
                         <a href="#" className="text-center block py-2 px-2 border-r-0  hover:text-white hover:bg-theme-blue border border-black dark:text-white md:dark:text-blue-500" aria-current="page">События</a>
                     </li>
@@ -33,10 +33,7 @@ export default function Header(){
                         <a href="#" className="text-center block py-2 px-2 border-r-0  hover:text-white hover:bg-theme-blue border border-black dark:text-white md:dark:text-blue-500" aria-current="page">Студии и Клубы</a>
                     </li>
                     <li className="flex-1">
-                        <a href="#" className="text-center block py-2 px-2 border-r-0  hover:text-white hover:bg-theme-blue border border-black dark:text-white md:dark:text-blue-500" aria-current="page">О нас</a>
-                    </li>
-                    <li className="flex-1">
-                        <a href="#" className="text-center block py-2 px-2  hover:text-white hover:bg-theme-blue border border-black dark:text-white md:dark:text-blue-500" aria-current="page">Контакты</a>
+                        <a href="#" className="text-center block py-2 px-2 hover:text-white hover:bg-theme-blue border border-black dark:text-white md:dark:text-blue-500" aria-current="page">О нас</a>
                     </li>
                 </ul>
             </div>
