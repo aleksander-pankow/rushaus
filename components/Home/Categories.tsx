@@ -27,7 +27,7 @@ function Categories() {
                 </div>
                 <div className="w-full sm:pl-5 sm:border-l border-black sm:w-1/2 sm:aspect-square">
                     <div className="relative h-full border border-black group/item">
-                        <div className="flex flex-col justify-between h-auto sm:h-[calc(50%)] lg:h-[calc((100%/2)-0.8rem)] p-4 sm:p-[30px]">
+                        <div className="flex flex-col justify-between h-auto sm:h-[calc(50%)] lg:h-[calc((100%/2)-0.8rem)] p-4 md:p-[30px]">
                             <div>
                                 <h4 className="font-gilbold uppercase max-md:text-base lg:text-rhtitle mb-2">Интенсивные курсы русского
                                     языка</h4>
@@ -94,7 +94,7 @@ function Categories() {
                 </div>
                 <div className=" w-full sm:pl-5 sm:border-l border-black sm:w-1/2 sm:aspect-square">
                     <div className="relative h-full border border-black group/item">
-                        <div className="flex flex-col justify-between h-auto sm:h-[calc(50%)] lg:h-[calc((100%/2)-0.8rem)] p-4 sm:p-[30px]">
+                        <div className="flex flex-col justify-between h-auto sm:h-[calc(50%)] lg:h-[calc((100%/2)-0.8rem)] p-4 md:p-[30px]">
                             <div>
                                 <h4 className="font-gilbold uppercase text-base lg:text-rhtitle mb-2">Класс керамики</h4>
                             </div>
