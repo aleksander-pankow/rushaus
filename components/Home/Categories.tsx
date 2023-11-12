@@ -5,7 +5,7 @@ function Categories() {
         <section className="border border-black border-t-0 p-5">
             <div className="w-full flex flex-wrap pb-5 max-sm:gap-5 sm:border-b border-black">
                 <div className="w-full sm:pr-5 sm:w-1/2 sm:aspect-square">
-                    <div className="relative flex h-full border border-black group/item p-5 lg:p-8 group/item items-center justify-center">
+                    <div className="relative flex h-full border border-black group/item p-4 sm:p-[30px] group/item items-center justify-center">
                         <h4 className="font-gilbold uppercase text-base lg:text-rhtitle text-center">Образовательный центр</h4>
                         <div className="group/details flex justify-between flex-col invisible hover:bg-theme-blue xl:group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
                             <div className="text-sm sm:text-base text-white space-y-2">
@@ -27,7 +27,7 @@ function Categories() {
                 </div>
                 <div className="w-full sm:pl-5 sm:border-l border-black sm:w-1/2 sm:aspect-square">
                     <div className="relative h-full border border-black group/item">
-                        <div className="flex flex-col justify-between h-auto sm:h-[calc(50%)] lg:h-[calc((100%/2)-0.8rem)] p-[30px]">
+                        <div className="flex flex-col justify-between h-auto sm:h-[calc(50%)] lg:h-[calc((100%/2)-0.8rem)] p-4 sm:p-[30px]">
                             <div>
                                 <h4 className="font-gilbold uppercase max-md:text-base lg:text-rhtitle mb-2">Интенсивные курсы русского
                                     языка</h4>
@@ -94,7 +94,7 @@ function Categories() {
                 </div>
                 <div className=" w-full sm:pl-5 sm:border-l border-black sm:w-1/2 sm:aspect-square">
                     <div className="relative h-full border border-black group/item">
-                        <div className="flex flex-col justify-between h-auto sm:h-[calc(50%)] lg:h-[calc((100%/2)-0.8rem)] p-[30px]">
+                        <div className="flex flex-col justify-between h-auto sm:h-[calc(50%)] lg:h-[calc((100%/2)-0.8rem)] p-4 sm:p-[30px]">
                             <div>
                                 <h4 className="font-gilbold uppercase text-base lg:text-rhtitle mb-2">Класс керамики</h4>
                             </div>
