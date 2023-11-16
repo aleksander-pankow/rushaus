@@ -53,6 +53,7 @@ const config: Config = {
         'sidebar-pattern': "url('/images/ru-flag-geometry-bg.png')",
         'map-pattern': "url('/images/russia-map-bg.png')",
         'common-pattern': "url('/images/common-background.jpg')",
+        'line-between': 'linear-gradient(#000,#000) center/1px 100% no-repeat',
       },
       colors: {
         'theme-red': '#e21d3a',

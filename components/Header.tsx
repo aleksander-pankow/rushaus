@@ -6,11 +6,11 @@ export default function Header(){
     const [state, setState] = useState(false)
 
     return (
-    <nav className="max-sm:px-5 container mx-auto bg-white border-gray-200 dark:bg-gray-900 pt-5">
+    <nav className="px-5 container mx-auto bg-white border-gray-200 dark:bg-gray-900 pt-5">
 
         <div className="flex flex-wrap justify-between mx-auto">
             <a href="/" className="flex flex-none items-center">
-                <img src="images/logo-only-text.png" className="h-8 mr-3 inline-block" alt="" />
+                <img src="images/rushaus-logo.svg" className="h-4 mr-3 inline-block" alt="" />
             </a>
             <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
                 <span className="sr-only">Open main menu</span>
