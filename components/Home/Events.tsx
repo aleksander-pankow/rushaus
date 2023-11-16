@@ -39,11 +39,11 @@ export default function Events() {
         <section className="border border-black border-t-0 p-5">
             <div className="flex flex-col xl:flex-row">
                 <div className="w-full  h-auto flex flex-wrap border-black max-lg:mt-0 max-xl:mt-5">
-                    <div className="relative w-full sm:w-1/2 lg:w-1/3 sm:max-xl:flex-row sm:max-xl:flex h-auto group/item sm:pr-5 sm:pb-5 sm:border-b sm:border-black max-md:h-44 md:max-xl:h-52">
+                    <div className="relative w-full sm:w-1/2 lg:w-1/3 sm:max-xl:flex-row sm:max-xl:flex h-auto group/item sm:pr-5 sm:pb-5 sm:border-b sm:border-black max-md:h-44 md:max-xl:h-52 max-sm:mb-4">
                         <div className="flex flex-col justify-between w-full h-full p-[30px] border border-black sm:aspect-square">
                             <div className={""}>
                                 <h4 className="font-gilbold uppercase text-[18px] xl:text-rhtitle mb-2">Городские сны</h4>
-                                 <div className={"sm:max-md:line-clamp-1"}>
+                                 <div className={"max-md:line-clamp-2"}>
                                 <p>Международный арт проект</p>
                                 <p>фотография, живопись, графика, скульптура</p>
                                  </div>
