@@ -3,8 +3,8 @@ import React from 'react';
 function Categories() {
     return (
         <section className="border border-black border-t-0 p-5">
-            <div className="grid sm:grid-cols-2 sm:grid-rows-3 xl:grid-cols-3 xl:grid-rows-2 gap-10">
-                <div className="sm:aspect-square sm:after:content-[''] sm:after:absolute sm:after:w-[2px] sm:after:min-h-[500vh] sm:after:bg-black sm:after:right-[-1rem]">
+            <div className="grid sm:grid-cols-2 sm:grid-rows-3 xl:grid-cols-3 xl:grid-rows-2 gap-10 max-sm:gap-5">
+                <div className="sm:aspect-square">
                     <div className="relative h-full border border-black group/item">
                         <div className="flex flex-col justify-between h-auto sm:h-[calc(50%)] lg:h-[calc((100%/2)-0.8rem)] p-4 md:p-[30px]">
                             <div>
@@ -37,7 +37,7 @@ function Categories() {
                         </div>
                     </div>
                 </div>
-                <div className="sm:aspect-square sm:after:content-[''] sm:after:absolute sm:after:w-[2px] sm:after:min-h-[500vh] sm:after:bg-black sm:after:right-[-1rem]">
+                <div className="sm:aspect-square">
                     <div className="relative flex h-full border border-black group/item p-4 sm:p-[30px] group/item items-center justify-center">
                         <h4 className="font-gilbold uppercase text-rhregular lg:text-rhtitle text-center">Образовательный центр</h4>
                         <div className="group/details flex justify-between flex-col invisible hover:bg-theme-blue xl:group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
