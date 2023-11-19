@@ -11,9 +11,8 @@ const config: Config = {
   theme: {
     fontSize: {
       rhtitle: ['25px', '30px'],
-      rhregular: ['16px', '25px'],
+      rhregular: ['16px', '30px'],
       rhbuttons: ['20x', '30px'],
-      rhfooter: ['16x', '30px'],
       xs: ['12px', '16px'],
       sm: ['14px', '20px'],
       base: ['16px', '24px'],

@@ -3,33 +3,12 @@ import React from 'react';
 function Categories() {
     return (
         <section className="border border-black border-t-0 p-5">
-            <div className="w-full flex flex-wrap pb-5 max-sm:gap-5 sm:border-b border-black">
-                <div className="w-full sm:pr-5 sm:w-1/2 sm:aspect-square">
-                    <div className="relative flex h-full border border-black group/item p-4 sm:p-[30px] group/item items-center justify-center">
-                        <h4 className="font-gilbold uppercase text-base lg:text-rhtitle text-center">Образовательный центр</h4>
-                        <div className="group/details flex justify-between flex-col invisible hover:bg-theme-blue xl:group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
-                            <div className="text-sm sm:text-base text-white space-y-2">
-                                <p>Русский колледж открыт для детей и подростков, которые хотят научиться чему-то
-                                    новому, узнать больше о русской культуре. Все материалы и методики разработаны
-                                    педагогами, чтобы обеспечить максимальную эффективность обучения.</p>
-                                <p>Занятия проводятся в группах по следующим направлениям:</p>
-                                <p>- Русский язык</p>
-                                <p>- Литературное чтение</p>
-                                <p> - Математика</p>
-                                <p> - Подготовка к школе</p>
-                            </div>
-                            <div className="link text-rhbuttons text-white font-gilbold uppercase">
-                                <a href="" title="" className="flex flex-row items-center space-x-3"><span>→</span>
-                                    <span>Подробная информация</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="w-full sm:pl-5 sm:border-l border-black sm:w-1/2 sm:aspect-square">
+            <div className="grid sm:grid-cols-2 sm:grid-rows-3 xl:grid-cols-3 xl:grid-rows-2 gap-10">
+                <div className="sm:aspect-square sm:after:content-[''] sm:after:absolute sm:after:w-[2px] sm:after:min-h-[500vh] sm:after:bg-black sm:after:right-[-1rem]">
                     <div className="relative h-full border border-black group/item">
                         <div className="flex flex-col justify-between h-auto sm:h-[calc(50%)] lg:h-[calc((100%/2)-0.8rem)] p-4 md:p-[30px]">
                             <div>
-                                <h4 className="font-gilbold uppercase max-md:text-base lg:text-rhtitle mb-2">Интенсивные курсы русского
+                                <h4 className="font-gilbold uppercase text-rhregular lg:text-rhtitle mb-2">Интенсивные курсы русского
                                     языка</h4>
                             </div>
                             <div>
@@ -50,10 +29,6 @@ function Categories() {
                                 <p>Интенсивные курсы - отличный способ погрузиться в языковую среду. В течение
                                     двухнедельных регулярных занятий с понедельника по пятницу даже начинающие изучают
                                     основы русской грамматики и могут обсуждать на русском языке самые разные темы.</p>
-                                <p> Вы уже продвинуты? Тогда вы можете углубить свои языковые навыки на всех уровнях и
-                                    открыть для себя новые темы. Наши интенсивные курсы подходят для всех изучающих
-                                    русский язык, независимо от того, нужен ли вам русский язык для работы, учебы или в
-                                    личных целях.</p>
                             </div>
                             <div className="link text-rhbuttons text-white font-gilbold uppercase">
                                 <a href="" title="" className="flex flex-row items-center space-x-3"><span>→</span>
@@ -62,12 +37,26 @@ function Categories() {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="w-full flex flex-wrap pb-5 max-sm:gap-5 sm:border-b border-black sm:mt-5">
-                <div className="w-full sm:pr-5 sm:w-1/2 sm:aspect-square">
+                <div className="sm:aspect-square sm:after:content-[''] sm:after:absolute sm:after:w-[2px] sm:after:min-h-[500vh] sm:after:bg-black sm:after:right-[-1rem]">
+                    <div className="relative flex h-full border border-black group/item p-4 sm:p-[30px] group/item items-center justify-center">
+                        <h4 className="font-gilbold uppercase text-rhregular lg:text-rhtitle text-center">Образовательный центр</h4>
+                        <div className="group/details flex justify-between flex-col invisible hover:bg-theme-blue xl:group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
+                            <div className="text-sm sm:text-base text-white space-y-2">
+                                <p>Русский колледж открыт для детей и подростков, которые хотят научиться чему-то
+                                    новому, узнать больше о русской культуре. Все материалы и методики разработаны
+                                    педагогами, чтобы обеспечить максимальную эффективность обучения.</p>
+                            </div>
+                            <div className="link text-rhbuttons text-white font-gilbold uppercase">
+                                <a href="" title="" className="flex flex-row items-center space-x-3"><span>→</span>
+                                    <span>Подробная информация</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="sm:aspect-square">
                     <div
                         className="relative flex h-full border border-black group/item p-4 sm:p-[30px] group/item items-center justify-center">
-                        <h4 className="font-gilbold uppercase text-base lg:text-rhtitle text-center">Художественная мастерская</h4>
+                        <h4 className="font-gilbold uppercase text-rhregular lg:text-rhtitle text-center">Художественная мастерская</h4>
                         <div
                             className="group/details flex justify-between flex-col invisible group-hover/item:bg-theme-yellow xl:group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
                             <div className="text-white text-base/[20px] sm:text-rhregular space-y-2">
@@ -75,15 +64,6 @@ function Categories() {
                                     представляет собой интересный эксперимент проверки модели развития. Равным образом
                                     укрепление и развитие структуры представляет собой интересный эксперимент проверки
                                     дальнейших направлений развития.</p>
-
-                                <p>Не следует, однако забывать, что реализация намеченных плановых заданий позволяет
-                                    выполнять
-                                    важные задания по разработке соответствующий условий активизации. Равным образом
-                                    дальнейшее
-                                    развитие различных форм деятельности требуют от нас анализа дальнейших направлений
-                                    развития.</p>
-
-
                             </div>
                             <div className="link text-rhbuttons text-white font-gilbold uppercase">
                                 <a href="" title="" className="flex flex-row items-center space-x-3"><span>→</span>
@@ -92,11 +72,30 @@ function Categories() {
                         </div>
                     </div>
                 </div>
-                <div className=" w-full sm:pl-5 sm:border-l border-black sm:w-1/2 sm:aspect-square">
+                <div className="sm:aspect-square">
+                    <div
+                        className="relative flex h-full border border-black group/item p-4 sm:p-[30px] group/item items-center justify-center ">
+                        <h4 className="font-gilbold uppercase text-rhregular lg:text-rhtitle text-center">Студии и клубы</h4>
+                        <div
+                            className="group/details flex justify-between flex-col invisible group-hover/item:bg-theme-green xl:group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
+                            <div className="text-white text-base/[20px] sm:text-rhregular space-y-2">
+                                <p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности
+                                    представляет собой интересный эксперимент проверки модели развития. Равным образом
+                                    укрепление и развитие структуры представляет собой интересный эксперимент проверки
+                                    дальнейших направлений развития.</p>
+                            </div>
+                            <div className="link text-rhbuttons text-white font-gilbold uppercase">
+                                <a href="" title="" className="flex flex-row items-center space-x-3"><span>→</span>
+                                    <span>Подробная информация</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="sm:aspect-square">
                     <div className="relative h-full border border-black group/item">
                         <div className="flex flex-col justify-between h-auto sm:h-[calc(50%)] lg:h-[calc((100%/2)-0.8rem)] p-4 md:p-[30px]">
                             <div>
-                                <h4 className="font-gilbold uppercase text-base lg:text-rhtitle mb-2">Класс керамики</h4>
+                                <h4 className="font-gilbold uppercase text-rhregular lg:text-rhtitle mb-2">Класс керамики</h4>
                             </div>
                             <div>
                                 <p className="text-base max-md:text-sm max-md:line-clamp-3">Опытные мастера-керамисты научат всех желающих гончарному
@@ -117,15 +116,6 @@ function Categories() {
                                     представляет собой интересный эксперимент проверки модели развития. Равным образом
                                     укрепление и развитие структуры представляет собой интересный эксперимент проверки
                                     дальнейших направлений развития.</p>
-
-                                <p>Не следует, однако забывать, что реализация намеченных плановых заданий позволяет
-                                    выполнять
-                                    важные задания по разработке соответствующий условий активизации. Равным образом
-                                    дальнейшее
-                                    развитие различных форм деятельности требуют от нас анализа дальнейших направлений
-                                    развития.</p>
-
-
                             </div>
                             <div className="link text-rhbuttons text-white font-gilbold uppercase">
                                 <a href="" title="" className="flex flex-row items-center space-x-3"><span>→</span>
@@ -134,40 +124,10 @@ function Categories() {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="w-full flex flex-wrap max-sm:gap-5 sm:mt-5">
-                <div className="w-full sm:pr-5 sm:w-1/2 sm:aspect-square">
+                <div className="sm:aspect-square">
                     <div
                         className="relative flex h-full border border-black group/item p-4 sm:p-[30px] group/item items-center justify-center ">
-                        <h4 className="font-gilbold uppercase text-base lg:text-rhtitle text-center">Студии и клубы</h4>
-                        <div
-                            className="group/details flex justify-between flex-col invisible group-hover/item:bg-theme-green xl:group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
-                            <div className="text-white text-base/[20px] sm:text-rhregular space-y-2">
-                                <p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности
-                                    представляет собой интересный эксперимент проверки модели развития. Равным образом
-                                    укрепление и развитие структуры представляет собой интересный эксперимент проверки
-                                    дальнейших направлений развития.</p>
-
-                                <p>Не следует, однако забывать, что реализация намеченных плановых заданий позволяет
-                                    выполнять
-                                    важные задания по разработке соответствующий условий активизации. Равным образом
-                                    дальнейшее
-                                    развитие различных форм деятельности требуют от нас анализа дальнейших направлений
-                                    развития.</p>
-
-
-                            </div>
-                            <div className="link text-rhbuttons text-white font-gilbold uppercase">
-                                <a href="" title="" className="flex flex-row items-center space-x-3"><span>→</span>
-                                    <span>Подробная информация</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="w-full sm:pl-5 sm:border-l border-black sm:w-1/2 sm:aspect-square">
-                    <div
-                        className="relative flex h-full border border-black group/item p-4 sm:p-[30px] group/item items-center justify-center ">
-                        <h4 className="font-gilbold uppercase text-base lg:text-rhtitle text-center">О нас</h4>
+                        <h4 className="font-gilbold uppercase text-rhregular lg:text-rhtitle text-center">О нас</h4>
                         <div
                             className="group/details flex justify-between flex-col invisible group-hover/item:bg-theme-blue xl:group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
                             <div className="text-white text-base/[20px] sm:text-rhregular space-y-2">
@@ -175,15 +135,6 @@ function Categories() {
                                     представляет собой интересный эксперимент проверки модели развития. Равным образом
                                     укрепление и развитие структуры представляет собой интересный эксперимент проверки
                                     дальнейших направлений развития.</p>
-
-                                <p>Не следует, однако забывать, что реализация намеченных плановых заданий позволяет
-                                    выполнять
-                                    важные задания по разработке соответствующий условий активизации. Равным образом
-                                    дальнейшее
-                                    развитие различных форм деятельности требуют от нас анализа дальнейших направлений
-                                    развития.</p>
-
-
                             </div>
                             <div className="link text-rhbuttons text-white font-gilbold uppercase">
                                 <a href="" title="" className="flex flex-row items-center space-x-3"><span>→</span>
