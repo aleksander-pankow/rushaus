@@ -22,7 +22,7 @@ export default function Footer() {
                         <p>Ежедневно 12:00-14:00, 15:00-19:00</p>
                         <p>Выходной: воскресенье</p>
                     </div>
-                    <div className="flex md:justify-start">
+                    <div className="flex md:justify-end">
                         <img
                             src="/images/Logo RH_horizontal_white.png"
                             alt="My Image"
