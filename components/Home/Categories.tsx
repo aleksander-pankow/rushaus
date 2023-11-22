@@ -41,7 +41,7 @@ function Categories() {
                     <div className="relative flex h-full border border-black group/item p-4 sm:p-[30px] group/item items-center justify-center">
                         <h4 className="font-gilbold uppercase text-rhregular lg:text-rhtitle text-center">Образовательный центр</h4>
                         <div className="group/details flex justify-between flex-col invisible hover:bg-theme-blue xl:group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
-                            <div className="text-sm sm:text-base text-white space-y-2">
+                            <div className="text-base text-white space-y-2">
                                 <p>Русский колледж открыт для детей и подростков, которые хотят научиться чему-то
                                     новому, узнать больше о русской культуре. Все материалы и методики разработаны
                                     педагогами, чтобы обеспечить максимальную эффективность обучения.</p>
@@ -59,7 +59,7 @@ function Categories() {
                         <h4 className="font-gilbold uppercase text-rhregular lg:text-rhtitle text-center">Художественная мастерская</h4>
                         <div
                             className="group/details flex justify-between flex-col invisible group-hover/item:bg-theme-yellow xl:group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
-                            <div className="text-white text-base/[20px] sm:text-rhregular space-y-2">
+                            <div className="text-base text-white space-y-2">
                                 <p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности
                                     представляет собой интересный эксперимент проверки модели развития. Равным образом
                                     укрепление и развитие структуры представляет собой интересный эксперимент проверки
@@ -78,7 +78,7 @@ function Categories() {
                         <h4 className="font-gilbold uppercase text-rhregular lg:text-rhtitle text-center">Студии и клубы</h4>
                         <div
                             className="group/details flex justify-between flex-col invisible group-hover/item:bg-theme-green xl:group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
-                            <div className="text-white text-base/[20px] sm:text-rhregular space-y-2">
+                            <div className="text-base text-white space-y-2">
                                 <p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности
                                     представляет собой интересный эксперимент проверки модели развития. Равным образом
                                     укрепление и развитие структуры представляет собой интересный эксперимент проверки
@@ -111,7 +111,7 @@ function Categories() {
                         </div>
                         <div
                             className="group/details flex justify-between flex-col invisible group-hover/item:bg-theme-yellow xl:group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
-                            <div className="text-white text-base/[20px] sm:text-rhregular space-y-2">
+                            <div className="text-base text-white space-y-2">
                                 <p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности
                                     представляет собой интересный эксперимент проверки модели развития. Равным образом
                                     укрепление и развитие структуры представляет собой интересный эксперимент проверки
@@ -130,7 +130,7 @@ function Categories() {
                         <h4 className="font-gilbold uppercase text-rhregular lg:text-rhtitle text-center">О нас</h4>
                         <div
                             className="group/details flex justify-between flex-col invisible group-hover/item:bg-theme-blue xl:group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
-                            <div className="text-white text-base/[20px] sm:text-rhregular space-y-2">
+                            <div className="text-base text-white space-y-2">
                                 <p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности
                                     представляет собой интересный эксперимент проверки модели развития. Равным образом
                                     укрепление и развитие структуры представляет собой интересный эксперимент проверки
