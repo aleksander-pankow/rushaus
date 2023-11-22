@@ -46,7 +46,7 @@ export default function Events() {
                                  </div>
                             </div>
                             <div>
-                                <h4 className="max-md:mt-4 mt-2 font-gilbold uppercase text-rhregular lg:text-rhtitle">До 30 апреля 2024</h4>
+                                <h4 className="mt-2 font-gilbold uppercase text-rhregular lg:text-rhtitle">До 30 апреля 2024</h4>
                             </div>
                         </div>
                         <div className="group/details flex justify-between flex-col invisible md:group-hover/item:bg-theme-red xl:group-hover/item:visible w-[calc((100%)-20px)] h-[calc(100%)] top-0 left-0 absolute p-[30px] transition ease-in duration-0 sm:aspect-square">
