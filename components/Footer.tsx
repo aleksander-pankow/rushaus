@@ -7,7 +7,7 @@ export default function Footer() {
             <div className="w-full">
                 <div className="border-y border-white items-start grid sm:grid-cols-2 gap-8 py-5 md:grid-cols-4 font-gilregular text-white text-rhregular/[24px]">
                     <div>
-                        <p>FriedrichstraBe 176-179</p>
+                        <p>Friedrichstraße 176-179</p>
                         <p>10117 Berlin</p>
                         <p>+49 30/20 30 22 52</p>
                         <p>info@russisches-haus.de</p>
