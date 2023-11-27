@@ -2,7 +2,7 @@ import React from 'react';
 
 function Categories() {
     return (
-        <section className="border border-black border-t-0 p-5">
+        <section className="border border-black border-t-0 p-5 pt-0">
             <div className="grid md:grid-cols-3 md:grid-rows-3 gap-5">
                 <div className="md:aspect-square">
                     <div className="relative flex h-full border border-black group/item p-4 sm:p-[30px] group/item items-center justify-center">

@@ -14,7 +14,7 @@ export default function Footer() {
                     </div>
                     <div>
                         <p>Дом открыт для посетителей:</p>
-                        <p>Ежедневно 09:00 -19:00</p>
+                        <p>Ежедневно 09:00-19:00</p>
                         <p>Выходной: воскресенье</p>
                     </div>
                     <div>
@@ -31,13 +31,13 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className="text-rhfooter py-6 bg-theme-gray text-white dark:bg-gray-700 md:flex md:items-center md:justify-between">
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 xl:gap-8">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-0 xl:gap-8">
                         <span className="">© 2023 Русский дом в Берлине</span>
                         <a href="#" className="">Политика приватности</a>
                         <a href="#" className="">Правила и условия</a>
                     </div>
 
-                    <div className="flex mt-2 space-x-5 sm:justify-center md:mt-0">
+                    <div className="flex space-x-5 sm:justify-center">
                         <a href="#" className="">Разработка сайта: A.P.</a>
                     </div>
                 </div>
