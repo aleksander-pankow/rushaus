@@ -5,7 +5,7 @@ export default function Footer() {
 
         <footer className="container mx-auto px-5 pt-8 bg-theme-gray dark:bg-gray-900">
             <div className="w-full">
-                <div className="border-y border-white items-start grid sm:grid-cols-2 gap-8 py-5 md:grid-cols-4 font-gilregular text-white text-rhregular/[24px]">
+                <div className="items-center border-y border-white items-start grid sm:grid-cols-2 gap-8 py-5 md:grid-cols-4 font-gilregular text-white text-rhregular/[24px]">
                     <div>
                         <p>Friedrichstraße 176-179</p>
                         <p>10117 Berlin</p>
@@ -31,13 +31,13 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className="text-rhfooter py-6 bg-theme-gray text-white dark:bg-gray-700 md:flex md:items-center md:justify-between">
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-0 xl:gap-8">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-0 md:gap-8">
                         <span className="">© 2023 Русский дом в Берлине</span>
                         <a href="#" className="">Политика приватности</a>
                         <a href="#" className="">Правила и условия</a>
                     </div>
 
-                    <div className="flex space-x-5 sm:justify-center">
+                    <div className="flex space-x-5 md:justify-end">
                         <a href="#" className="">Разработка сайта: A.P.</a>
                     </div>
                 </div>

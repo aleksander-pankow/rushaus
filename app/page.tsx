@@ -1,19 +1,19 @@
 "use client"
-import {Alert} from "flowbite-react"
 import Slider from "@/components/Home/Slider";
 import Ticker from "@/components/Home/Ticker";
 import Events from "@/components/Home/Events";
 import Categories from "@/components/Home/Categories";
-import Social from "@/components/Home/Social";
+import Social from "@/components/Social";
+import Container from "@/components/Container";
 
 export default function Home() {
     return (
-        <section className="container mx-auto">
+        <Container>
             <Slider/>
             <Ticker/>
             <Events/>
             <Categories/>
             <Social/>
-        </section>
+        </Container>
     )
 }

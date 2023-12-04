@@ -10,7 +10,7 @@ const config: Config = {
   darkMode: "class",
   theme: {
     fontSize: {
-      rhtitle: ['25px', '30px'],
+      rhtitle: ['23px', '30px'],
       rhregular: ['16px', '30px'],
       rhbuttons: ['20x', '30px'],
       xs: ['12px', '16px'],
