@@ -81,7 +81,7 @@ export default function Events() {
                             />
                         </div>
                         <div
-                            className="group/details flex justify-between flex-col invisible group-hover/item:bg-theme-red xl:group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
+                            className="group/details flex justify-between flex-col transition ease-in-out duration-300 opacity-0 lg:group-hover/item:opacity-100 group-hover/item:bg-theme-red  w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
                             <div className="text-base text-white space-y-2">
                                 <p>Интенсивные курсы - отличный способ погрузиться в языковую среду. В течение
                                     двухнедельных регулярных занятий с понедельника по пятницу даже начинающие изучают

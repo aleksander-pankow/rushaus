@@ -7,7 +7,7 @@ function Categories() {
                 <div className="md:aspect-square">
                     <div className="relative flex h-full border border-black group/item p-4 sm:p-[30px] group/item items-center justify-center">
                         <h4 className="font-gilbold uppercase text-rhregular/[20px] lg:text-rhtitle text-center">Образовательный центр</h4>
-                        <div className="group/details flex justify-between flex-col invisible hover:bg-theme-blue xl:group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
+                        <div className="group/details flex justify-between flex-col  hover:bg-theme-blue transition ease-in-out duration-300 opacity-0 xl:group-hover/item:opacity-100 w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
                             <div className="text-base text-white space-y-2">
                                 <p>Русский колледж открыт для детей и подростков, которые хотят научиться чему-то
                                     новому, узнать больше о русской культуре. Все материалы и методики разработаны
@@ -40,7 +40,7 @@ function Categories() {
                             />
                         </div>
                         <div
-                            className="group/details flex justify-between flex-col invisible group-hover/item:bg-theme-blue xl:group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
+                            className="group/details flex justify-between flex-col  group-hover/item:bg-theme-blue transition ease-in-out duration-300 opacity-0 xl:group-hover/item:opacity-100 w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
                             <div className="text-base text-white space-y-2">
                                 <p>Интенсивные курсы - отличный способ погрузиться в языковую среду. В течение
                                     двухнедельных регулярных занятий с понедельника по пятницу даже начинающие изучают
@@ -73,7 +73,7 @@ function Categories() {
                             />
                         </div>
                         <div
-                            className="group/details flex justify-between flex-col invisible group-hover/item:bg-theme-blue xl:group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
+                            className="group/details flex justify-between flex-col  group-hover/item:bg-theme-blue transition ease-in-out duration-300 opacity-0 xl:group-hover/item:opacity-100 w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
                             <div className="text-base text-white space-y-2">
                                 <p>Интенсивные курсы - отличный способ погрузиться в языковую среду. В течение
                                     двухнедельных регулярных занятий с понедельника по пятницу даже начинающие изучают
@@ -91,7 +91,7 @@ function Categories() {
                         className="relative flex h-full border border-black group/item p-4 sm:p-[30px] group/item items-center justify-center">
                         <h4 className="font-gilbold uppercase text-rhregular/[20px] lg:text-rhtitle text-center">Художественная мастерская</h4>
                         <div
-                            className="group/details flex justify-between flex-col invisible group-hover/item:bg-theme-yellow xl:group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
+                            className="group/details flex justify-between flex-col  group-hover/item:bg-theme-yellow transition ease-in-out duration-300 opacity-0 xl:group-hover/item:opacity-100 w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
                             <div className="text-base text-white space-y-2">
                                 <p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности
                                     представляет собой интересный эксперимент проверки модели развития. Равным образом
@@ -124,7 +124,7 @@ function Categories() {
                             />
                         </div>
                         <div
-                            className="group/details flex justify-between flex-col invisible group-hover/item:bg-theme-yellow xl:group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
+                            className="group/details flex justify-between flex-col  group-hover/item:bg-theme-yellow transition ease-in-out duration-300 opacity-0 xl:group-hover/item:opacity-100 w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
                             <div className="text-base text-white space-y-2">
                                 <p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности
                                     представляет собой интересный эксперимент проверки модели развития. Равным образом
@@ -157,7 +157,7 @@ function Categories() {
                             />
                         </div>
                         <div
-                            className="group/details flex justify-between flex-col invisible group-hover/item:bg-theme-yellow xl:group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
+                            className="group/details flex justify-between flex-col  group-hover/item:bg-theme-yellow transition ease-in-out duration-300 opacity-0 xl:group-hover/item:opacity-100 w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
                             <div className="text-base text-white space-y-2">
                                 <p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности
                                     представляет собой интересный эксперимент проверки модели развития. Равным образом
@@ -176,7 +176,7 @@ function Categories() {
                         className="relative flex h-full border border-black group/item p-4 sm:p-[30px] group/item items-center justify-center ">
                         <h4 className="font-gilbold uppercase text-rhregular/[20px] lg:text-rhtitle text-center">Студии и клубы</h4>
                         <div
-                            className="group/details flex justify-between flex-col invisible group-hover/item:bg-theme-green xl:group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
+                            className="group/details flex justify-between flex-col  group-hover/item:bg-theme-green transition ease-in-out duration-300 opacity-0 xl:group-hover/item:opacity-100 w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
                             <div className="text-base text-white space-y-2">
                                 <p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности
                                     представляет собой интересный эксперимент проверки модели развития. Равным образом
@@ -195,7 +195,7 @@ function Categories() {
                         className="relative flex h-full border border-black group/item p-4 sm:p-[30px] group/item items-center justify-center ">
                         <h4 className="font-gilbold uppercase text-rhregular/[20px] lg:text-rhtitle text-center">О нас</h4>
                         <div
-                            className="group/details flex justify-between flex-col invisible group-hover/item:bg-theme-gray xl:group-hover/item:visible w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
+                            className="group/details flex justify-between flex-col  group-hover/item:bg-theme-gray transition ease-in-out duration-300 opacity-0 xl:group-hover/item:opacity-100 w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
                             <div className="text-base text-white space-y-2">
                                 <p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности
                                     представляет собой интересный эксперимент проверки модели развития. Равным образом
