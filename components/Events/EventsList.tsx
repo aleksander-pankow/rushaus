@@ -25,7 +25,7 @@ export default function InfiniteScrollList() {
         return <p>No posts have been published.</p>;
     }
 
-    const events = data.events.edges.map((edge) => edge.node);
+    const events = data.events.edges.map((edge: { node: any; }) => edge.node);
     const haveMoreEvents = Boolean(data.events?.pageInfo?.hasNextPage);
 
     return (
@@ -37,7 +37,7 @@ export default function InfiniteScrollList() {
                 loader={<p>Loading...</p>}
                 endMessage={<p>✅ All posts loaded.</p>}
             >
-                {events.map((event) => {
+                {events.map((event: { databaseId: any; title: string; slug: string; }) => {
                     const { databaseId, title, slug } = event;
                     return (
                         <li

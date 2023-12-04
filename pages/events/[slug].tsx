@@ -4,6 +4,7 @@ import parse from "html-react-parser";
 import { gql } from "@apollo/client";
 import { client } from "@/app/lib/apollo-client";
 
+// @ts-ignore
 export default function Event({ event }) {
     const { title, content, previousPost, nextPost } = event;
 
@@ -29,7 +30,7 @@ export default function Event({ event }) {
 
 export async function getStaticPaths() {
     const slugs = await getSlugs();
-    const paths = slugs.map((slug) => {
+    const paths = slugs.map((slug: string) => {
         return { params: { slug } };
     });
 
@@ -52,7 +53,7 @@ async function getSlugs() {
     `,
     });
 
-    return data.events.nodes.map((node) => node.slug);
+    return data.events.nodes.map((node: { slug: string; }) => node.slug);
 }
 
 const GET_EVENT = gql`
@@ -66,7 +67,7 @@ const GET_EVENT = gql`
   }
 `;
 
-export async function getStaticProps(context) {
+export async function getStaticProps(context: { params: { slug: string; }; }) {
     const { data } = await client.query({
         query: GET_EVENT,
         variables: {
