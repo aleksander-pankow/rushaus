@@ -21,7 +21,7 @@ function Categories() {
                     </div>
                 </div>
                 <div className="md:aspect-square">
-                    <div className="relative h-full border border-black group/item">
+                    <div className="relative h-full border border-black">
                         <div className="flex flex-col justify-between h-auto sm:h-[calc(50%)] lg:h-[calc((100%/2)-0.8rem)] p-4 md:p-[30px]">
                             <div>
                                 <h4 className="font-gilbold uppercase text-rhregular/[20px] lg:text-rhtitle mb-2">Интенсивные курсы русского
@@ -38,23 +38,11 @@ function Categories() {
                                 alt="My Image"
                                 className="object-fill h-full w-full"
                             />
-                        </div>
-                        <div
-                            className="group/details flex justify-between flex-col  group-hover/item:bg-theme-blue transition ease-in-out duration-300 opacity-0 xl:group-hover/item:opacity-100 w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
-                            <div className="text-base text-white space-y-2">
-                                <p>Интенсивные курсы - отличный способ погрузиться в языковую среду. В течение
-                                    двухнедельных регулярных занятий с понедельника по пятницу даже начинающие изучают
-                                    основы русской грамматики и могут обсуждать на русском языке самые разные темы.</p>
-                            </div>
-                            <div className="link text-rhbuttons text-white font-gilbold uppercase">
-                                <a href="" title="" className="flex flex-row items-center space-x-3"><span>→</span>
-                                    <span>Подробная информация</span></a>
-                            </div>
                         </div>
                     </div>
                 </div>
                 <div className="md:aspect-square">
-                    <div className="relative h-full border border-black group/item">
+                    <div className="relative h-full border border-black">
                         <div className="flex flex-col justify-between h-auto sm:h-[calc(50%)] lg:h-[calc((100%/2)-0.8rem)] p-4 md:p-[30px]">
                             <div>
                                 <h4 className="font-gilbold uppercase text-rhregular/[20px] lg:text-rhtitle mb-2">Интенсивные курсы русского
@@ -71,18 +59,6 @@ function Categories() {
                                 alt="My Image"
                                 className="object-fill h-full w-full"
                             />
-                        </div>
-                        <div
-                            className="group/details flex justify-between flex-col  group-hover/item:bg-theme-blue transition ease-in-out duration-300 opacity-0 xl:group-hover/item:opacity-100 w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
-                            <div className="text-base text-white space-y-2">
-                                <p>Интенсивные курсы - отличный способ погрузиться в языковую среду. В течение
-                                    двухнедельных регулярных занятий с понедельника по пятницу даже начинающие изучают
-                                    основы русской грамматики и могут обсуждать на русском языке самые разные темы.</p>
-                            </div>
-                            <div className="link text-rhbuttons text-white font-gilbold uppercase">
-                                <a href="" title="" className="flex flex-row items-center space-x-3"><span>→</span>
-                                    <span>Подробная информация</span></a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -106,7 +82,7 @@ function Categories() {
                     </div>
                 </div>
                 <div className="md:aspect-square">
-                    <div className="relative h-full border border-black group/item">
+                    <div className="relative h-full border border-black">
                         <div className="flex flex-col justify-between h-auto sm:h-[calc(50%)] lg:h-[calc((100%/2)-0.8rem)] p-4 md:p-[30px]">
                             <div>
                                 <h4 className="font-gilbold uppercase text-rhregular/[20px] lg:text-rhtitle mb-2">Класс керамики</h4>
@@ -122,24 +98,11 @@ function Categories() {
                                 alt="My Image"
                                 className="object-fill h-full w-full"
                             />
-                        </div>
-                        <div
-                            className="group/details flex justify-between flex-col  group-hover/item:bg-theme-yellow transition ease-in-out duration-300 opacity-0 xl:group-hover/item:opacity-100 w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
-                            <div className="text-base text-white space-y-2">
-                                <p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности
-                                    представляет собой интересный эксперимент проверки модели развития. Равным образом
-                                    укрепление и развитие структуры представляет собой интересный эксперимент проверки
-                                    дальнейших направлений развития.</p>
-                            </div>
-                            <div className="link text-rhbuttons text-white font-gilbold uppercase">
-                                <a href="" title="" className="flex flex-row items-center space-x-3"><span>→</span>
-                                    <span>Подробная информация</span></a>
-                            </div>
                         </div>
                     </div>
                 </div>
                 <div className="md:aspect-square">
-                    <div className="relative h-full border border-black group/item">
+                    <div className="relative h-full border border-black">
                         <div className="flex flex-col justify-between h-auto sm:h-[calc(50%)] lg:h-[calc((100%/2)-0.8rem)] p-4 md:p-[30px]">
                             <div>
                                 <h4 className="font-gilbold uppercase text-rhregular/[20px] lg:text-rhtitle mb-2">Класс керамики</h4>
@@ -155,19 +118,6 @@ function Categories() {
                                 alt="My Image"
                                 className="object-fill h-full w-full"
                             />
-                        </div>
-                        <div
-                            className="group/details flex justify-between flex-col  group-hover/item:bg-theme-yellow transition ease-in-out duration-300 opacity-0 xl:group-hover/item:opacity-100 w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
-                            <div className="text-base text-white space-y-2">
-                                <p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности
-                                    представляет собой интересный эксперимент проверки модели развития. Равным образом
-                                    укрепление и развитие структуры представляет собой интересный эксперимент проверки
-                                    дальнейших направлений развития.</p>
-                            </div>
-                            <div className="link text-rhbuttons text-white font-gilbold uppercase">
-                                <a href="" title="" className="flex flex-row items-center space-x-3"><span>→</span>
-                                    <span>Подробная информация</span></a>
-                            </div>
                         </div>
                     </div>
                 </div>
