@@ -8,7 +8,7 @@ export default function Events() {
             <div className="grid md:grid-cols-3 gap-5">
                 <div className="md:aspect-square">
                     <div
-                        className="relative flex h-full border border-black group/item p-4 sm:p-[30px] group/item items-center justify-center max-sm:hover:bg-theme-red">
+                        className="relative flex h-full border border-black group/item p-4 sm:p-[30px] group/item items-center justify-center max-sm:hover:bg-theme-red max-sm:focus:bg-theme-red">
                         <h4 className="font-gilbold uppercase text-rhregular lg:text-rhtitle text-center">Культура</h4>
                         <div
                             className="group/details flex justify-between flex-col transition ease-in-out duration-300 opacity-0 xl:group-hover/item:opacity-100 hover:bg-theme-red w-full h-full top-0 left-0 absolute p-[30px]">
