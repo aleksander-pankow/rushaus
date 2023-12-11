@@ -3,7 +3,7 @@ import React from 'react';
 function Categories() {
     return (
         <section className="border border-black border-t-0 p-5 pt-0">
-            <div className="grid md:grid-cols-3 md:grid-rows-3 gap-5">
+            <div className="grid md:grid-cols-3 gap-5">
                 <div className="md:aspect-square">
                     <div className="relative flex h-full border border-black group/item p-4 sm:p-[30px] group/item items-center justify-center">
                         <h4 className="font-gilbold uppercase text-rhregular/[20px] lg:text-rhtitle text-center">Образовательный центр</h4>
@@ -21,8 +21,8 @@ function Categories() {
                     </div>
                 </div>
                 <div className="md:aspect-square">
-                    <div className="relative h-full border border-black">
-                        <div className="flex flex-col justify-between h-auto sm:h-[calc(50%)] lg:h-[calc((100%/2)-0.8rem)] p-4 md:p-[30px]">
+                    <div className="relative h-full border border-black group/item">
+                        <div className="flex flex-col justify-between h-auto sm:h-[calc(50%)] p-4 md:p-[30px]">
                             <div>
                                 <h4 className="font-gilbold uppercase text-rhregular/[20px] lg:text-rhtitle mb-2">Интенсивные курсы русского
                                     языка</h4>
@@ -32,18 +32,18 @@ function Categories() {
                                     регулярных двухнедельных занятий</p>
                             </div>
                         </div>
-                        <div className="h-auto sm:h-[calc(50%)] lg:h-[calc((100%/2)+0.8rem)] bg-blue-900">
+                        <div className="h-auto sm:h-[calc(50%)] bg-blue-900 overflow-hidden">
                             <img
                                 src="/images/test/urok.png"
                                 alt="My Image"
-                                className="object-fill h-full w-full"
+                                className="object-cover h-full w-full group group-hover/item:scale-125 transition duration-500"
                             />
                         </div>
                     </div>
                 </div>
                 <div className="md:aspect-square">
-                    <div className="relative h-full border border-black">
-                        <div className="flex flex-col justify-between h-auto sm:h-[calc(50%)] lg:h-[calc((100%/2)-0.8rem)] p-4 md:p-[30px]">
+                    <div className="relative h-full border border-black group/item">
+                        <div className="flex flex-col justify-between h-auto sm:h-[calc(50%)] p-4 md:p-[30px]">
                             <div>
                                 <h4 className="font-gilbold uppercase text-rhregular/[20px] lg:text-rhtitle mb-2">Интенсивные курсы русского
                                     языка</h4>
@@ -53,15 +53,23 @@ function Categories() {
                                     регулярных двухнедельных занятий</p>
                             </div>
                         </div>
-                        <div className="h-auto sm:h-[calc(50%)] lg:h-[calc((100%/2)+0.8rem)] bg-blue-900">
+                        <div className="h-auto sm:h-[calc(50%)] bg-blue-900 overflow-hidden">
                             <img
                                 src="/images/test/urok.png"
                                 alt="My Image"
-                                className="object-fill h-full w-full"
+                                className="object-cover h-full w-full group group-hover/item:scale-125 transition duration-500"
                             />
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className={"flex w-full text-base md:text-rhbuttons text-black font-gilbold uppercase my-5 justify-center md:justify-end"}>
+                    <a href={"/events"} title={"Мероприятия"} className={"space-x-3 h-full inline-flex px-5 "}>
+                        <span>→</span>
+                        <span>Другие курсы</span>
+                    </a>
+                </div>
+            <div className="grid md:grid-cols-3 md:grid-rows-2 gap-5">
                 <div className="md:aspect-square">
                     <div
                         className="relative flex h-full border border-black group/item p-4 sm:p-[30px] group/item items-center justify-center">
@@ -82,8 +90,8 @@ function Categories() {
                     </div>
                 </div>
                 <div className="md:aspect-square">
-                    <div className="relative h-full border border-black">
-                        <div className="flex flex-col justify-between h-auto sm:h-[calc(50%)] lg:h-[calc((100%/2)-0.8rem)] p-4 md:p-[30px]">
+                    <div className="relative h-full border border-black group/item">
+                        <div className="flex flex-col justify-between h-auto sm:h-[calc(50%)] p-4 md:p-[30px]">
                             <div>
                                 <h4 className="font-gilbold uppercase text-rhregular/[20px] lg:text-rhtitle mb-2">Класс керамики</h4>
                             </div>
@@ -92,18 +100,18 @@ function Categories() {
                                     ремеслу, ручной лепке, техникам росписи керамических изделий.</p>
                             </div>
                         </div>
-                        <div className="h-auto sm:h-[calc(50%)] lg:h-[calc((100%/2)+0.8rem)] bg-blue-900">
+                        <div className="h-auto sm:h-[calc(50%)] bg-blue-900 overflow-hidden">
                             <img
                                 src="/images/test/keramika.png"
                                 alt="My Image"
-                                className="object-fill h-full w-full"
+                                className="object-cover h-full w-full group group-hover/item:scale-125 transition duration-500"
                             />
                         </div>
                     </div>
                 </div>
                 <div className="md:aspect-square">
-                    <div className="relative h-full border border-black">
-                        <div className="flex flex-col justify-between h-auto sm:h-[calc(50%)] lg:h-[calc((100%/2)-0.8rem)] p-4 md:p-[30px]">
+                    <div className="relative h-full border border-black group/item">
+                        <div className="flex flex-col justify-between h-auto sm:h-[calc(50%)] p-4 md:p-[30px]">
                             <div>
                                 <h4 className="font-gilbold uppercase text-rhregular/[20px] lg:text-rhtitle mb-2">Класс керамики</h4>
                             </div>
@@ -112,11 +120,11 @@ function Categories() {
                                     ремеслу, ручной лепке, техникам росписи керамических изделий.</p>
                             </div>
                         </div>
-                        <div className="h-auto sm:h-[calc(50%)] lg:h-[calc((100%/2)+0.8rem)] bg-blue-900">
+                        <div className="h-auto sm:h-[calc(50%)] bg-blue-900 overflow-hidden">
                             <img
                                 src="/images/test/keramika.png"
                                 alt="My Image"
-                                className="object-fill h-full w-full"
+                                className="object-cover h-full w-full group group-hover/item:scale-125 transition duration-500"
                             />
                         </div>
                     </div>
