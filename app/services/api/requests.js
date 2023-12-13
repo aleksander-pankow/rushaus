@@ -33,8 +33,8 @@ export const GET_EVENTS = gql`
   }
 `;
 export const GET_FEATURED_EVENTS = gql`
-  query getFeaturedEvents{
-    events(where: {featuredHome: true}) {
+  query getFeaturedEvents($count: Int!){
+    events(first: $count, where: {featuredHome: true}) {
       pageInfo {
         hasNextPage
         endCursor

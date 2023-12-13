@@ -8,6 +8,7 @@ import ClientOnly from "@/components/ClientOnly";
 import Social from "@/components/Social";
 
 import {loadErrorMessages, loadDevMessages} from "@apollo/client/dev";
+import React from "react";
 
 loadDevMessages();
 loadErrorMessages();
@@ -25,13 +26,50 @@ export default function Events() {
                     <section className={"uppercase text-[65px] font-gilbold p-5 border border-black border-t-0 mt-10"}>
                         <h1>Мероприятия</h1>
                     </section>
-                    <section className={"flex flex-row border border-black border-t-0"}>
-                            <div className="basis-4/5 p-5">
+                    <section className={"flex flex-col lg:flex-row border border-black border-t-0"}>
+                            <div className="basis-full lg:basis-3/4 p-5">
                                 <ClientOnly>
                                     <EventList/>
                                 </ClientOnly>
                             </div>
-                            <div className="basis-1/5 p-5">03</div>
+                            <div className="basis-full lg:basis-1/4 p-5 space-y-5">
+                                <div className={"relative overflow-hidden"}>
+                                    <a hrefLang={""} title={""}>
+                                        <img
+                                            src="/images/banners/banner_1.png"
+                                            alt="My Image"
+                                            className="w-full hover:scale-110 transition duration-500"
+                                        />
+                                    </a>
+                                </div>
+                                <div className={"relative overflow-hidden"}>
+                                    <a hrefLang={""} title={""}>
+                                        <img
+                                            src="/images/banners/banner_2.png"
+                                            alt="My Image"
+                                            className="w-full hover:scale-110 transition duration-500"
+                                        />
+                                    </a>
+                                </div>
+                                <div className={"relative overflow-hidden"}>
+                                    <a hrefLang={""} title={""}>
+                                        <img
+                                            src="/images/banners/banner_3.png"
+                                            alt="My Image"
+                                            className="w-full hover:scale-110 transition duration-500"
+                                        />
+                                    </a>
+                                </div>
+                                <div className={"relative overflow-hidden"}>
+                                    <a hrefLang={""} title={""}>
+                                        <img
+                                            src="/images/banners/banner_4.png"
+                                            alt="My Image"
+                                            className="w-full hover:scale-110 transition duration-500"
+                                        />
+                                    </a>
+                                </div>
+                            </div>
                     </section>
                 </article>
                 <Social/>
