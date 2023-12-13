@@ -48,7 +48,7 @@ export default function Events() {
                                     педагогами, чтобы обеспечить максимальную эффективность обучения.</p>
                             </div>
                             <div className="link text-rhbuttons text-white font-gilbold uppercase">
-                                <a href="" title="" className="flex flex-row items-center space-x-3"><span>→</span>
+                                <a href="#" title="" className="flex flex-row items-center space-x-3"><span>→</span>
                                     <span>Подробная информация</span></a>
                             </div>
                         </div>
