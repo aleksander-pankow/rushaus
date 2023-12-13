@@ -47,7 +47,7 @@ const Card: React.FC<CardProps> = ({ title, description, slug, date, image, type
 
     return (
         <Link href={cardLink} title={title} className="card md:aspect-square">
-            <div className="relative h-full border border-black group/item">
+            <div className="relative h-auto border border-black group/item">
                 {/* Card Details */}
                 <div className="flex flex-col justify-between h-auto sm:h-[calc(50%)] p-[30px] md:max-xl:p-[25px]">
                     <div>
@@ -70,7 +70,7 @@ const Card: React.FC<CardProps> = ({ title, description, slug, date, image, type
                     <img
                         src={image || defaultImage}
                         alt={`Image ${title}`}
-                        className="object-cover h-full w-full group group-hover/item:scale-125 transition duration-500"
+                        className="object-cover group group-hover/item:scale-125 transition duration-500"
                     />
                 </div>
             </div>
