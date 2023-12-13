@@ -1,6 +1,7 @@
 import {useQuery} from "@apollo/client";
 import {GET_FEATURED_EVENTS} from "@/app/services/api/requests";
 import Card from "@/components/Card/Card";
+import Link from "next/link";
 
 const Events = () => {
     const {data, loading, error} = useQuery(GET_FEATURED_EVENTS, {
@@ -20,7 +21,8 @@ const Events = () => {
                     {[...Array(3)].map((_, index) => (
                         <div key={index} className="md:aspect-square">
                             <div
-                                className="animate-pulse relative flex h-full border border-black items-center justify-center max-sm:hover:bg-theme-red max-sm:focus:bg-theme-red">
+                                className="animate-pulse relative flex h-full border border-black items-center justify-center max-sm:hover:bg-theme-red max-sm:focus:bg-theme-red"
+                            >
                                 <div className="w-full h-full bg-gray-200"></div>
                             </div>
                         </div>
@@ -28,10 +30,8 @@ const Events = () => {
                 </div>
                 <div
                     className="animate-pulse flex text-base md:text-rhbuttons text-black font-gilbold uppercase mt-5 justify-center md:justify-end">
-                    <a href="/events" title="Мероприятия" className="space-x-3 h-full inline-flex px-5 opacity-0">
-                        <span>→</span>
-                        <span>Другие события</span>
-                    </a>
+                    <span>→</span>
+                    <span>Другие события</span>
                 </div>
             </section>
         );
@@ -53,7 +53,6 @@ const Events = () => {
         const {node: event} = edge;
         return transformEventData(event);
     });
-    //console.log(featuredEventsWithSourceUrl);
     return (
         <section className="border border-black border-t-0 border-b-0 p-5">
             <div className="grid md:grid-cols-3 gap-5">
@@ -70,9 +69,10 @@ const Events = () => {
                                     педагогами, чтобы обеспечить максимальную эффективность обучения.</p>
                             </div>
                             <div className="link text-rhbuttons text-white font-gilbold uppercase">
-                                <a href="/events/" title=""
-                                   className="flex flex-row items-center space-x-3"><span>→</span>
-                                    <span>Подробная информация</span></a>
+                                <Link href="/events/" className="flex flex-row items-center space-x-3">
+                                    <span>→</span>
+                                    <span>Подробная информация</span>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -90,17 +90,16 @@ const Events = () => {
                         type={event.type}
                     ></Card>
                 ))}
-
             </div>
             <div
                 className="flex text-base md:text-rhbuttons text-black font-gilbold uppercase mt-5 justify-center md:justify-end">
-                <a href="/events" title="Мероприятия" className="space-x-3 h-full inline-flex px-5">
+                <Link href="/events" className="space-x-3 h-full inline-flex px-5">
                     <span>→</span>
                     <span>Другие события</span>
-                </a>
+                </Link>
             </div>
         </section>
     );
 };
 
-export default Events;
+export default Events

@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from "next/link";
 
 /**
  * Card Component displays details in a card format based on the type.
@@ -45,7 +46,7 @@ const Card: React.FC<CardProps> = ({ title, description, slug, date, image, type
     const defaultImage = "/images/test/test-event-picture.png";
 
     return (
-        <a href={cardLink} title={title} className="card md:aspect-square">
+        <Link href={cardLink} title={title} className="card md:aspect-square">
             <div className="relative h-full border border-black group/item">
                 {/* Card Details */}
                 <div className="flex flex-col justify-between h-auto sm:h-[calc(50%)] p-[30px] md:max-xl:p-[25px]">
@@ -73,7 +74,7 @@ const Card: React.FC<CardProps> = ({ title, description, slug, date, image, type
                     />
                 </div>
             </div>
-        </a>
+        </Link>
     );
 };
 
