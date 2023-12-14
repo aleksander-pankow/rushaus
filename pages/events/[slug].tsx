@@ -29,7 +29,8 @@ interface EventProps {
 const Event: React.FC<EventProps> = ({ event }) => {
     const { title, content, event_fields } = event;
     const { dateAndTime, excerpt, place, video, photo } = event_fields || {};
-
+    // @ts-ignore
+    const image = photo[0].sourceUrl;
     return (
         <>
             <Head>
@@ -44,7 +45,7 @@ const Event: React.FC<EventProps> = ({ event }) => {
                     <section className={"flex flex-col lg:flex-row border border-black border-t-0"}>
                         <div className="basis-full lg:basis-3/4 p-5 border-black border-r">
                             <div className={"border-black border-b pb-5 mb-5"}>
-                                {photo && <img src={photo[0].sourceUrl} className={"w-full aspect-[2.39/1] object-cover"} alt={""} />} {/* Assuming photo exists */}
+                                {photo && <img src={image} className={"w-full aspect-[2.39/1] object-cover"} alt={""} />} {/* Assuming photo exists */}
                             </div>
                             <ClientOnly className={"space-y-2"}>
                                 {parse(content)}
