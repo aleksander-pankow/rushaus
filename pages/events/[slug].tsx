@@ -11,10 +11,25 @@ import ClientOnly from "@/components/ClientOnly";
 import Social from "@/components/Social";
 import React from "react";
 
-export default function Event({ event }) {
+interface EventProps {
+    event: {
+        title: string;
+        content: string;
+        event_fields: {
+            dateAndTime: string;
+            excerpt: string;
+            place: string;
+            video: string;
+            photo: {
+                sourceUrl: string;
+            };
+        };
+    };
+}
+const Event: React.FC<EventProps> = ({ event }) => {
     const { title, content, event_fields } = event;
     const { dateAndTime, excerpt, place, video, photo } = event_fields || {};
-    console.log(event);
+
     return (
         <>
             <Head>
@@ -145,3 +160,5 @@ export async function getStaticProps(context: any) {
         },
     };
 }
+
+export default Event;
