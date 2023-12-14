@@ -14,7 +14,7 @@ loadDevMessages();
 loadErrorMessages();
 export default function Events() {
     return (
-        <div>
+        <>
             <Head>
                 <title>My page title</title>
                 <meta name="description"
@@ -75,7 +75,7 @@ export default function Events() {
                 <Social/>
             </Container>
             <Footer/>
-        </div>
+        </>
     )
 
 }
