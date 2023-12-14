@@ -2,7 +2,7 @@ import '@/app/globals.css';
 import Link from "next/link";
 import Head from "next/head";
 import parse from "html-react-parser";
-import { gql } from "@apollo/client";
+import { gql, ApolloQueryResult } from "@apollo/client";
 import { client } from "@/app/lib/apollo-client";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -11,7 +11,7 @@ import ClientOnly from "@/components/ClientOnly";
 import Social from "@/components/Social";
 import React from "react";
 
-interface EventProps {
+interface PageProps {
     event: {
         title: string;
         content: string;
@@ -22,15 +22,15 @@ interface EventProps {
             video: string;
             photo: {
                 sourceUrl: string;
-            };
+            }[];
         };
     };
 }
-const Event: React.FC<EventProps> = ({ event }) => {
+
+const Page: React.FC<PageProps> = ({ event }) => {
     const { title, content, event_fields } = event;
     const { dateAndTime, excerpt, place, video, photo } = event_fields || {};
-    // @ts-ignore
-    const image = photo[0].sourceUrl;
+    console.log(event);
     return (
         <>
             <Head>
@@ -45,7 +45,7 @@ const Event: React.FC<EventProps> = ({ event }) => {
                     <section className={"flex flex-col lg:flex-row border border-black border-t-0"}>
                         <div className="basis-full lg:basis-3/4 p-5 border-black border-r">
                             <div className={"border-black border-b pb-5 mb-5"}>
-                                {photo && <img src={image} className={"w-full aspect-[2.39/1] object-cover"} alt={""} />} {/* Assuming photo exists */}
+                                {photo && <img src={photo[0]?.sourceUrl} className={"w-full aspect-[2.39/1] object-cover"} alt={""} />} {/* Assuming photo exists */}
                             </div>
                             <ClientOnly className={"space-y-2"}>
                                 {parse(content)}
@@ -100,9 +100,9 @@ const Event: React.FC<EventProps> = ({ event }) => {
 }
 
 export async function getStaticPaths() {
-    const slugs = await getSlugs();
+    const slugs: string[] = await getSlugs();
     const paths = slugs.map((slug: string) => {
-        return {params: {slug}};
+        return { params: { slug } };
     });
 
     return {
@@ -112,19 +112,19 @@ export async function getStaticPaths() {
 }
 
 async function getSlugs() {
-    const {data} = await client.query({
+    const { data } = await client.query({
         query: gql`
-      query getPosts {
-        events(first: 100) {
-          nodes {
-            slug
-          }
-        }
-      }
-    `,
+            query getPosts {
+                events(first: 100) {
+                    nodes {
+                        slug
+                    }
+                }
+            }
+        `,
     });
 
-    return data.events.nodes.map((node: { slug: string; }) => node.slug);
+    return data.events.nodes.map((node: { slug: string }) => node.slug);
 }
 
 const GET_EVENT = gql`
@@ -147,8 +147,8 @@ const GET_EVENT = gql`
     }
 `;
 
-export async function getStaticProps(context: any) {
-    const { data } = await client.query({
+export async function getStaticProps(context: { params: { slug: string } }) {
+    const { data }: ApolloQueryResult<any> = await client.query({
         query: GET_EVENT,
         variables: {
             slug: context.params.slug,
@@ -162,4 +162,4 @@ export async function getStaticProps(context: any) {
     };
 }
 
-export default Event;
+export default Page;
