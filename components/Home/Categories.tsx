@@ -1,62 +1,34 @@
-import React from 'react';
-import { useQuery } from "@apollo/client";
-import { GET_FEATURED_LESSONS } from "@/app/services/api/requests";
+import {useQuery} from "@apollo/client";
+import {GET_FEATURED_LESSONS} from "@/app/services/api/requests";
 import Card from "@/components/Card/Card";
 import Link from "next/link";
 
-interface Lesson {
-    databaseId: string;
-    title: string;
-    content: string;
-    slug: string;
-    lesson_fields: {
-        date: string;
-        time: string;
-        excerpt: string;
-        place: string;
-        video: string;
-        photo: {
-            sourceUrl: string;
-        }[];
-    };
-}
-
-interface Edge {
-    node: Lesson;
-    // Add other fields as needed
-}
-
-interface LessonsData {
-    lessons: {
-        edges: Edge[];
-    };
-    // Add other fields as needed
-}
-const Categories: React.FC = () => {
-    const { data: centerData, loading: centerLoading, error: centerError } = useQuery<LessonsData>(GET_FEATURED_LESSONS, {
-        variables: { count: 2, chapter: 'center' },
+const Categories = () => {
+    const {data: centerData, loading: centerLoading, error: centerError} = useQuery(GET_FEATURED_LESSONS, {
+        variables: {count: 2, chapter: 'center'},
         notifyOnNetworkStatusChange: true,
     });
 
-    const { data: workshopData, loading: workshopLoading, error: workshopError } = useQuery<LessonsData>(GET_FEATURED_LESSONS, {
-        variables: { count: 2, chapter: 'workshop' },
+    const {data: workshopData, loading: workshopLoading, error: workshopError} = useQuery(GET_FEATURED_LESSONS, {
+        variables: {count: 2, chapter: 'workshop'},
         notifyOnNetworkStatusChange: true,
     });
 
-    const transformLessonData = (lesson: Lesson) => {
-        const { lesson_fields: fields, ...rest } = lesson;
+    const transformLessonData = (lesson: any) => {
+        const {lesson_fields: fields, ...rest} = lesson;
         return {
             ...rest,
-            image: fields.photo?.[0]?.sourceUrl,
-            date: fields.date,
-            time: fields.time,
-            excerpt: fields.excerpt,
-            place: fields.place,
-            video: fields.video,
+            image: fields.photo?.[0]?.sourceUrl || null,
+            date: fields.date || null,
+            time: fields.time || null,
+            excerpt: fields.excerpt || null,
+            place: fields.place || null,
+            video: fields.video || null,
+            type: "lesson",
         };
     };
 
-    const renderContent = (data: LessonsData | undefined, loading: boolean, error: any, chapter: string) => {
+    const renderContent = (data: any, loading: any, error: any, chapter: string) => {
         if (error) {
             return <p>Sorry, an error has occurred for {chapter} chapter. Please reload the page.</p>;
         }
@@ -78,28 +50,28 @@ const Categories: React.FC = () => {
             );
         }
 
-        const featuredLessons = data.lessons.edges.map((edge) => {
+        const featuredLessons = data.lessons.edges.map((edge: any) => {
             const {node: lesson} = edge;
             return transformLessonData(lesson);
         });
 
         return (
             <>
-            {
-                featuredLessons.map((lesson, index) => (
-                    <div className="md:aspect-square" key={`${chapter}_${index}`}>
-                        <Card
-                            key={lesson.databaseId}
-                            title={lesson.title}
-                            description={lesson.excerpt}
-                            image={lesson.image}
-                            slug={lesson.slug}
-                            date={lesson.date}
-                            type="lesson"
-                        />
-                    </div>
-                ))
-            }
+                {
+                    featuredLessons.map((lesson: any, index: any) => (
+                        <div className="md:aspect-square" key={`${chapter}_${index}`}>
+                            <Card
+                                key={lesson.databaseId}
+                                title={lesson.title}
+                                description={lesson.excerpt}
+                                image={lesson.image}
+                                slug={lesson.slug}
+                                date={lesson.date}
+                                type={lesson.type}
+                            />
+                        </div>
+                    ))
+                }
             </>
         );
     };

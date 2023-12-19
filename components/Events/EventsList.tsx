@@ -56,7 +56,7 @@ export default function InfiniteScrollList() {
             >
                 {events.map((event: any) => {
                     return (
-                        <div key={event.databaseId} className={"flex flex-col border border-black mb-10"}>
+                        <div key={event.databaseId} className={"flex flex-col border border-black mb-5"}>
                             <div className={"flex flex-col lg:flex-row"}>
                                 <div className={"inline-flex basis-1/2"} >
                                     <img src={event.image} alt={event.title} className={"object-cover aspect-[16/9]"} />
