@@ -10,6 +10,7 @@ import Container from "@/components/Container";
 import ClientOnly from "@/components/ClientOnly";
 import Social from "@/components/Social";
 import React from "react";
+import { GET_EVENT, GET_SLUGS } from "@/app/services/api/requests";
 
 interface PageProps {
     event: {
@@ -39,15 +40,20 @@ const Page: React.FC<PageProps> = ({ event }) => {
             <Header />
             <Container>
                 <article>
-                    <section className={"uppercase text-[65px] font-gilbold p-5 border border-black border-t-0 mt-10 text-center"}>
+                    <section className={"uppercase text-[65px] font-gilbold p-5 border border-black border-t-0 mt-10"}>
                         <h1>{title}</h1>
                     </section>
                     <section className={"flex flex-col lg:flex-row border border-black border-t-0"}>
-                        <div className="basis-full lg:basis-3/4 p-5 border-black border-r">
-                            <div className={"border-black border-b pb-5 mb-5"}>
-                                {photo && <img src={photo[0]?.sourceUrl} className={"w-full aspect-[2.39/1] object-cover"} alt={""} />} {/* Assuming photo exists */}
+                        <div className="basis-full lg:basis-3/4 border-black border-r">
+                            <div className={"relative border-black border-b"}>
+                                {photo && <img src={photo[0]?.sourceUrl} className={"w-full aspect-[2.39/1] object-cover p-5"} alt={""} />} {/* Assuming photo exists */}
+                                <div className={"absolute flex left-0 bottom-10 p-5 mx-5 w-auto z-10 backdrop-blur-md bg-white/30"}>
+                                    <div className={"date"}>{dateAndTime}</div>
+                                    <div className={"adress"}>Berlin</div>
+                                    <div className={"place"}>{place}</div>
+                                </div>
                             </div>
-                            <ClientOnly className={"space-y-2"}>
+                            <ClientOnly className={"space-y-2 p-5"}>
                                 {parse(content)}
                             </ClientOnly>
                         </div>
@@ -113,39 +119,12 @@ export async function getStaticPaths() {
 
 async function getSlugs() {
     const { data } = await client.query({
-        query: gql`
-            query getPosts {
-                events(first: 100) {
-                    nodes {
-                        slug
-                    }
-                }
-            }
-        `,
+        query: GET_SLUGS,
     });
 
     return data.events.nodes.map((node: { slug: string }) => node.slug);
 }
 
-const GET_EVENT = gql`
-    query getEvent($slug: ID!) {
-        event(id: $slug, idType: SLUG) {
-            databaseId
-            title
-            content
-            slug
-            event_fields {
-                dateAndTime
-                excerpt
-                place
-                video
-                photo {
-                    sourceUrl(size: LARGE)
-                }
-            }
-        }
-    }
-`;
 
 export async function getStaticProps(context: { params: { slug: string } }) {
     const { data }: ApolloQueryResult<any> = await client.query({

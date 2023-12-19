@@ -1,5 +1,5 @@
 import {useQuery} from "@apollo/client";
-import {GET_FEATURED_EVENTS} from "@/app/services/api/requests";
+import { GET_FEATURED_EVENTS } from "@/app/services/api/requests";
 import Card from "@/components/Card/Card";
 import Link from "next/link";
 
@@ -41,7 +41,8 @@ const Events = () => {
         return {
             ...rest,
             image: fields.photo?.[0]?.sourceUrl || null,
-            date: fields.dateAndTime || null,
+            date: fields.date || null,
+            time: fields.time || null,
             excerpt: fields.excerpt || null,
             place: fields.place || null,
             video: fields.video || null,
@@ -69,7 +70,7 @@ const Events = () => {
                                     педагогами, чтобы обеспечить максимальную эффективность обучения.</p>
                             </div>
                             <div className="link text-rhbuttons text-white font-gilbold uppercase">
-                                <Link href="/events/" className="flex flex-row items-center space-x-3">
+                                <Link href="/pages/events/" className="flex flex-row items-center space-x-3">
                                     <span>→</span>
                                     <span>Подробная информация</span>
                                 </Link>
@@ -93,7 +94,7 @@ const Events = () => {
             </div>
             <div
                 className="flex text-base md:text-rhbuttons text-black font-gilbold uppercase mt-5 justify-center md:justify-end">
-                <Link href="/events" className="space-x-3 h-full inline-flex px-5">
+                <Link href="/pages/events" className="space-x-3 h-full inline-flex px-5">
                     <span>→</span>
                     <span>Другие события</span>
                 </Link>
