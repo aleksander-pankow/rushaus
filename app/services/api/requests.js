@@ -14,7 +14,7 @@ export const GET_EVENTS = gql`
             title(format: RENDERED)
             content(format: RENDERED)
             slug
-            event_fields {
+            eventFields {
               excerpt
               date
               time
@@ -40,51 +40,55 @@ export const GET_EVENT = gql`
             title
             content
             slug
-            event_fields {
-                date
-                time
-                excerpt
-                place
-                video
-                photo {
-                    sourceUrl(size: LARGE)
+            eventFields {
+                  excerpt
+                  date
+                  time
+                  place
+                  video
+                  photo {
+                    nodes {
+                      sourceUrl(size: LARGE)
+                    }
+                  }
                 }
-            }
         }
     }
 `;
 export const GET_FEATURED_EVENTS = gql`
-  query getFeaturedEvents($count: Int!){
-    events(first: $count, where: {featuredHome: true, language: DEFAULT}) {
-      pageInfo {
-        hasNextPage
-        endCursor
-      }
-      edges {
-          node {
-            id
-            databaseId
-            title(format: RENDERED)
-            content(format: RENDERED)
-            slug
-            event_fields {
-              excerpt
-              date
-              time
-              place
-              video
-              photo {
-                sourceUrl(size: LARGE)
-              }
-            }
-            featured_settings {
-              featuredHome
-              templateCard
+  query getFeaturedEvents($count: Int!) {
+  events(first: $count, where: {featuredHome: true, language: DEFAULT}) {
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+    edges {
+      node {
+        id
+        databaseId
+        title(format: RENDERED)
+        content(format: RENDERED)
+        slug
+        eventFields {
+          excerpt
+          date
+          time
+          place
+          video
+          photo {
+            nodes {
+              sourceUrl(size: LARGE)
             }
           }
         }
+        featuredSettings {
+          featuredHome
+          templateCard
+        }
+      }
     }
   }
+}
 `;
 export const GET_LESSONS = gql`
   query getLessons($first: Int!, $after: String) {

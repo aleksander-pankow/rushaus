@@ -3,7 +3,7 @@ import '@/app/globals.css';
 import Link from "next/link";
 import Head from "next/head";
 import parse from "html-react-parser";
-import { gql, ApolloQueryResult } from "@apollo/client";
+import { ApolloQueryResult } from "@apollo/client";
 import { client } from "@/app/lib/apollo-client";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -12,6 +12,7 @@ import ClientOnly from "@/components/ClientOnly";
 import Social from "@/components/Social";
 import React from "react";
 import { GET_EVENT, GET_SLUGS } from "@/app/services/api/requests";
+import DateFormatter from "@/components/Date/Date";
 interface EventFields {
     date: string;
     time: string;
@@ -19,25 +20,21 @@ interface EventFields {
     place: string;
     video: string;
     photo: {
-        sourceUrl: string;
-    }[];
+        nodes: {
+            sourceUrl: string;
+        }[]
+    };
 }
 
 interface Event {
     title: string;
     content: string;
-    event_fields: EventFields;
+    eventFields: EventFields;
 }
 
 interface PageProps {
     event: Event;
 }
-
-const getFormattedDateAndTime = (date: string, time: string): string => {
-    // Format date and time as needed
-    return `${date} ${time}`;
-};
-
 const renderBannerLinks = () => {
     // Render banner links
     return(
@@ -83,8 +80,8 @@ const renderBannerLinks = () => {
 };
 
 const Page: React.FC<PageProps> = ({ event }) => {
-    const { title, content, event_fields } = event;
-    const { date, time, excerpt, place, video, photo } = event_fields || {};
+    const { title, content, eventFields } = event;
+    const { date, time, excerpt, place, video, photo } = eventFields || {};
 
     return (
         <>
@@ -105,10 +102,15 @@ const Page: React.FC<PageProps> = ({ event }) => {
                         {/* Main content */}
                         <div className="basis-full lg:basis-3/4 border-black border-r">
                             <div className="relative border-black border-b">
-                                {photo && <img src={photo[0]?.sourceUrl} className="w-full aspect-[2.39/1] object-cover p-5" alt="" />}
+                                {photo && photo.nodes[0] && photo.nodes.length > 0 && (
+                                    <img
+                                        src={photo.nodes[0]?.sourceUrl}
+                                        className="w-full aspect-[2.39/1] object-cover p-5"
+                                        alt=""
+                                    />
+                                )}
                                 <div className="absolute flex left-0 bottom-10 p-5 mx-5 w-auto z-10 backdrop-blur-md bg-white/30">
-                                    <div className="date">{getFormattedDateAndTime(date, time)}</div>
-                                    <div className="adress">{place}</div>
+                                    <div className="date"><DateFormatter dateString={date} formatString="d MMMM yyyy" language={"ru"} usePronouncedMonths={true} /></div>
                                     <div className="place">{place}</div>
                                 </div>
                             </div>

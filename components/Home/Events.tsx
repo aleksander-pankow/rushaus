@@ -2,7 +2,6 @@ import {useQuery} from "@apollo/client";
 import { GET_FEATURED_EVENTS } from "@/app/services/api/requests";
 import Card from "@/components/Card/Card";
 import Link from "next/link";
-
 const Events = () => {
     const {data, loading, error} = useQuery(GET_FEATURED_EVENTS, {
         variables: {count: 2},
@@ -37,12 +36,12 @@ const Events = () => {
         );
     }
     const transformEventData = (event: any) => {
-        const {event_fields: fields, ...rest} = event;
+        const {eventFields: fields, ...rest} = event;
         return {
             ...rest,
-            image: fields.photo?.[0]?.sourceUrl || null,
-            date: fields.date || null,
-            time: fields.time || null,
+            image: fields.photo.nodes[0]?.sourceUrl || null,
+            date: fields.date,
+            time: fields.time,
             excerpt: fields.excerpt || null,
             place: fields.place || null,
             video: fields.video || null,
@@ -52,6 +51,7 @@ const Events = () => {
 
     const featuredEventsWithSourceUrl = data.events.edges.map((edge: any) => {
         const {node: event} = edge;
+        console.log(event.image);
         return transformEventData(event);
     });
     return (
