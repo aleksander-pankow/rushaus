@@ -2,7 +2,6 @@ import { useQuery, gql } from "@apollo/client";
 import Link from "next/link";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { GET_EVENTS, BATCH_SIZE } from "@/app/services/api/requests";
-import DateComponent from "@/components/Date/Date";
 
 export default function InfiniteScrollList() {
     const { data, loading, error, fetchMore } = useQuery(GET_EVENTS, {
@@ -88,10 +87,10 @@ export default function InfiniteScrollList() {
                                     </svg>
                                     {event.place}
                                 </div>
-                                <a href={"/events/"+event.slug} title={""} className={"inline-flex flex-none  px-5 py-3 border-l border-black gap-3 hover:bg-theme-red hover:text-white"}>
+                                <Link href={"/events/"+event.slug} title={""} className={"inline-flex flex-none  px-5 py-3 border-l border-black gap-3 hover:bg-theme-red hover:text-white"}>
                                     <span>→</span>
                                     <span>Подробнее</span>
-                                </a>
+                                </Link>
                             </div>
 
                         </div>

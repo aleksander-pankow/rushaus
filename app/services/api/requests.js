@@ -144,9 +144,6 @@ export const GET_FEATURED_LESSONS = gql`
                     }
                 }
                 contentTypeName
-                chapters {
-                    chapterType
-                }
             featured_settings {
               featuredHome
               templateCard

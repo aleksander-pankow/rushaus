@@ -15,15 +15,15 @@ import Link from "next/link";
 
 interface CardProps {
     title: string;
-    description: string;
+    description: string | null;
     slug: string;
-    date: string;
-    image: string;
-    type: 'event' | 'lesson' | 'article';
+    date: string | null;
+    image: string | null;
+    type: string | null | 'event' | 'lesson' | 'article';
 }
 const Card: React.FC<CardProps> = ({ title, description, slug, date, image, type }) => {
     // Generate the link for the card based on the type and provided slug
-    const generateLink = (type: string, slug: string) => {
+    const generateLink = (type: string | "event" | "lesson" | "article" | null, slug: string) => {
         switch (type) {
             case 'event':
                 return `/events/${slug}`;

@@ -1,3 +1,4 @@
+// Import statements...
 import '@/app/globals.css';
 import Link from "next/link";
 import Head from "next/head";
@@ -11,100 +12,126 @@ import ClientOnly from "@/components/ClientOnly";
 import Social from "@/components/Social";
 import React from "react";
 import { GET_EVENT, GET_SLUGS } from "@/app/services/api/requests";
+interface EventFields {
+    date: string;
+    time: string;
+    excerpt: string;
+    place: string;
+    video: string;
+    photo: {
+        sourceUrl: string;
+    }[];
+}
+
+interface Event {
+    title: string;
+    content: string;
+    event_fields: EventFields;
+}
 
 interface PageProps {
-    event: {
-        title: string;
-        content: string;
-        event_fields: {
-            dateAndTime: string;
-            excerpt: string;
-            place: string;
-            video: string;
-            photo: {
-                sourceUrl: string;
-            }[];
-        };
-    };
+    event: Event;
 }
+
+const getFormattedDateAndTime = (date: string, time: string): string => {
+    // Format date and time as needed
+    return `${date} ${time}`;
+};
+
+const renderBannerLinks = () => {
+    // Render banner links
+    return(
+        <>
+            <div className={"relative overflow-hidden"}>
+                <a hrefLang={""} title={""}>
+                    <img
+                        src="/images/banners/banner_1.png"
+                        alt="My Image"
+                        className="w-full hover:scale-110 transition duration-500"
+                    />
+                </a>
+            </div>
+            <div className={"relative overflow-hidden"}>
+                <a hrefLang={""} title={""}>
+                    <img
+                        src="/images/banners/banner_2.png"
+                        alt="My Image"
+                        className="w-full hover:scale-110 transition duration-500"
+                    />
+                </a>
+            </div>
+            <div className={"relative overflow-hidden"}>
+                <a hrefLang={""} title={""}>
+                    <img
+                        src="/images/banners/banner_3.png"
+                        alt="My Image"
+                        className="w-full hover:scale-110 transition duration-500"
+                    />
+                </a>
+            </div>
+            <div className={"relative overflow-hidden"}>
+                <a hrefLang={""} title={""}>
+                    <img
+                        src="/images/banners/banner_4.png"
+                        alt="My Image"
+                        className="w-full hover:scale-110 transition duration-500"
+                    />
+                </a>
+            </div>
+        </>
+    );
+};
 
 const Page: React.FC<PageProps> = ({ event }) => {
     const { title, content, event_fields } = event;
-    const { dateAndTime, excerpt, place, video, photo } = event_fields || {};
-    console.log(event);
+    const { date, time, excerpt, place, video, photo } = event_fields || {};
+
     return (
         <>
+            {/* Head, Header, and other common components */}
             <Head>
                 <title>{parse(title)} | Pagination Station</title>
             </Head>
             <Header />
+
             <Container>
                 <article>
+                    {/* Title section */}
                     <section className={"uppercase text-[65px] font-gilbold p-5 border border-black border-t-0 mt-10"}>
                         <h1>{title}</h1>
                     </section>
-                    <section className={"flex flex-col lg:flex-row border border-black border-t-0"}>
+                    {/* Content section */}
+                    <section className="flex flex-col lg:flex-row border border-black border-t-0">
+                        {/* Main content */}
                         <div className="basis-full lg:basis-3/4 border-black border-r">
-                            <div className={"relative border-black border-b"}>
-                                {photo && <img src={photo[0]?.sourceUrl} className={"w-full aspect-[2.39/1] object-cover p-5"} alt={""} />} {/* Assuming photo exists */}
-                                <div className={"absolute flex left-0 bottom-10 p-5 mx-5 w-auto z-10 backdrop-blur-md bg-white/30"}>
-                                    <div className={"date"}>{dateAndTime}</div>
-                                    <div className={"adress"}>Berlin</div>
-                                    <div className={"place"}>{place}</div>
+                            <div className="relative border-black border-b">
+                                {photo && <img src={photo[0]?.sourceUrl} className="w-full aspect-[2.39/1] object-cover p-5" alt="" />}
+                                <div className="absolute flex left-0 bottom-10 p-5 mx-5 w-auto z-10 backdrop-blur-md bg-white/30">
+                                    <div className="date">{getFormattedDateAndTime(date, time)}</div>
+                                    <div className="adress">{place}</div>
+                                    <div className="place">{place}</div>
                                 </div>
                             </div>
-                            <ClientOnly className={"space-y-2 p-5"}>
-                                {parse(content)}
-                            </ClientOnly>
+                            <ClientOnly className="space-y-2 p-5">{parse(content)}</ClientOnly>
                         </div>
+
+                        {/* Banner links section */}
                         <div className="basis-full lg:basis-1/4 p-5 space-y-5">
-                            {/* Banner links */}
-                            <div className={"relative overflow-hidden"}>
-                                <a hrefLang={""} title={""}>
-                                    <img
-                                        src="/images/banners/banner_1.png"
-                                        alt="My Image"
-                                        className="w-full hover:scale-110 transition duration-500"
-                                    />
-                                </a>
-                            </div>
-                            <div className={"relative overflow-hidden"}>
-                                <a hrefLang={""} title={""}>
-                                    <img
-                                        src="/images/banners/banner_2.png"
-                                        alt="My Image"
-                                        className="w-full hover:scale-110 transition duration-500"
-                                    />
-                                </a>
-                            </div>
-                            <div className={"relative overflow-hidden"}>
-                                <a hrefLang={""} title={""}>
-                                    <img
-                                        src="/images/banners/banner_3.png"
-                                        alt="My Image"
-                                        className="w-full hover:scale-110 transition duration-500"
-                                    />
-                                </a>
-                            </div>
-                            <div className={"relative overflow-hidden"}>
-                                <a hrefLang={""} title={""}>
-                                    <img
-                                        src="/images/banners/banner_4.png"
-                                        alt="My Image"
-                                        className="w-full hover:scale-110 transition duration-500"
-                                    />
-                                </a>
-                            </div>
+                            {renderBannerLinks()}
                         </div>
                     </section>
                 </article>
+
+                {/* Social, Footer */}
                 <Social />
             </Container>
             <Footer />
         </>
     );
-}
+};
 
+// Remaining code for getStaticPaths and getStaticProps remains the same
+// Ensure you maintain the logic for fetching slugs and event data
 export async function getStaticPaths() {
     const slugs: string[] = await getSlugs();
     const paths = slugs.map((slug: string) => {

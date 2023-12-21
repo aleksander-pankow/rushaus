@@ -17,7 +17,8 @@ interface PageProps {
         title: string;
         content: string;
         event_fields: {
-            dateAndTime: string;
+            date: string;
+            time: string;
             excerpt: string;
             place: string;
             video: string;
@@ -30,7 +31,7 @@ interface PageProps {
 
 const Page: React.FC<PageProps> = ({ event }) => {
     const { title, content, event_fields } = event;
-    const { dateAndTime, excerpt, place, video, photo } = event_fields || {};
+    const { date, time, excerpt, place, video, photo } = event_fields || {};
     console.log(event);
     return (
         <>
@@ -48,7 +49,7 @@ const Page: React.FC<PageProps> = ({ event }) => {
                             <div className={"relative border-black border-b"}>
                                 {photo && <img src={photo[0]?.sourceUrl} className={"w-full aspect-[2.39/1] object-cover p-5"} alt={""} />} {/* Assuming photo exists */}
                                 <div className={"absolute flex left-0 bottom-10 p-5 mx-5 w-auto z-10 backdrop-blur-md bg-white/30"}>
-                                    <div className={"date"}>{dateAndTime}</div>
+                                    <div className={"date"}>{date} {time}</div>
                                     <div className={"adress"}>Berlin</div>
                                     <div className={"place"}>{place}</div>
                                 </div>
@@ -142,3 +143,4 @@ export async function getStaticProps(context: { params: { slug: string } }) {
 }
 
 export default Page;
+
