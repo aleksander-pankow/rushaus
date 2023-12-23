@@ -9,25 +9,25 @@ export const GET_EVENTS = gql`
       }
       edges {
           node {
-            id
-            databaseId
-            title(format: RENDERED)
-            content(format: RENDERED)
-            slug
-            event_fields {
-              excerpt
-              date
-              time
-              place
-              video
-              photo {
-                sourceUrl(size: LARGE)
-              }
-            }
-            featured_settings {
-              featuredHome
-              templateCard
-            }
+                id
+                databaseId
+                title(format: RENDERED)
+                content(format: RENDERED)
+                slug
+                eventFields {
+                  excerpt
+                  date
+                  time
+                  place
+                  video
+                  photo {
+                    edges {
+                      node {
+                        sourceUrl(size: LARGE)
+                      }
+                    }
+                  }
+               }
           }
         }
     }
@@ -40,48 +40,52 @@ export const GET_EVENT = gql`
             title
             content
             slug
-            event_fields {
+            eventFields {
+                excerpt
                 date
                 time
-                excerpt
                 place
                 video
                 photo {
-                    sourceUrl(size: LARGE)
-                }
+                  edges {
+                    node {
+                      sourceUrl(size: LARGE)
+                    }
+                  }
+               }
             }
         }
     }
 `;
 export const GET_FEATURED_EVENTS = gql`
   query getFeaturedEvents($count: Int!){
-    events(first: $count, where: {featuredHome: true, language: DEFAULT}) {
+    events(first: $count, where: {language: DEFAULT}) {
       pageInfo {
         hasNextPage
         endCursor
       }
       edges {
-          node {
-            id
-            databaseId
-            title(format: RENDERED)
-            content(format: RENDERED)
-            slug
-            event_fields {
-              excerpt
-              date
-              time
-              place
-              video
-              photo {
-                sourceUrl(size: LARGE)
+        node{
+          id
+          databaseId
+          title(format: RENDERED)
+          content(format: RENDERED)
+          slug
+          eventFields {
+            excerpt
+            date
+            time
+            place
+            video
+            photo {
+              edges {
+                node {
+                  sourceUrl(size: LARGE)
+                }
               }
             }
-            featured_settings {
-              featuredHome
-              templateCard
-            }
           }
+         }
         }
     }
   }
@@ -119,12 +123,8 @@ export const GET_LESSONS = gql`
   }
 `;
 export const GET_FEATURED_LESSONS = gql`
-  query getFeaturedLessons($count: Int!, $chapter: String!){
-    lessons(first: $count, where: {featuredHome: true, language: DEFAULT, chapterType: $chapter}) {
-      pageInfo {
-        hasNextPage
-        endCursor
-      }
+  query getFeaturedLessons($count: Int!, $chapter: ID!){
+    lessons(first: $count, where: {language: DEFAULT, chapterType: $chapter}) {
       edges {
           node {
             id
@@ -132,24 +132,27 @@ export const GET_FEATURED_LESSONS = gql`
             title(format: RENDERED)
             content(format: RENDERED)
             slug
-            lesson_fields {
-                    day
-                    excerpt
-                    place
-                    time
-                    video
-                    photo {
-                        sourceUrl(size: LARGE)
-                        altText
-                    }
+            lessonFields {
+                day
+                excerpt
+                place
+                time
+                video
+                photo {
+                edges {
+                  node {
+                    sourceUrl(size: LARGE)
+                  }
                 }
-                contentTypeName
-            featured_settings {
-              featuredHome
-              templateCard
+              }
             }
+            contentTypeName
           }
         }
+    }
+    chapter(id: $chapter, idType: DATABASE_ID) {
+      description
+      name
     }
   }
 `;

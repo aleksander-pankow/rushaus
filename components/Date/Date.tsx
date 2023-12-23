@@ -1,5 +1,5 @@
 import * as dfns from 'date-fns';
-import ru from 'date-fns/locale/ru';
+import ru from 'date-fns/locale/ru'
 interface DateComponentProps {
     dateString: string;
     formatString: string;

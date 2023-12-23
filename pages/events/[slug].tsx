@@ -12,30 +12,52 @@ import ClientOnly from "@/components/ClientOnly";
 import Social from "@/components/Social";
 import React from "react";
 import { GET_EVENT, GET_SLUGS } from "@/app/services/api/requests";
+import DateComponent from "@/components/Date/Date";
 interface EventFields {
-    date: string;
-    time: string;
-    excerpt: string;
-    place: string;
-    video: string;
+    excerpt: string | null;
+    date: string | null;
+    time: string | null;
+    place: string | null;
+    video: string | null;
     photo: {
-        sourceUrl: string;
-    }[];
+        edges: {
+            node: {
+                sourceUrl: string | null;
+                altText: string | null;
+            };
+        }[];
+    };
 }
 
 interface Event {
     title: string;
     content: string;
-    event_fields: EventFields;
+    eventFields: EventFields;
 }
 
 interface PageProps {
     event: Event;
 }
 
-const getFormattedDateAndTime = (date: string, time: string): string => {
-    // Format date and time as needed
-    return `${date} ${time}`;
+const transformEventData = (eventFields: EventFields) => {
+    const { date, time, excerpt, place, video, photo } = eventFields || {};
+
+    let images: string[] = [];
+
+    if (photo && photo.edges && photo.edges.length > 0) {
+        images = photo.edges.map((image) => image.node.sourceUrl || "/images/test/thumb.png");
+    } else {
+        images = ["/images/test/thumb.png"]; // Default image path
+    }
+
+    return {
+        date: date || null,
+        time: time || null,
+        excerpt: excerpt || null,
+        place: place || null,
+        video: video || null,
+        photo: images,
+    };
 };
 
 const renderBannerLinks = () => {
@@ -83,8 +105,9 @@ const renderBannerLinks = () => {
 };
 
 const Page: React.FC<PageProps> = ({ event }) => {
-    const { title, content, event_fields } = event;
-    const { date, time, excerpt, place, video, photo } = event_fields || {};
+    const { title, content, eventFields } = event;
+    const transformedEventData = transformEventData(eventFields);
+    const { date, time, excerpt, place, video, photo } = transformedEventData;
 
     return (
         <>
@@ -105,10 +128,11 @@ const Page: React.FC<PageProps> = ({ event }) => {
                         {/* Main content */}
                         <div className="basis-full lg:basis-3/4 border-black border-r">
                             <div className="relative border-black border-b">
-                                {photo && <img src={photo[0]?.sourceUrl} className="w-full aspect-[2.39/1] object-cover p-5" alt="" />}
+                                {photo && photo.length > 0 && (
+                                    <img src={photo[0]} className="w-full aspect-[2.39/1] object-cover p-5" alt="" />
+                                )}
                                 <div className="absolute flex left-0 bottom-10 p-5 mx-5 w-auto z-10 backdrop-blur-md bg-white/30">
-                                    <div className="date">{getFormattedDateAndTime(date, time)}</div>
-                                    <div className="adress">{place}</div>
+                                    <div className="date">{date && <DateComponent dateString={date} formatString={'d MMMM yyyy'} />}</div>
                                     <div className="place">{place}</div>
                                 </div>
                             </div>

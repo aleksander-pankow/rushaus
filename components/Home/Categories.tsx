@@ -2,35 +2,21 @@ import {useQuery} from "@apollo/client";
 import {GET_FEATURED_LESSONS} from "@/app/services/api/requests";
 import Card from "@/components/Card/Card";
 import Link from "next/link";
-
+import {LessonModel, LessonFields, ChapterInfo} from "@/app/models/LessonModel"
 const Categories = () => {
     const {data: centerData, loading: centerLoading, error: centerError} = useQuery(GET_FEATURED_LESSONS, {
-        variables: {count: 2, chapter: 'center'},
+        variables: {count: 2, chapter: 25},
         notifyOnNetworkStatusChange: true,
     });
 
     const {data: workshopData, loading: workshopLoading, error: workshopError} = useQuery(GET_FEATURED_LESSONS, {
-        variables: {count: 2, chapter: 'workshop'},
+        variables: {count: 2, chapter: 13},
         notifyOnNetworkStatusChange: true,
     });
 
-    const transformLessonData = (lesson: any) => {
-        const {lesson_fields: fields, ...rest} = lesson;
-        return {
-            ...rest,
-            image: fields.photo?.[0]?.sourceUrl || null,
-            date: fields.date || null,
-            time: fields.time || null,
-            excerpt: fields.excerpt || null,
-            place: fields.place || null,
-            video: fields.video || null,
-            type: "lesson",
-        };
-    };
-
-    const renderContent = (data: any, loading: any, error: any, chapter: string) => {
+    const renderContent = (data: any, loading: any, error: any, chapter: any) => {
         if (error) {
-            return <p>Sorry, an error has occurred for {chapter} chapter. Please reload the page.</p>;
+            return <p>Sorry, an error has occurred for  chapter. Please reload the page.</p>;
         }
 
         if (loading || !data || !data.lessons.edges.length) {
@@ -50,26 +36,66 @@ const Categories = () => {
             );
         }
 
-        const featuredLessons = data.lessons.edges.map((edge: any) => {
+        const transformLessonData = (lesson: LessonModel<LessonFields>) => {
+            const {lessonFields: fields, ...rest} = lesson;
+            let image = '/images/test/thumb.png';
+
+            if (fields.photo && fields.photo.edges && fields.photo.edges.length > 0 && fields.photo.edges[0].node.sourceUrl) {
+                image = fields.photo.edges[0].node.sourceUrl;
+            }
+
+            // Process other fields if needed...
+
+            return {
+                ...rest,
+                image,
+                days: fields.day || [], // Assuming day is an array of strings
+                excerpt: fields.excerpt || null,
+                place: fields.place || null,
+                time: fields.time || null,
+                video: fields.video || null,
+                type: 'lesson',
+            };
+        };
+
+        const lessons = data.lessons.edges.map((edge: any) => {
             const {node: lesson} = edge;
             return transformLessonData(lesson);
         });
 
         return (
             <>
-                {
-                    featuredLessons.map((lesson: any, index: any) => (
-                        <div className="md:aspect-square" key={`${chapter}_${index}`}>
-                            <Card
-                                key={lesson.databaseId}
-                                title={lesson.title}
-                                description={lesson.excerpt}
-                                image={lesson.image}
-                                slug={lesson.slug}
-                                date={lesson.date}
-                                type={lesson.type}
-                            />
+                <div className="md:aspect-square">
+                    <div
+                        className="relative flex h-full border border-black group/item p-4 sm:p-[30px] group/item items-center justify-center">
+                        <h4 className="font-gilbold uppercase text-rhregular/[20px] lg:text-rhtitle text-center">{chapter.name}</h4>
+                        <div
+                            className="group/details flex justify-between flex-col  group-hover/item:bg-theme-yellow transition ease-in-out duration-300 opacity-0 xl:group-hover/item:opacity-100 w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
+                            <div className="text-base text-white space-y-2">
+                                <p>{chapter.description}</p>
+                            </div>
+                            <div className="link text-rhbuttons text-white font-gilbold uppercase">
+                                <a href="" title=""
+                                   className="flex flex-row items-center space-x-3"><span>→</span>
+                                    <span>Подробная информация</span></a>
+                            </div>
                         </div>
+                    </div>
+                </div>
+                {
+                    lessons.map((lesson: any, index: any) => (
+
+                            <div className="md:aspect-square" key={`${chapter.id}_${index}`}>
+                                <Card
+                                    key={lesson.databaseId}
+                                    title={lesson.title}
+                                    description={lesson.excerpt}
+                                    image={lesson.image}
+                                    slug={lesson.slug}
+                                    date={lesson.date}
+                                    type={lesson.type}
+                                />
+                            </div>
                     ))
                 }
             </>
@@ -80,47 +106,8 @@ const Categories = () => {
     return (
         <section className="border border-black border-t-0 p-5 pt-0">
             <div className="grid md:grid-cols-3 md:grid-rows-3 gap-5">
-                <div className="md:aspect-square">
-                    <div
-                        className="relative flex h-full border border-black group/item p-4 sm:p-[30px] group/item items-center justify-center">
-                        <h4 className="font-gilbold uppercase text-rhregular/[20px] lg:text-rhtitle text-center">Образовательный
-                            центр</h4>
-                        <div
-                            className="group/details flex justify-between flex-col  hover:bg-theme-blue transition ease-in-out duration-300 opacity-0 xl:group-hover/item:opacity-100 w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
-                            <div className="text-base text-white space-y-2">
-                                <p>Русский колледж открыт для детей и подростков, которые хотят научиться чему-то
-                                    новому, узнать больше о русской культуре. Все материалы и методики разработаны
-                                    педагогами, чтобы обеспечить максимальную эффективность обучения.</p>
-                            </div>
-                            <div className="link text-rhbuttons text-white font-gilbold uppercase">
-                                <a href="" title="" className="flex flex-row items-center space-x-3"><span>→</span>
-                                    <span>Подробная информация</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {renderContent(centerData, centerLoading, centerError, 'center')}
-                <div className="md:aspect-square">
-                    <div
-                        className="relative flex h-full border border-black group/item p-4 sm:p-[30px] group/item items-center justify-center">
-                        <h4 className="font-gilbold uppercase text-rhregular/[20px] lg:text-rhtitle text-center">Художественная
-                            мастерская</h4>
-                        <div
-                            className="group/details flex justify-between flex-col  group-hover/item:bg-theme-yellow transition ease-in-out duration-300 opacity-0 xl:group-hover/item:opacity-100 w-full h-full top-0 left-0 absolute p-[30px] transition ease-in duration-0">
-                            <div className="text-base text-white space-y-2">
-                                <p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности
-                                    представляет собой интересный эксперимент проверки модели развития. Равным образом
-                                    укрепление и развитие структуры представляет собой интересный эксперимент проверки
-                                    дальнейших направлений развития.</p>
-                            </div>
-                            <div className="link text-rhbuttons text-white font-gilbold uppercase">
-                                <a href="" title="" className="flex flex-row items-center space-x-3"><span>→</span>
-                                    <span>Подробная информация</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {renderContent(workshopData, workshopLoading, workshopError, 'workshop')}
+                {renderContent(centerData, centerLoading, centerError, centerData?.chapter)}
+                {renderContent(workshopData, workshopLoading, workshopError, workshopData?.chapter)}
                 <div className="md:aspect-square">
                     <div
                         className="relative flex h-full border border-black group/item p-4 sm:p-[30px] group/item items-center justify-center ">

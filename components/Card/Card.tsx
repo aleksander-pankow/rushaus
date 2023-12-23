@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from "next/link";
+import DateComponent from "@/components/Date/Date";
 
 /**
  * Card Component displays details in a card format based on the type.
@@ -17,7 +18,7 @@ interface CardProps {
     title: string;
     description: string | null;
     slug: string;
-    date: string | null;
+    date: string;
     image: string | null;
     type: string | null | 'event' | 'lesson' | 'article';
 }
@@ -37,7 +38,7 @@ const Card: React.FC<CardProps> = ({ title, description, slug, date, image, type
     };
 
     // Determine if the type requires date rendering
-    const showDate = type === 'event' || type === 'lesson';
+    const showDate = type === 'event';
 
     // Create the link based on the type and slug
     const cardLink = generateLink(type, slug);
@@ -61,7 +62,9 @@ const Card: React.FC<CardProps> = ({ title, description, slug, date, image, type
                     {showDate && (
                         <div>
                             {/* Card Date (for event and lesson types) */}
-                            <h4 className="max-md:mt-2 font-gilbold uppercase text-rhregular lg:text-rhtitle">{date}</h4>
+                            <h4 className="max-md:mt-2 font-gilbold uppercase text-rhregular lg:text-rhtitle">
+                                <DateComponent dateString={date} formatString={"d MMMM yyyy"} />
+                            </h4>
                         </div>
                     )}
                 </div>

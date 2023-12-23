@@ -2,6 +2,7 @@ import {useQuery} from "@apollo/client";
 import { GET_FEATURED_EVENTS } from "@/app/services/api/requests";
 import Card from "@/components/Card/Card";
 import Link from "next/link";
+import { EventModel, EventFields } from "@/app/models/EventModel";
 
 const Events = () => {
     const {data, loading, error} = useQuery(GET_FEATURED_EVENTS, {
@@ -36,11 +37,24 @@ const Events = () => {
             </section>
         );
     }
-    const transformEventData = (event: any) => {
-        const {event_fields: fields, ...rest} = event;
+
+    const DEFAULT_IMAGE_URL = '/images/test/thumb.png';
+    const transformEventData = (event: EventModel<EventFields>) => {
+        const { eventFields: fields, ...rest } = event;
+        let image = DEFAULT_IMAGE_URL;
+
+        if (
+            fields.photo &&
+            fields.photo.edges &&
+            fields.photo.edges.length > 0 &&
+            fields.photo.edges[0].node.sourceUrl
+        ) {
+            image = fields.photo.edges[0].node.sourceUrl;
+        }
+
         return {
             ...rest,
-            image: fields.photo?.[0]?.sourceUrl || null,
+            image,
             date: fields.date || null,
             time: fields.time || null,
             excerpt: fields.excerpt || null,
