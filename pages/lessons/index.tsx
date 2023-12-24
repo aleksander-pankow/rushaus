@@ -21,7 +21,7 @@ export default function Events() {
                       content="Do you want people to click on your search result? Learn how to write the best meta description. Including 7 characteristics and examples!"/>
             </Head>
             <Header/>
-            <Container>
+            <Container className={""}>
                 <article>
                     <section className={"uppercase text-[65px] font-gilbold p-5 border border-black border-t-0 mt-10"}>
                         <h1>Мероприятия</h1>

@@ -38,7 +38,7 @@ const Page: React.FC<PageProps> = ({ event }) => {
                 <title>{parse(title)} | Pagination Station</title>
             </Head>
             <Header />
-            <Container>
+            <Container className={""}>
                 <article>
                     <section className={"uppercase text-[65px] font-gilbold p-5 border border-black border-t-0 mt-10"}>
                         <h1>{title}</h1>

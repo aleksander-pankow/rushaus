@@ -75,9 +75,9 @@ const Categories = () => {
                                 <p>{chapter.description}</p>
                             </div>
                             <div className="link text-rhbuttons text-white font-gilbold uppercase">
-                                <a href="" title=""
+                                <Link href="" title=""
                                    className="flex flex-row items-center space-x-3"><span>→</span>
-                                    <span>Подробная информация</span></a>
+                                    <span>Подробная информация</span></Link>
                             </div>
                         </div>
                     </div>
