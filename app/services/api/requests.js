@@ -2,7 +2,7 @@ import {gql} from "@apollo/client";
 
 export const GET_EVENTS = gql`
   query getEvents($first: Int!, $after: String) {
-    events(first: $first, after: $after, where: {language: DEFAULT}) {
+    events(first: $first, after: $after, where: {language: DEFAULT, orderby: {field: STARTEVENT, order: ASC}}) {
       pageInfo {
         hasNextPage
         endCursor
@@ -58,8 +58,8 @@ export const GET_EVENT = gql`
     }
 `;
 export const GET_FEATURED_EVENTS = gql`
-  query getFeaturedEvents($count: Int!){
-    events(first: $count, where: {language: DEFAULT}) {
+  query getFeaturedEvents($count: Int!, $section: ID!){
+    events(first: $count, where: {language: DEFAULT, sectionType: $section, orderby: {field: STARTEVENT, order: ASC}}) {
       pageInfo {
         hasNextPage
         endCursor
@@ -88,11 +88,16 @@ export const GET_FEATURED_EVENTS = gql`
          }
         }
     }
+    section(id: $section, idType: DATABASE_ID) {
+            name
+            description
+            slug
+    }
   }
 `;
 export const GET_LESSONS = gql`
   query getLessons($first: Int!, $after: String) {
-    lessons(first: $first, after: $after, where: {chapterType: null}) {
+    lessons(first: $first, after: $after, where: {language: DEFAULT}) {
       pageInfo {
         hasNextPage
         endCursor
@@ -100,27 +105,52 @@ export const GET_LESSONS = gql`
       edges {
           node {
             id
-                title(format: RENDERED)
-                content(format: RENDERED)
-                lesson_fields {
-                    day
-                    excerpt
-                    place
-                    time
-                    video
-                    photo {
-                        sourceUrl(size: LARGE)
-                        altText
-                    }
-                }
-                contentTypeName
-                chapters {
-                    chapterType
-                }
+            title(format: RENDERED)
+             content(format: RENDERED)
+             lessonFields {
+             day
+             excerpt
+             place
+             time
+             video
+             photo {
+             edges {
+               node {
+                 sourceUrl(size: LARGE)
+               }
+             }
+           }
+         }
+             contentTypeName
+            
           }
         }
     }
   }
+`;
+export const GET_LESSON = gql`
+    query getLesson($slug: ID!) {
+        lesson(id: $slug, idType: SLUG) {
+            databaseId
+            title
+            content
+            slug
+            lessonFields {
+                excerpt
+                day
+                time
+                place
+                video
+                photo {
+                  edges {
+                    node {
+                      sourceUrl(size: LARGE)
+                    }
+                  }
+               }
+            }
+        }
+    }
 `;
 export const GET_FEATURED_LESSONS = gql`
   query getFeaturedLessons($count: Int!, $chapter: ID!){
@@ -156,9 +186,18 @@ export const GET_FEATURED_LESSONS = gql`
     }
   }
 `;
-export const GET_SLUGS = gql`
-            query getSlugs {
+export const GET_EVENT_SLUGS = gql`
+            query getEventSlugs {
                 events(first: 100, where: {language: DEFAULT}) {
+                    nodes {
+                        slug
+                    }
+                }
+            }
+        `;
+export const GET_LESSON_SLUGS = gql`
+            query getLessonSlugs {
+                lessons(first: 100, where: {language: DEFAULT}) {
                     nodes {
                         slug
                     }
@@ -175,3 +214,4 @@ query getCategoryInfo($category: String!) {
     }
 }`;
 export const BATCH_SIZE = 5;
+export const BATCH_HOMEPAGE_EVENTS = 10;

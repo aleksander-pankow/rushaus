@@ -1,12 +1,12 @@
 import {useQuery} from "@apollo/client";
-import { GET_FEATURED_EVENTS } from "@/app/services/api/requests";
+import {BATCH_HOMEPAGE_EVENTS, GET_FEATURED_EVENTS} from "@/app/services/api/requests";
 import Card from "@/components/Card/Card";
 import Link from "next/link";
 import { EventModel, EventFields } from "@/app/models/EventModel";
 
 const Events = () => {
     const {data, loading, error} = useQuery(GET_FEATURED_EVENTS, {
-        variables: {count: 2},
+        variables: {count: BATCH_HOMEPAGE_EVENTS, section: 30},
         notifyOnNetworkStatusChange: true,
     });
 
@@ -75,16 +75,14 @@ const Events = () => {
                 <div className="md:aspect-square">
                     <div
                         className="relative flex h-full border border-black group/item p-4 sm:p-[30px] group/item items-center justify-center max-sm:hover:bg-theme-red max-sm:focus:bg-theme-red">
-                        <h4 className="font-gilbold uppercase text-rhregular lg:text-rhtitle text-center">Культура</h4>
+                        <h4 className="font-gilbold uppercase text-rhregular lg:text-rhtitle text-center">{data.section.name}</h4>
                         <div
                             className="group/details flex justify-between flex-col transition ease-in-out duration-300 opacity-0 lg:group-hover/item:opacity-100 hover:bg-theme-red w-full h-full top-0 left-0 absolute p-[30px]">
                             <div className="text-base text-white space-y-2">
-                                <p>Русский колледж открыт для детей и подростков, которые хотят научиться чему-то
-                                    новому, узнать больше о русской культуре. Все материалы и методики разработаны
-                                    педагогами, чтобы обеспечить максимальную эффективность обучения.</p>
+                                <p>{data.section.description}</p>
                             </div>
                             <div className="link text-rhbuttons text-white font-gilbold uppercase">
-                                <Link href="/pages/events/" className="flex flex-row items-center space-x-3">
+                                <Link href="/events/" className="flex flex-row items-center space-x-3">
                                     <span>→</span>
                                     <span>Подробная информация</span>
                                 </Link>
@@ -94,7 +92,7 @@ const Events = () => {
                 </div>
 
                 {/* Mapping through featuredEventsWithSourceUrl */}
-                {featuredEventsWithSourceUrl.map((event: any) => (
+                {featuredEventsWithSourceUrl.slice(0, 2).map((event: any) => (
                     <Card
                         key={event.databaseId}
                         title={event.title}
@@ -108,7 +106,7 @@ const Events = () => {
             </div>
             <div
                 className="flex text-base md:text-rhbuttons text-black font-gilbold uppercase mt-5 justify-center md:justify-end">
-                <Link href="/pages/events" className="space-x-3 h-full inline-flex px-5">
+                <Link href="/events" className="space-x-3 h-full inline-flex px-5">
                     <span>→</span>
                     <span>Другие события</span>
                 </Link>

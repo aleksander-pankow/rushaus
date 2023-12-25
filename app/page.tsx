@@ -8,6 +8,7 @@ import {ApolloProvider} from "@apollo/client";
 import {client} from "@/app/lib/apollo-client";
 import {useEffect, useState} from "react";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import Container from "@/components/Container";
 import SplashScreen from "@/components/SplashScreen";
 import styles from "./styles/animations.module.css";
@@ -25,6 +26,7 @@ export default function Home() {
     return (
         <ApolloProvider client={client}>
             {loading ? <SplashScreen className={styles['animate-fadeIn']} /> :
+                <>
                 <Container className={loading ? styles['animate-fadeOut'] : styles['animate-fadeIn']}>
                     <Header/>
                     <Slider/>
@@ -33,6 +35,8 @@ export default function Home() {
                     <Categories/>
                     <Social/>
                 </Container>
+                <Footer />
+                </>
             }
         </ApolloProvider>
     )

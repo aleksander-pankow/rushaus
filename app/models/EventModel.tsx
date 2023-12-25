@@ -5,6 +5,7 @@ export interface EventModel<T> {
     content: string;
     slug: string;
     eventFields: T;
+    section: SectionInfo;
 }
 
 export interface EventFields {
@@ -21,4 +22,9 @@ export interface EventFields {
             };
         }[];
     };
+}
+export interface SectionInfo {
+    description: string;
+    name: string;
+    slug: string;
 }

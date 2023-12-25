@@ -1,116 +1,97 @@
-import '@/app/globals.css';
-import Link from "next/link";
-import Head from "next/head";
-import parse from "html-react-parser";
-import { gql, ApolloQueryResult } from "@apollo/client";
-import { client } from "@/app/lib/apollo-client";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import Container from "@/components/Container";
-import ClientOnly from "@/components/ClientOnly";
-import Social from "@/components/Social";
-import React from "react";
-import { GET_EVENT, GET_SLUGS } from "@/app/services/api/requests";
+import React from 'react';
+import { GET_LESSON, GET_LESSON_SLUGS } from '@/app/services/api/requests';
+import { ApolloQueryResult } from '@apollo/client';
+import { client } from '@/app/lib/apollo-client';
 
-interface PageProps {
-    event: {
-        title: string;
-        content: string;
-        event_fields: {
-            date: string;
-            time: string;
-            excerpt: string;
-            place: string;
-            video: string;
-            photo: {
-                sourceUrl: string;
-            }[];
-        };
-    };
+import Head from 'next/head';
+import parse from 'html-react-parser';
+
+import '@/app/globals.css';
+
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import Container from '@/components/Container';
+import ClientOnly from '@/components/ClientOnly';
+import Social from '@/components/Social';
+import BannerList from '@/components/BannerList';
+import PostHeader from '@/components/Post/PostHeader';
+import PostMeta from '@/components/Post/PostMeta';
+import PostMedia from '@/components/Post/PostMedia';
+
+//Model
+import {LessonFields, LessonModel} from "@/app/models/LessonModel"; // Update the path
+
+interface PostProps {
+    lesson: LessonModel<LessonFields>;
 }
 
-const Page: React.FC<PageProps> = ({ event }) => {
-    const { title, content, event_fields } = event;
-    const { date, time, excerpt, place, video, photo } = event_fields || {};
-    console.log(event);
+const transformLessonData = (lesson: LessonModel<LessonFields>) => {
+    const {lessonFields: fields, ...rest} = lesson;
+    let image = '/images/test/thumb.png';
+
+    if (fields.photo && fields.photo.edges && fields.photo.edges.length > 0 && fields.photo.edges[0].node.sourceUrl) {
+        image = fields.photo.edges[0].node.sourceUrl;
+    }
+
+    // Process other fields if needed...
+
+    return {
+        ...rest,
+        image,
+        days: fields.day || [], // Assuming day is an array of strings
+        excerpt: fields.excerpt || null,
+        place: fields.place || null,
+        time: fields.time || null,
+        video: fields.video || null,
+        type: 'lesson',
+    };
+};
+
+
+
+const Post: React.FC<PostProps> = ({ lesson }) => {
+    const { title, content, lessonFields } = lesson;
+    const { days, time, excerpt, place, video, image } = transformLessonData(lesson);
+
     return (
         <>
+            {/* Head, Header, and other common components */}
             <Head>
-                <title>{parse(title)} | Pagination Station</title>
+                <title>{title} | #RUSHAUS</title>
             </Head>
             <Header />
-            <Container className={""}>
+            <Container className="">
                 <article>
-                    <section className={"uppercase text-[65px] font-gilbold p-5 border border-black border-t-0 mt-10"}>
-                        <h1>{title}</h1>
-                    </section>
-                    <section className={"flex flex-col lg:flex-row border border-black border-t-0"}>
+                    {/* Title section */}
+                    <PostHeader title={title} />
+
+                    {/* Content section */}
+                    <section className="flex flex-col lg:flex-row border border-black border-t-0">
+                        {/* Main content */}
                         <div className="basis-full lg:basis-3/4 border-black border-r">
-                            <div className={"relative border-black border-b"}>
-                                {photo && <img src={photo[0]?.sourceUrl} className={"w-full aspect-[2.39/1] object-cover p-5"} alt={""} />} {/* Assuming photo exists */}
-                                <div className={"absolute flex left-0 bottom-10 p-5 mx-5 w-auto z-10 backdrop-blur-md bg-white/30"}>
-                                    <div className={"date"}>{date} {time}</div>
-                                    <div className={"adress"}>Berlin</div>
-                                    <div className={"place"}>{place}</div>
-                                </div>
-                            </div>
-                            <ClientOnly className={"space-y-2 p-5"}>
-                                {parse(content)}
-                            </ClientOnly>
+                            <PostMedia photo={[image]} />
+                            <PostMeta date={""} place={place} time={time} />
+                            <ClientOnly className="space-y-2 p-5">{parse(content)}</ClientOnly>
                         </div>
+
+                        {/* Banner links section */}
                         <div className="basis-full lg:basis-1/4 p-5 space-y-5">
-                            {/* Banner links */}
-                            <div className={"relative overflow-hidden"}>
-                                <a hrefLang={""} title={""}>
-                                    <img
-                                        src="/images/banners/banner_1.png"
-                                        alt="My Image"
-                                        className="w-full hover:scale-110 transition duration-500"
-                                    />
-                                </a>
-                            </div>
-                            <div className={"relative overflow-hidden"}>
-                                <a hrefLang={""} title={""}>
-                                    <img
-                                        src="/images/banners/banner_2.png"
-                                        alt="My Image"
-                                        className="w-full hover:scale-110 transition duration-500"
-                                    />
-                                </a>
-                            </div>
-                            <div className={"relative overflow-hidden"}>
-                                <a hrefLang={""} title={""}>
-                                    <img
-                                        src="/images/banners/banner_3.png"
-                                        alt="My Image"
-                                        className="w-full hover:scale-110 transition duration-500"
-                                    />
-                                </a>
-                            </div>
-                            <div className={"relative overflow-hidden"}>
-                                <a hrefLang={""} title={""}>
-                                    <img
-                                        src="/images/banners/banner_4.png"
-                                        alt="My Image"
-                                        className="w-full hover:scale-110 transition duration-500"
-                                    />
-                                </a>
-                            </div>
+                            <BannerList />
                         </div>
                     </section>
                 </article>
+
+                {/* Social, Footer */}
                 <Social />
             </Container>
             <Footer />
         </>
     );
-}
+};
 
 export async function getStaticPaths() {
     const slugs: string[] = await getSlugs();
-    const paths = slugs.map((slug: string) => {
-        return { params: { slug } };
-    });
+    const paths = slugs.map((slug: string) => ({ params: { slug } }));
 
     return {
         paths,
@@ -120,16 +101,15 @@ export async function getStaticPaths() {
 
 async function getSlugs() {
     const { data } = await client.query({
-        query: GET_SLUGS,
+        query: GET_LESSON_SLUGS,
     });
 
-    return data.events.nodes.map((node: { slug: string }) => node.slug);
+    return data.lessons.nodes.map((node: { slug: string }) => node.slug);
 }
-
 
 export async function getStaticProps(context: { params: { slug: string } }) {
     const { data }: ApolloQueryResult<any> = await client.query({
-        query: GET_EVENT,
+        query: GET_LESSON,
         variables: {
             slug: context.params.slug,
         },
@@ -137,10 +117,9 @@ export async function getStaticProps(context: { params: { slug: string } }) {
 
     return {
         props: {
-            event: data.event,
+            lesson: data.lesson,
         },
     };
 }
 
-export default Page;
-
+export default Post;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { GET_EVENT, GET_SLUGS } from '@/app/services/api/requests';
+import { GET_EVENT, GET_EVENT_SLUGS } from '@/app/services/api/requests';
 import { ApolloQueryResult } from '@apollo/client';
 import { client } from '@/app/lib/apollo-client';
 
@@ -94,7 +94,7 @@ export async function getStaticPaths() {
 
 async function getSlugs() {
     const { data } = await client.query({
-        query: GET_SLUGS,
+        query: GET_EVENT_SLUGS,
     });
 
     return data.events.nodes.map((node: { slug: string }) => node.slug);

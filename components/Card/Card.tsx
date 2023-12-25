@@ -63,7 +63,7 @@ const Card: React.FC<CardProps> = ({ title, description, slug, date, image, type
                         <div>
                             {/* Card Date (for event and lesson types) */}
                             <h4 className="max-md:mt-2 font-gilbold uppercase text-rhregular lg:text-rhtitle">
-                                <DateComponent dateString={date} formatString={"d MMMM yyyy"} />
+                                {date && <DateComponent dateString={date} formatString={"d MMMM yyyy"} />}
                             </h4>
                         </div>
                     )}
