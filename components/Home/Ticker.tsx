@@ -24,7 +24,7 @@ export default function TickerTop(){
             <div className="relative flex overflow-x-hidden border border-black">
                 <div className="py-3 animate-marquee whitespace-nowrap">
                     {eventsList.map((event: any) => (
-                        <a href={`/events/${event.slug}`} className="after:content-['•'] hover:after:text-black after:mx-2 hover:text-red-700" title="">{event.title}</a>
+                        <a key={event.id} href={`/events/${event.slug}`} className="after:content-['•'] hover:after:text-black after:mx-2 hover:text-red-700" title="">{event.title}</a>
                     ))}
                 </div>
 
