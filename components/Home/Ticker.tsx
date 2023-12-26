@@ -1,6 +1,7 @@
 "use client"
 import {useQuery} from "@apollo/client";
 import {BATCH_HOMEPAGE_EVENTS, GET_FEATURED_EVENTS} from "@/app/services/api/requests";
+import Link from "next/link";
 
 export default function TickerTop(){
     const {data, loading, error} = useQuery(GET_FEATURED_EVENTS, {
@@ -24,13 +25,13 @@ export default function TickerTop(){
             <div className="relative flex overflow-x-hidden border border-black">
                 <div className="py-3 animate-marquee whitespace-nowrap">
                     {eventsList.map((event: any) => (
-                        <a key={event.id} href={`/events/${event.slug}`} className="after:content-['•'] hover:after:text-black after:mx-2 hover:text-red-700" title="">{event.title}</a>
+                        <Link key={event.databaseId} href={`/events/${event.slug}`} className="after:content-['•'] hover:after:text-black after:mx-2 hover:text-red-700" title="">{event.title}</Link>
                     ))}
                 </div>
 
                 <div className="absolute top-0 py-3 animate-marquee2 whitespace-nowrap">
                     {eventsList.map((event: any) => (
-                        <a href={`/events/${event.slug}`} className="after:content-['•'] hover:after:text-black after:mx-2 hover:text-red-700" title="">{event.title}</a>
+                        <Link key={event.databaseId} href={`/events/${event.slug}`} className="after:content-['•'] hover:after:text-black after:mx-2 hover:text-red-700" title="">{event.title}</Link>
                     ))}
                 </div>
             </div>
