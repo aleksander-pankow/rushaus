@@ -1,10 +1,54 @@
 "use client"
 import {useState} from 'react'
 import Link from "next/link";
+import { Dropdown } from 'flowbite-react';
+import { HiOutlineX } from "react-icons/hi";
 
 export default function Header() {
 
-    const [state, setState] = useState(false)
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const toggleMenu = () => setIsMenuOpen((prevState) => !prevState);
+
+    function Menu() {
+        return(
+            <div className="navbar-mobile fixed top-0 left-0 w-full h-full bg-white z-10 p-5">
+                <div className="flex items-start flex-col gap-4 font-gilbold uppercase text-base">
+                    <div className={"flex justify-between w-full content-center mb-5"}>
+                        <Link href="/" className="flex flex-none items-center" onClick={toggleMenu}>
+                            <img src={"/images/rushaus-logo.svg"} className="h-4 mr-3 inline-block" alt=""/>
+                        </Link>
+                        <button data-collapse-toggle="navbar-default" type="button"
+                                className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                                aria-controls="navbar-default" aria-expanded="false"
+                                onClick={toggleMenu}>
+                            <span className="sr-only">Close main menu</span>
+                            <HiOutlineX className={"w-6 h-6 text-black"} />
+                        </button>
+                    </div>
+
+                    <Link href="/events/"
+                          className="text-center block dark:text-white md:dark:text-blue-500"
+                          >Культура</Link>
+                    <Dropdown label="ОБРАЗОВАНИЕ"  inline>
+                        <Dropdown.Item as="a" href="/lessons/">
+                            Образовательный центр
+                        </Dropdown.Item>
+                        <Dropdown.Item as="a" href="#">
+                            Художественная мастерская
+                        </Dropdown.Item>
+                        <Dropdown.Item as="a" href="#">
+                            Студии и Клубы
+                        </Dropdown.Item>
+                    </Dropdown>
+                    <Link href="#"
+                          className="text-center block dark:text-white md:dark:text-blue-500"
+                          >О нас</Link>
+                </div>
+
+
+            </div>
+        )
+    }
 
     return (
         <nav className="px-5 container mx-auto bg-white border-gray-200 dark:bg-gray-900 pt-5">
@@ -27,13 +71,15 @@ export default function Header() {
                                   d="M8.509 5.75c0-1.493.394-2.96 1.144-4.25h-.081a8.5 8.5 0 1 0 7.356 12.746A8.5 8.5 0 0 1 8.509 5.75Z"/>
                         </svg>
                     </Link>
+
                 </div>
                 <Link href="/" className="flex flex-none items-center">
                     <img src={"/images/rushaus-logo.svg"} className="h-4 mr-3 inline-block" alt=""/>
                 </Link>
                 <button data-collapse-toggle="navbar-default" type="button"
                         className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                        aria-controls="navbar-default" aria-expanded="false">
+                        aria-controls="navbar-default" aria-expanded="false"
+                        onClick={toggleMenu}>
                     <span className="sr-only">Open main menu</span>
                     <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                          viewBox="0 0 17 14">
@@ -41,6 +87,7 @@ export default function Header() {
                               d="M1 1h15M1 7h15M1 13h15"/>
                     </svg>
                 </button>
+                {isMenuOpen && <Menu />}
                 <div className="hidden lg:block  flex-auto" id="navbar-default">
                     <ul className="font-gilbold text-base uppercase text-black flex flex-col p-4 md:p-0 mt-4 bg-gray-50 md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                         <li className="flex-1">
@@ -124,3 +171,4 @@ export default function Header() {
         </nav>
     )
 }
+

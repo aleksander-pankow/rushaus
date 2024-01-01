@@ -59,8 +59,8 @@ export default function EventsList() {
                 dataLength={events.length}
                 next={fetchMoreEvents}
                 hasMore={haveMoreEvents}
-                loader={<p>Loading...</p>}
-                endMessage={<p>✅ All posts loaded.</p>}
+                loader={<p>Загрузка...</p>}
+                endMessage={<p>Весь контент загружен.</p>}
             >
                 {events.map((event: any) => {
                     return (
@@ -81,13 +81,13 @@ export default function EventsList() {
                                     </svg>
                                     {event.date && <DateComponent dateString={event.date} formatString={"d MMMM yyyy"} />}
                                 </div>
-                                <div className={"inline-flex flex-1 px-5 py-3 gap-3 border-x border-black"}>
+                                <div className={"inline-flex flex-1 px-5 py-3 gap-3 max-lg:border-y lg:border-x border-black"}>
                                     <svg className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                                         <path stroke="currentColor" strokeLinejoin="round" strokeWidth="2" d="M10 6v4l3.276 3.276M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
                                     </svg>
                                     {event.time}
                                 </div>
-                                <div className={"inline-flex flex-1 px-5 py-3 gap-3"}>
+                                <div className={"inline-flex flex-1 px-5 py-3 gap-3 max-lg:border-b max-lg:border-black"}>
                                     <svg className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 21">
                                         <g stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
                                             <path d="M8 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
@@ -96,7 +96,7 @@ export default function EventsList() {
                                     </svg>
                                     {event.place}
                                 </div>
-                                <Link href={"/events/"+event.slug} title={""} className={"inline-flex flex-none  px-5 py-3 border-l border-black gap-3 hover:bg-theme-red hover:text-white"}>
+                                <Link href={"/events/"+event.slug} title={""} className={"inline-flex flex-none  px-5 py-3 lg:border-l border-black gap-3 hover:bg-theme-red hover:text-white"}>
                                     <span>→</span>
                                     <span>Подробнее</span>
                                 </Link>

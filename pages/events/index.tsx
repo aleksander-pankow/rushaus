@@ -21,7 +21,7 @@ export default function Events() {
             <Header/>
             <Container className={""}>
                 <article>
-                    <section className={"uppercase text-[65px] font-gilbold p-5 border border-black border-t-0 mt-10"}>
+                    <section className={"uppercase text-3xl xl:text-[65px] font-gilbold p-5 border border-black border-t-0 mt-10"}>
                         <h1>Мероприятия</h1>
                     </section>
                     <section className={"flex flex-col lg:flex-row border border-black border-t-0"}>
