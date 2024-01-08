@@ -10,7 +10,7 @@ export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const toggleMenu = () => setIsMenuOpen((prevState) => !prevState);
     const {systemTheme, theme, setTheme} = useTheme();
-    const currentTheme = theme === 'system' ? systemTheme : theme;
+    const currentTheme = theme === 'light' ? systemTheme : theme;
 
     const [scrolled, setScrolled] = useState(false);
 
