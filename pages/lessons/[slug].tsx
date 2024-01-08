@@ -1,5 +1,5 @@
 import React from 'react';
-import { GET_LESSON, GET_LESSON_SLUGS } from '@/app/services/api/requests';
+import { GET_LESSON, GET_LESSON_SLUGS } from '@/app/services/api/queries';
 import { ApolloQueryResult } from '@apollo/client';
 import { client } from '@/app/lib/apollo-client';
 
@@ -70,7 +70,7 @@ const Post: React.FC<PostProps> = ({ lesson }) => {
                         {/* Main content */}
                         <div className="basis-full lg:basis-3/4 border-black border-r">
                             <PostMedia photo={[image]} />
-                            <PostMeta date={""} place={place} time={time} />
+                            <PostMeta days={days} place={place} time={time} />
                             <ClientOnly className="space-y-2 p-5">{parse(content)}</ClientOnly>
                         </div>
 

@@ -215,3 +215,13 @@ query getCategoryInfo($category: String!) {
 }`;
 export const BATCH_SIZE = 5;
 export const BATCH_HOMEPAGE_EVENTS = 10;
+
+export const GET_ABOUT_US = gql`
+  query About {
+      post(id: "235", idType: DATABASE_ID) {
+        title(format: RENDERED)
+        content(format: RENDERED)
+        excerpt(format: RENDERED)
+      }
+  }
+`;

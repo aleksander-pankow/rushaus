@@ -1,7 +1,9 @@
-import { useQuery, gql } from "@apollo/client";
+"use client";
+import { useQuery } from "@apollo/client";
 import Link from "next/link";
+import Image from 'next/image';
 import InfiniteScroll from "react-infinite-scroll-component";
-import { GET_EVENTS, BATCH_SIZE } from "@/app/services/api/requests";
+import { GET_EVENTS, BATCH_SIZE } from "@/app/services/api/queries";
 import DateComponent from "@/components/Date/Date";
 import { EventModel, EventFields } from "@/app/models/EventModel";
 export default function EventsList() {
@@ -15,15 +17,15 @@ export default function EventsList() {
     }
 
     if (error) {
-        return <p>Sorry, an error has occurred. Please reload the page.</p>;
+        return <p>Возникла техническая ошибка. Пожалуйста попробуйте позже.</p>;
     }
 
     if (!data && loading) {
-        return <p>Loading...</p>;
+        return <p>Загрузка...</p>;
     }
 
     if (!data?.events.edges.length) {
-        return <p>No posts have been published.</p>;
+        return <p>К сожалению, в этом разделе еще нет опубликованного контента.</p>;
     }
 
     const DEFAULT_IMAGE_URL = '/images/test/thumb.png'; // Replace with your default image URL
@@ -56,6 +58,7 @@ export default function EventsList() {
 
     return (
             <InfiniteScroll
+                scrollThreshold={0.5}
                 dataLength={events.length}
                 next={fetchMoreEvents}
                 hasMore={haveMoreEvents}
@@ -67,7 +70,14 @@ export default function EventsList() {
                         <div key={event.databaseId} className={"flex flex-col border border-black mb-5"}>
                             <div className={"flex flex-col lg:flex-row"}>
                                 <div className={"inline-flex basis-1/2"} >
-                                    <img src={event.image} alt={event.title} className={"object-cover aspect-[16/9]"} />
+                                    <Image
+                                        src={event.image}
+                                        alt={event.title}
+                                        className={"object-cover aspect-[16/9]"}
+                                        width={1920} // Set width and height for optimal rendering
+                                        height={1080}
+                                        loading="lazy" // Enable lazy loading
+                                    />
                                 </div>
                                 <div className={"inline-flex basis-1/2 flex-col p-5 space-y-5"} >
                                     <h4 className={"text-2xl uppercase font-gilbold"}>{event.title}</h4>

@@ -1,16 +1,34 @@
-"use client"
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import Link from "next/link";
-import { Dropdown } from 'flowbite-react';
-import { HiOutlineX } from "react-icons/hi";
+import {Dropdown} from 'flowbite-react';
+import {HiOutlineX} from "react-icons/hi";
+import {useTheme} from "next-themes";
+import Container from "@/components/Container";
 
 export default function Header() {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const toggleMenu = () => setIsMenuOpen((prevState) => !prevState);
+    const {systemTheme, theme, setTheme} = useTheme();
+    const currentTheme = theme === 'system' ? systemTheme : theme;
+
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const isScrolled = window.scrollY > 100; // Change 100 to your preferred scroll position
+            setScrolled(isScrolled);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
 
     function Menu() {
-        return(
+        return (
             <div className="navbar-mobile fixed top-0 left-0 w-full h-full bg-white z-10 p-5">
                 <div className="flex items-start flex-col gap-4 font-gilbold uppercase text-base">
                     <div className={"flex justify-between w-full content-center mb-5"}>
@@ -22,14 +40,14 @@ export default function Header() {
                                 aria-controls="navbar-default" aria-expanded="false"
                                 onClick={toggleMenu}>
                             <span className="sr-only">Close main menu</span>
-                            <HiOutlineX className={"w-6 h-6 text-black"} />
+                            <HiOutlineX className={"w-6 h-6 text-black"}/>
                         </button>
                     </div>
 
                     <Link href="/events/"
                           className="text-center block dark:text-white md:dark:text-blue-500"
-                          >Культура</Link>
-                    <Dropdown label="ОБРАЗОВАНИЕ"  inline>
+                    >Культура</Link>
+                    <Dropdown label="ОБРАЗОВАНИЕ" inline>
                         <Dropdown.Item as="a" href="/lessons/">
                             Образовательный центр
                         </Dropdown.Item>
@@ -40,9 +58,9 @@ export default function Header() {
                             Студии и Клубы
                         </Dropdown.Item>
                     </Dropdown>
-                    <Link href="#"
+                    <Link href="/about"
                           className="text-center block dark:text-white md:dark:text-blue-500"
-                          >О нас</Link>
+                    >О нас</Link>
                 </div>
 
 
@@ -51,12 +69,16 @@ export default function Header() {
     }
 
     return (
-        <nav className="px-5 container mx-auto bg-white border-gray-200 dark:bg-gray-900 pt-5">
-
-            <div className="flex flex-wrap justify-between mx-auto">
+        <nav
+            className={`w-full z-20 px-5 bg-white border-gray-200 dark:backdrop-blur-md dark:bg-gray-900/80 py-3 ${
+                scrolled ? 'fixed top-0 left-0 right-0 z-50' : 'static'
+            }`}
+        >
+            <Container className={""}>
+                <div className="flex flex-wrap justify-between mx-auto">
                 <div className={"inline-flex"}>
                     <Link href={""} title={""}
-                       className={"inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 hover:cursor-pointer focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"}>
+                          className={"inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 hover:cursor-pointer focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                              className="w-5 h-5 text-gray-500 dark:text-white">
                             <path
@@ -64,7 +86,7 @@ export default function Header() {
                         </svg>
                     </Link>
                     <Link href={""} title={""}
-                       className={"inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 hover:cursor-pointer focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"}>
+                          className={"inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 hover:cursor-pointer focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"}>
                         <svg className="w-5 h-5 text-gray-500 dark:text-white" aria-hidden="true"
                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
                             <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
@@ -74,7 +96,24 @@ export default function Header() {
 
                 </div>
                 <Link href="/" className="flex flex-none items-center">
-                    <img src={"/images/rushaus-logo.svg"} className="h-4 mr-3 inline-block" alt=""/>
+                    <svg id="Layer_1" className={`h-4 mr-3 inline-block ${theme === 'dark' ? 'fill-white' : 'fill-black'}`} data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 241.67 34.94">
+                        <path className="cls-1"
+                              d="M23.84,14.38l-.77,5.22H26.4v5.88H22.1l-1.44,9.17H14l1.5-9.17H9.94L8.49,34.65H1.88l1.45-9.17H0V19.6H4.3l.77-5.22H1.69V8.54H6L7.34,0H14L12.6,8.54h5.6L19.55,0h6.56l-1.3,8.54h3.33v5.84Zm-12.16,0-.82,5.22h5.6l.77-5.22Z"/>
+                        <path className="cls-1"
+                              d="M52.22,34.65,45.51,21H40.68v13.7H34V.29H47.44c7,0,11.15,4.78,11.15,10.52a9.26,9.26,0,0,1-6.28,9L60,34.65ZM47,6.27H40.68v9.08H47c3,0,4.88-1.88,4.88-4.54S50,6.27,47,6.27Z"/>
+                        <path className="cls-1"
+                              d="M77.16,34.94c-7,0-12.64-4.77-12.64-12.06V.29h6.71V22.64c0,3.95,2.31,6.32,5.93,6.32s6-2.37,6-6.32V.29h6.66V22.88C89.81,30.17,84.21,34.94,77.16,34.94Z"/>
+                        <path className="cls-1"
+                              d="M106.26,34.94c-5.21,0-9.17-1.11-12.55-4.53l4.35-4.35c2.17,2.17,5.11,2.9,8.3,2.9,4,0,6.08-1.5,6.08-4.25a3.81,3.81,0,0,0-1.06-2.89,5.11,5.11,0,0,0-3-1.21L104.19,20a11.57,11.57,0,0,1-6.66-2.85,9.08,9.08,0,0,1-2.46-6.76C95.07,4.3,99.6,0,107,0c4.72,0,8.15,1.16,11.1,4l-4.25,4.2c-2.17-2.08-4.78-2.37-7-2.37-3.57,0-5.31,2-5.31,4.34a3.32,3.32,0,0,0,1,2.47A6,6,0,0,0,105.73,14l4.06.58c3.13.43,5.11,1.3,6.56,2.65C118.18,19,119,21.48,119,24.52,119,31.18,113.45,34.94,106.26,34.94Z"/>
+                        <path className="cls-1"
+                              d="M143.18,34.65V20.27H131.55V34.65h-6.71V.29h6.71v14h11.63V.29h6.71V34.65Z"/>
+                        <path className="cls-1"
+                              d="M177,34.65l-2-6.08H162.72l-2.07,6.08h-7L166.15.29h5.26L184,34.65Zm-8-24.23L164.6,22.93h8.55Z"/>
+                        <path className="cls-1"
+                              d="M199.83,34.94c-7,0-12.64-4.77-12.64-12.06V.29h6.7V22.64c0,3.95,2.32,6.32,5.94,6.32s6-2.37,6-6.32V.29h6.66V22.88C212.48,30.17,206.88,34.94,199.83,34.94Z"/>
+                        <path className="cls-1"
+                              d="M228.93,34.94c-5.21,0-9.17-1.11-12.55-4.53l4.35-4.35c2.17,2.17,5.11,2.9,8.3,2.9,3.95,0,6.08-1.5,6.08-4.25a3.81,3.81,0,0,0-1.06-2.89,5.11,5.11,0,0,0-3-1.21L226.85,20a11.63,11.63,0,0,1-6.66-2.85,9.08,9.08,0,0,1-2.46-6.76c0-6.12,4.54-10.42,12-10.42,4.73,0,8.16,1.16,11.1,4l-4.24,4.2a9.56,9.56,0,0,0-7.05-2.37c-3.57,0-5.31,2-5.31,4.34a3.35,3.35,0,0,0,1,2.47A6.05,6.05,0,0,0,228.4,14l4,.58c3.14.43,5.12,1.3,6.57,2.65,1.83,1.74,2.65,4.25,2.65,7.29C241.67,31.18,236.12,34.94,228.93,34.94Z"/>
+                    </svg>
                 </Link>
                 <button data-collapse-toggle="navbar-default" type="button"
                         className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -87,49 +126,49 @@ export default function Header() {
                               d="M1 1h15M1 7h15M1 13h15"/>
                     </svg>
                 </button>
-                {isMenuOpen && <Menu />}
+                {isMenuOpen && <Menu/>}
                 <div className="hidden lg:block  flex-auto" id="navbar-default">
-                    <ul className="font-gilbold text-base uppercase text-black flex flex-col p-4 md:p-0 mt-4 bg-gray-50 md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <ul className="font-gilbold text-base uppercase text-black flex flex-col p-4 md:p-0 mt-4 bg-gray-50 md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-transparent ">
                         <li className="flex-1">
                             <Link href="#"
-                               className="text-center block py-2 px-2 border-r-0  hover:text-white hover:bg-theme-red border border-black dark:text-white md:dark:text-blue-500"
-                               aria-current="page">Культура</Link>
+                                  className="text-center block py-2 px-2 border-r-0  hover:text-white hover:bg-theme-red border border-black dark:border-white dark:text-white md:dark:text-blue-500"
+                                  aria-current="page">Культура</Link>
                         </li>
                         <li className="flex-1 relative group">
                             <Link href="#"
-                               className="text-center block py-2 px-2 border-r-0  hover:text-white hover:bg-theme-blue border border-black dark:text-white md:dark:text-blue-500"
-                               aria-current="page">Образование</Link>
+                                  className="text-center block py-2 px-2 border-r-0  hover:text-white hover:bg-theme-blue border border-black dark:text-white md:dark:text-blue-500"
+                                  aria-current="page">Образование</Link>
                             <div
-                                className={"dropdown absolute bg-white w-[calc(100%+1px)] hidden group-hover:block transition ease-in-out duration-300"}>
+                                className={"dropdown z-10 absolute bg-white w-[calc(100%+1px)] hidden group-hover:block transition ease-in-out duration-300"}>
                                 <ul>
                                     <li className="flex-1">
                                         <Link href="#"
-                                           className="text-center block py-2 px-2 border-t-0 border-b-0 hover:text-white hover:bg-theme-blue border border-black dark:text-white md:dark:text-blue-500"
-                                           aria-current="page">Образовательный центр</Link>
+                                              className="text-center block py-2 px-2 border-t-0 border-b-0 hover:text-white hover:bg-theme-blue border border-black dark:text-white md:dark:text-blue-500"
+                                              aria-current="page">Образовательный центр</Link>
                                     </li>
                                     <li className="flex-1">
                                         <Link href="#"
-                                           className="text-center block py-2 px-2  hover:text-white hover:bg-theme-yellow border border-black dark:text-white md:dark:text-blue-500"
-                                           aria-current="page">Художественная мастерская</Link>
+                                              className="text-center block py-2 px-2  hover:text-white hover:bg-theme-yellow border border-black dark:text-white md:dark:text-blue-500"
+                                              aria-current="page">Художественная мастерская</Link>
                                     </li>
                                     <li className="flex-1">
                                         <Link href="#"
-                                           className="text-center block py-2 px-2 border-t-0  hover:text-white hover:bg-theme-green border border-black dark:text-white md:dark:text-blue-500"
-                                           aria-current="page">Студии и Клубы</Link>
+                                              className="text-center block py-2 px-2 border-t-0  hover:text-white hover:bg-theme-green border border-black dark:text-white md:dark:text-blue-500"
+                                              aria-current="page">Студии и Клубы</Link>
                                     </li>
                                 </ul>
                             </div>
                         </li>
 
                         <li className="flex-1">
-                            <Link href="#"
-                               className="text-center block py-2 px-2 hover:text-white hover:bg-theme-gray border border-black dark:text-white md:dark:text-blue-500"
-                               aria-current="page">О нас</Link>
+                            <Link href="/about"
+                                  className="text-center block py-2 px-2 hover:text-white hover:bg-theme-gray border border-black dark:text-white md:dark:text-blue-500"
+                                  aria-current="page">О нас</Link>
                         </li>
                         <li className="flex-none relative group">
                             <Link href="#"
-                               className="text-center block py-2 px-2  hover:text-white hover:bg-theme-yellow border border-black border-x-0 dark:text-white md:dark:text-blue-500"
-                               aria-current="page">
+                                  className="text-center block py-2 px-2  hover:text-white hover:bg-theme-yellow border border-black border-x-0 dark:text-white md:dark:text-blue-500"
+                                  aria-current="page">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                                      className="w-6 h-6 text-black dark:text-white">
                                     <path
@@ -141,33 +180,53 @@ export default function Header() {
                                 <ul>
                                     <li className="flex-1">
                                         <Link href="#"
-                                           className="text-center block py-2 px-2 border-t-0 border-b-0 hover:text-white hover:bg-theme-blue border border-black dark:text-white md:dark:text-blue-500"
-                                           aria-current="page">РУ</Link>
+                                              className="text-center block py-2 px-2 border-t-0 border-b-0 hover:text-white hover:bg-theme-blue border border-black dark:text-white md:dark:text-blue-500"
+                                              aria-current="page">РУ</Link>
                                     </li>
                                     <li className="flex-1">
                                         <Link href="#"
-                                           className="text-center block py-2 px-2  hover:text-white hover:bg-theme-blue border border-black dark:text-white md:dark:text-blue-500"
-                                           aria-current="page">DE</Link>
+                                              className="text-center block py-2 px-2  hover:text-white hover:bg-theme-blue border border-black dark:text-white md:dark:text-blue-500"
+                                              aria-current="page">DE</Link>
                                     </li>
                                 </ul>
                             </div>
                         </li>
                         <li className="flex-none">
-                            <Link href="#"
-                               className="text-center block py-2 px-2 hover:text-white hover:bg-theme-yellow border border-black dark:text-white md:dark:text-blue-500"
-                               aria-current="page">
-                                <svg className="w-6 h-6 text-black dark:text-white" aria-hidden="true"
-                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
-                                    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
-                                          strokeWidth="2"
-                                          d="M8.509 5.75c0-1.493.394-2.96 1.144-4.25h-.081a8.5 8.5 0 1 0 7.356 12.746A8.5 8.5 0 0 1 8.509 5.75Z"/>
-                                </svg>
-                            </Link>
+                            <button
+                                onClick={() => theme === 'dark' ? setTheme('light') : setTheme('dark')}
+                                className="text-center block py-2 px-2 hover:text-white hover:bg-theme-yellow border border-black dark:text-white"
+                            >
+                                {theme === 'dark' ? (
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        strokeWidth={1.5}
+                                        stroke="currentColor"
+                                        className="w-6 h-6"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+                                        />
+                                    </svg>
+                                ) : (
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                         strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                        <path strokeLinecap="round" strokeLinejoin="round"
+                                              d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"/>
+                                    </svg>
+                                )}
+                            </button>
+
+
                         </li>
                     </ul>
 
                 </div>
             </div>
+            </Container>
         </nav>
     )
 }

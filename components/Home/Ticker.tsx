@@ -1,6 +1,6 @@
 "use client"
 import {useQuery} from "@apollo/client";
-import {BATCH_HOMEPAGE_EVENTS, GET_FEATURED_EVENTS} from "@/app/services/api/requests";
+import {BATCH_HOMEPAGE_EVENTS, GET_FEATURED_EVENTS} from "@/app/services/api/queries";
 import Link from "next/link";
 
 export default function TickerTop(){

@@ -1,5 +1,5 @@
 import {useQuery} from "@apollo/client";
-import {GET_FEATURED_LESSONS} from "@/app/services/api/requests";
+import {GET_FEATURED_LESSONS} from "@/app/services/api/queries";
 import Card from "@/components/Card/Card";
 import Link from "next/link";
 import {LessonModel, LessonFields, ChapterInfo} from "@/app/models/LessonModel"
