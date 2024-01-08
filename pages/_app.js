@@ -6,7 +6,7 @@ import {ThemeProvider} from "next-themes";
 function App({ Component, pageProps }) {
     return (
         <ApolloProvider client={client}>
-            <ThemeProvider attribute="class">
+            <ThemeProvider attribute="class" defaultTheme = 'system'>
                 <Component {...pageProps} />
             </ThemeProvider>
         </ApolloProvider>
